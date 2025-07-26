@@ -1,16 +1,38 @@
-[gd_scene load_steps=10 format=3 uid="uid://doecc38wvpm3k"]
+[gd_scene load_steps=25 format=3 uid="uid://doecc38wvpm3k"]
 
 [ext_resource type="Script" uid="uid://eqto2d5mhk60" path="res://Escenas/Menu_Handler.gd" id="1_0fbet"]
-[ext_resource type="Texture2D" uid="uid://cbl3c1lvjbvjq" path="res://Recursos/Imagenes/boton.png" id="3_iy58a"]
+[ext_resource type="Texture2D" uid="uid://b6yohsoym3ww7" path="res://Recursos/Imagenes/Sprite sheet for Basic Pack.png" id="2_nabdr"]
 [ext_resource type="FontFile" uid="uid://jse5vf2o10b8" path="res://Recursos/Otros/GrapeSoda.ttf" id="4_6a6wx"]
+[ext_resource type="Texture2D" uid="uid://48yrseusxbqy" path="res://Recursos/Imagenes/Setting menu.png" id="5_mthex"]
 [ext_resource type="Texture2D" uid="uid://bhr8al78lf0ub" path="res://Recursos/Imagenes/wp.png" id="5_sky72"]
 [ext_resource type="Texture2D" uid="uid://cdhg10onvlcek" path="res://Recursos/Imagenes/icon.png" id="6_0ytqx"]
+[ext_resource type="Script" uid="uid://c8vskqud37nbs" path="res://Escenas/option_button.gd" id="6_7wy5n"]
+[ext_resource type="Script" uid="uid://bbcmnj22uvj15" path="res://Escenas/icon.gd" id="6_sllrp"]
+[ext_resource type="Script" uid="uid://c4sekgqhhjdvl" path="res://Escenas/res_button.gd" id="7_nmcrp"]
 [ext_resource type="Texture2D" uid="uid://c4eh5uim62wod" path="res://Recursos/Imagenes/idea_chinga.png" id="7_pxugv"]
+[ext_resource type="Script" uid="uid://b1501ovk7fabp" path="res://Escenas/tecla1.gd" id="8_n8okg"]
+[ext_resource type="Script" uid="uid://drroqx2nwu2ct" path="res://Escenas/tecla2.gd" id="9_bffhi"]
+[ext_resource type="Script" uid="uid://ciu720tw8j8dk" path="res://Escenas/tecla3}.gd" id="10_fb8t6"]
+[ext_resource type="Script" uid="uid://cmgj1edh7qbaw" path="res://Escenas/master_volumen_slider.gd" id="11_bffhi"]
+[ext_resource type="Script" uid="uid://d02ksvc72xgsg" path="res://Escenas/music_volumen_slider.gd" id="12_5xrkl"]
+[ext_resource type="Script" uid="uid://dkvgbe1i8l25c" path="res://Escenas/sfx_volumen_slider.gd" id="13_uq3ll"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh0v1"]
 bg_color = Color(0.143405, 0.0184957, 0.0319131, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wy5n"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nabdr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am1vj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sllrp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mthex"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iy58a"]
@@ -23,6 +45,9 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmcrp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -43,7 +68,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_eh0v1")
 
 [node name="Button" type="Button" parent="Panel"]
-visible = false
 layout_mode = 0
 offset_left = 719.0
 offset_top = 474.0
@@ -60,9 +84,11 @@ offset_right = 256.0
 offset_bottom = 633.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Panel/Botones_Side"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("3_iy58a")
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(275, 178, 90, 27)
 
 [node name="Play" type="Button" parent="Panel/Botones_Side/NinePatchRect"]
 texture_filter = 1
@@ -74,15 +100,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_6a6wx")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nabdr")
 theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
 text = "Jugar"
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="Panel/Botones_Side"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("3_iy58a")
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(275, 178, 90, 27)
 
 [node name="Settings" type="Button" parent="Panel/Botones_Side/NinePatchRect2"]
 texture_filter = 1
@@ -94,17 +127,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_6a6wx")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mthex")
 theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
 text = "Ajustes"
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="Panel/Botones_Side"]
 visibility_layer = 3
 z_index = 1
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("3_iy58a")
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(275, 178, 90, 27)
 
 [node name="Quit" type="Button" parent="Panel/Botones_Side/NinePatchRect3"]
 texture_filter = 1
@@ -116,12 +157,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_6a6wx")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mthex")
 theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
 text = "Salir"
 
 [node name="Fondo" type="NinePatchRect" parent="Panel"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -129,86 +177,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_sky72")
-
-[node name="Config_Tab" type="Panel" parent="Panel"]
-visible = false
-z_index = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -385.0
-offset_top = -250.0
-offset_right = 385.0
-offset_bottom = 250.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_iy58a")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/Config_Tab"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = -60.0
-offset_bottom = 60.0
-grow_horizontal = 2
-
-[node name="Button" type="Button" parent="Panel/Config_Tab/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Juego"
-
-[node name="Button2" type="Button" parent="Panel/Config_Tab/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "HUD"
-
-[node name="Button3" type="Button" parent="Panel/Config_Tab/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Sonido"
-
-[node name="Button" type="Button" parent="Panel/Config_Tab"]
-custom_minimum_size = Vector2(-10, -10)
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -60.0
-offset_top = 10.0
-offset_right = -10.0
-offset_bottom = 60.0
-grow_horizontal = 0
-text = "X"
-
-[node name="Panel" type="Panel" parent="Panel/Config_Tab"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 60.0
-offset_right = -10.0
-offset_bottom = -10.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Config_Tab/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ventana" type="Label" parent="Panel/Config_Tab/Panel/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Modo de ventana:"
 
 [node name="Settings_Tab" type="Panel" parent="Panel"]
 visible = false
@@ -268,11 +236,320 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Volver"
 
+[node name="Config_Tab" type="Panel" parent="Panel"]
+visible = false
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nmcrp")
+
+[node name="Botones_Side_Config" type="VBoxContainer" parent="Panel/Config_Tab"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 281.0
+offset_right = 256.0
+offset_bottom = 633.0
+
+[node name="juego_texture" type="NinePatchRect" parent="Panel/Config_Tab/Botones_Side_Config"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(275, 178, 90, 27)
+
+[node name="Juego" type="Button" parent="Panel/Config_Tab/Botones_Side_Config/juego_texture"]
+texture_filter = 1
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nabdr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
+text = "Juego"
+
+[node name="sonido_texture" type="NinePatchRect" parent="Panel/Config_Tab/Botones_Side_Config"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(275, 178, 90, 27)
+
+[node name="Sonido" type="Button" parent="Panel/Config_Tab/Botones_Side_Config/sonido_texture"]
+texture_filter = 1
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mthex")
+theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
+text = "Sonido"
+
+[node name="atras_texture" type="NinePatchRect" parent="Panel/Config_Tab/Botones_Side_Config"]
+visibility_layer = 3
+z_index = 1
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(275, 178, 90, 27)
+
+[node name="Atras" type="Button" parent="Panel/Config_Tab/Botones_Side_Config/atras_texture"]
+texture_filter = 1
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mthex")
+theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
+text = "Atras"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Panel/Config_Tab"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -269.0
+offset_top = -269.0
+offset_right = 380.0
+offset_bottom = 249.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_mthex")
+region_rect = Rect2(139, 12, 106, 122)
+
+[node name="Cfg_titulo" type="Label" parent="Panel/Config_Tab/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -169.5
+offset_top = 10.0
+offset_right = 169.5
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 48
+text = "Ajustes del juego"
+
+[node name="ajustes_juego" type="VBoxContainer" parent="Panel/Config_Tab/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 33.0
+offset_top = 73.0
+offset_right = -17.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="ventana_dropdown" type="Label" parent="Panel/Config_Tab/NinePatchRect/ajustes_juego"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 48
+text = "Modo de ventana"
+
+[node name="ventana_button" type="OptionButton" parent="Panel/Config_Tab/NinePatchRect/ajustes_juego/ventana_dropdown"]
+layout_mode = 2
+offset_left = 342.0
+offset_top = 10.0
+offset_right = 590.0
+offset_bottom = 41.0
+script = ExtResource("6_7wy5n")
+
+[node name="resolucion_dropdown" type="Label" parent="Panel/Config_Tab/NinePatchRect/ajustes_juego"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 48
+text = "Resolucion"
+
+[node name="res_button" type="OptionButton" parent="Panel/Config_Tab/NinePatchRect/ajustes_juego/resolucion_dropdown"]
+layout_mode = 2
+offset_left = 342.0
+offset_top = 10.0
+offset_right = 590.0
+offset_bottom = 41.0
+script = ExtResource("7_nmcrp")
+
+[node name="separator" type="Label" parent="Panel/Config_Tab/NinePatchRect/ajustes_juego"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 48
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Panel/Config_Tab/NinePatchRect/ajustes_juego/separator"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 196.0
+offset_top = 16.0
+offset_right = -216.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(341, 6, 38, 4)
+
+[node name="tecla_one" type="Label" parent="Panel/Config_Tab/NinePatchRect/ajustes_juego"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 48
+text = "Tecla izquierda"
+
+[node name="Button" type="Button" parent="Panel/Config_Tab/NinePatchRect/ajustes_juego/tecla_one"]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 10.0
+offset_right = 590.0
+offset_bottom = 41.0
+text = "-"
+script = ExtResource("8_n8okg")
+
+[node name="tecla_two" type="Label" parent="Panel/Config_Tab/NinePatchRect/ajustes_juego"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 48
+text = "Tecla centro"
+
+[node name="Button" type="Button" parent="Panel/Config_Tab/NinePatchRect/ajustes_juego/tecla_two"]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 10.0
+offset_right = 590.0
+offset_bottom = 41.0
+text = "-"
+script = ExtResource("9_bffhi")
+
+[node name="tecla_three" type="Label" parent="Panel/Config_Tab/NinePatchRect/ajustes_juego"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 48
+text = "Tecla derecha"
+
+[node name="Button" type="Button" parent="Panel/Config_Tab/NinePatchRect/ajustes_juego/tecla_three"]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 10.0
+offset_right = 590.0
+offset_bottom = 41.0
+text = "-"
+script = ExtResource("10_fb8t6")
+
+[node name="ajustes_sonido" type="VBoxContainer" parent="Panel/Config_Tab/NinePatchRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 33.0
+offset_top = 73.0
+offset_right = -17.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="master_volumen" type="Label" parent="Panel/Config_Tab/NinePatchRect/ajustes_sonido"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 48
+text = "Master: 100%"
+
+[node name="master_volumen_slider" type="HSlider" parent="Panel/Config_Tab/NinePatchRect/ajustes_sonido/master_volumen"]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 17.0
+offset_right = 590.0
+offset_bottom = 33.0
+script = ExtResource("11_bffhi")
+
+[node name="music_volumen" type="Label" parent="Panel/Config_Tab/NinePatchRect/ajustes_sonido"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 48
+text = "Musica: 100"
+
+[node name="music_volumen_slider" type="HSlider" parent="Panel/Config_Tab/NinePatchRect/ajustes_sonido/music_volumen"]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 17.0
+offset_right = 590.0
+offset_bottom = 33.0
+script = ExtResource("12_5xrkl")
+
+[node name="sfx_volumen" type="Label" parent="Panel/Config_Tab/NinePatchRect/ajustes_sonido"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 48
+text = "SFX: 100"
+
+[node name="sfx_volumen_slider" type="HSlider" parent="Panel/Config_Tab/NinePatchRect/ajustes_sonido/sfx_volumen"]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 17.0
+offset_right = 590.0
+offset_bottom = 33.0
+script = ExtResource("13_uq3ll")
+
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(137.5, 149)
-rotation = -0.279469
+rotation = -0.00281681
 scale = Vector2(0.295898, 0.334473)
 texture = ExtResource("6_0ytqx")
+script = ExtResource("6_sllrp")
 
 [node name="IdeaChinga" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -280,11 +557,15 @@ position = Vector2(606, 291)
 scale = Vector2(0.873047, 0.824219)
 texture = ExtResource("7_pxugv")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="toggled" from="Panel/Button" to="." method="_on_button_toggled"]
 [connection signal="pressed" from="Panel/Botones_Side/NinePatchRect/Play" to="." method="play_pressed"]
 [connection signal="pressed" from="Panel/Botones_Side/NinePatchRect2/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Panel/Botones_Side/NinePatchRect3/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Panel/Config_Tab/Button" to="." method="cfg_exit_pressed"]
 [connection signal="pressed" from="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Salir" to="." method="_on_salir_pressed"]
 [connection signal="pressed" from="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Volver" to="." method="_on_volver_pressed"]
+[connection signal="pressed" from="Panel/Config_Tab/Botones_Side_Config/juego_texture/Juego" to="." method="_on_juego_pressed"]
+[connection signal="pressed" from="Panel/Config_Tab/Botones_Side_Config/sonido_texture/Sonido" to="." method="_on_sonido_pressed"]
+[connection signal="pressed" from="Panel/Config_Tab/Botones_Side_Config/atras_texture/Atras" to="." method="config_atras_pressed"]
