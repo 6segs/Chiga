@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dc4pv7cl42gt8"]
+
+[ext_resource type="Texture2D" uid="uid://48yrseusxbqy" path="res://Recursos/Imagenes/Setting menu.png" id="1_jqvmu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gap33"]
+texture = ExtResource("1_jqvmu")
+region_rect = Rect2(139, 12, 106, 122)
+
+[resource]
+Panel/styles/panel = SubResource("StyleBoxTexture_gap33")
