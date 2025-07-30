@@ -23,7 +23,8 @@ func play_pressed() -> void:
 	visible_window(true, false, false)
 func _on_settings_pressed() -> void:
 	visible_window(false, true, false)
-	botones_side.visible = true
+	botones_side.visible = false
+	
 func _on_quit_pressed() -> void:
 	visible_window(false, false, true)
 
@@ -43,6 +44,7 @@ func cfg_exit_pressed() -> void:
 # Code > Ventanas > Exit
 func _on_volver_pressed() -> void:
 	visible_window(false, false, false)
+	botones_side.visible = true
 func _on_salir_pressed() -> void:
 	get_tree().quit()
 

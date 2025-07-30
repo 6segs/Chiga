@@ -12,7 +12,7 @@ func _on_play_mouse_exited() -> void:
 	animacion.visible = false
 	
 func _on_play_mouse_entered() -> void:
-		animation.visible = true
-		animation.play("Run")
-		animacion.visible = true
-		animacion.play("Run")
+	animation.visible = true
+	animation.play("Run")
+	animacion.visible = true
+	animacion.play("Run")

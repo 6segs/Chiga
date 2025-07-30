@@ -1,17 +1,19 @@
-[gd_scene load_steps=25 format=3 uid="uid://doecc38wvpm3k"]
+[gd_scene load_steps=31 format=3 uid="uid://doecc38wvpm3k"]
 
 [ext_resource type="Script" uid="uid://eqto2d5mhk60" path="res://Escenas/Menu_Handler.gd" id="1_0fbet"]
+[ext_resource type="Texture2D" uid="uid://b733suml7n1cd" path="res://Escenas/MainMenu-Chiga.png" id="2_n8okg"]
 [ext_resource type="Texture2D" uid="uid://b6yohsoym3ww7" path="res://Recursos/Imagenes/Sprite sheet for Basic Pack.png" id="2_nabdr"]
 [ext_resource type="FontFile" uid="uid://jse5vf2o10b8" path="res://Recursos/Otros/GrapeSoda.ttf" id="4_6a6wx"]
+[ext_resource type="Texture2D" uid="uid://d07mwb0knmjl2" path="res://Sprites/nota musical.png" id="5_bffhi"]
 [ext_resource type="Texture2D" uid="uid://48yrseusxbqy" path="res://Recursos/Imagenes/Setting menu.png" id="5_mthex"]
-[ext_resource type="Texture2D" uid="uid://bhr8al78lf0ub" path="res://Recursos/Imagenes/wp.png" id="5_sky72"]
-[ext_resource type="Texture2D" uid="uid://cdhg10onvlcek" path="res://Recursos/Imagenes/icon.png" id="6_0ytqx"]
+[ext_resource type="Script" uid="uid://c55xhxy11piok" path="res://Escenas/node_2d.gd" id="5_uq3ll"]
 [ext_resource type="Script" uid="uid://c8vskqud37nbs" path="res://Escenas/option_button.gd" id="6_7wy5n"]
-[ext_resource type="Script" uid="uid://bbcmnj22uvj15" path="res://Escenas/icon.gd" id="6_sllrp"]
 [ext_resource type="Script" uid="uid://c4sekgqhhjdvl" path="res://Escenas/res_button.gd" id="7_nmcrp"]
-[ext_resource type="Texture2D" uid="uid://c4eh5uim62wod" path="res://Recursos/Imagenes/idea_chinga.png" id="7_pxugv"]
+[ext_resource type="Script" uid="uid://dkn3oxk5dc8ph" path="res://Escenas/node_s.gd" id="7_tq07p"]
+[ext_resource type="Script" uid="uid://x8bsbj01r7fv" path="res://Escenas/node_q.gd" id="8_llqk2"]
 [ext_resource type="Script" uid="uid://b1501ovk7fabp" path="res://Escenas/tecla1.gd" id="8_n8okg"]
 [ext_resource type="Script" uid="uid://drroqx2nwu2ct" path="res://Escenas/tecla2.gd" id="9_bffhi"]
+[ext_resource type="Theme" uid="uid://dc4pv7cl42gt8" path="res://Recursos/Temas/new_theme.tres" id="9_tq07p"]
 [ext_resource type="Script" uid="uid://ciu720tw8j8dk" path="res://Escenas/tecla3}.gd" id="10_fb8t6"]
 [ext_resource type="Script" uid="uid://cmgj1edh7qbaw" path="res://Escenas/master_volumen_slider.gd" id="11_bffhi"]
 [ext_resource type="Script" uid="uid://d02ksvc72xgsg" path="res://Escenas/music_volumen_slider.gd" id="12_5xrkl"]
@@ -20,13 +22,43 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh0v1"]
 bg_color = Color(0.143405, 0.0184957, 0.0319131, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tq07p"]
+atlas = ExtResource("5_bffhi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llqk2"]
+atlas = ExtResource("5_bffhi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llxjb"]
+atlas = ExtResource("5_bffhi")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jube"]
+atlas = ExtResource("5_bffhi")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fhhdm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tq07p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llqk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llxjb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jube")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wy5n"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nabdr"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am1vj"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sllrp"]
@@ -35,18 +67,13 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mthex"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iy58a"]
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am1vj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmcrp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nabdr"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Control" type="Control"]
@@ -67,21 +94,30 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_eh0v1")
 
-[node name="Button" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 719.0
-offset_top = 474.0
-offset_right = 1090.0
-offset_bottom = 589.0
-theme_override_font_sizes/font_size = 50
-text = "-"
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_n8okg")
+expand_mode = 1
 
 [node name="Botones_Side" type="VBoxContainer" parent="Panel"]
-layout_mode = 0
-offset_left = 29.0
-offset_top = 281.0
-offset_right = 256.0
-offset_bottom = 633.0
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.043
+anchor_top = 0.459
+anchor_right = 0.208
+anchor_bottom = 0.942
+offset_left = -10.536
+offset_top = -17.432
+offset_right = 26.384
+offset_bottom = 21.584
+theme_override_constants/separation = 24
+metadata/_edit_group_ = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Panel/Botones_Side"]
 texture_filter = 1
@@ -94,9 +130,15 @@ region_rect = Rect2(275, 178, 90, 27)
 texture_filter = 1
 texture_repeat = 2
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.5
+offset_top = -41.5
+offset_right = 107.5
+offset_bottom = 31.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -105,10 +147,28 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_6a6wx")
 theme_override_font_sizes/font_size = 48
-theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
-theme_override_styles/hover = SubResource("StyleBoxFlat_nabdr")
-theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
 text = "Jugar"
+flat = true
+
+[node name="Node2D" type="Node2D" parent="Panel/Botones_Side/NinePatchRect/Play"]
+position = Vector2(47, 13)
+script = ExtResource("5_uq3ll")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/Botones_Side/NinePatchRect/Play/Node2D"]
+position = Vector2(0, -11)
+scale = Vector2(3.78125, 3.78125)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
+
+[node name="1" type="AnimatedSprite2D" parent="Panel/Botones_Side/NinePatchRect/Play/Node2D"]
+position = Vector2(155, -11)
+scale = Vector2(3.781, 3.781)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="Panel/Botones_Side"]
 texture_filter = 1
@@ -121,9 +181,15 @@ region_rect = Rect2(275, 178, 90, 27)
 texture_filter = 1
 texture_repeat = 2
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.5
+offset_top = -36.5
+offset_right = 105.5
+offset_bottom = 29.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -131,12 +197,32 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_6a6wx")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 42
 theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
 theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mthex")
 theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
 text = "Ajustes"
+
+[node name="Node2D" type="Node2D" parent="Panel/Botones_Side/NinePatchRect2/Settings"]
+position = Vector2(29, 11)
+script = ExtResource("7_tq07p")
+
+[node name="1" type="AnimatedSprite2D" parent="Panel/Botones_Side/NinePatchRect2/Settings/Node2D"]
+position = Vector2(179, -12)
+scale = Vector2(3.781, 3.781)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/Botones_Side/NinePatchRect2/Settings/Node2D"]
+position = Vector2(10, -12)
+scale = Vector2(3.78125, 3.78125)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="Panel/Botones_Side"]
 visibility_layer = 3
@@ -151,9 +237,15 @@ region_rect = Rect2(275, 178, 90, 27)
 texture_filter = 1
 texture_repeat = 2
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.5
+offset_top = -51.0
+offset_right = 113.5
+offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -168,32 +260,40 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_mthex")
 theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
 text = "Salir"
 
-[node name="Fondo" type="NinePatchRect" parent="Panel"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_sky72")
+[node name="Node2D" type="Node2D" parent="Panel/Botones_Side/NinePatchRect3/Quit"]
+script = ExtResource("8_llqk2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/Botones_Side/NinePatchRect3/Quit/Node2D"]
+position = Vector2(52, 16.5)
+scale = Vector2(3.78125, 3.78125)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
+
+[node name="1" type="AnimatedSprite2D" parent="Panel/Botones_Side/NinePatchRect3/Quit/Node2D"]
+position = Vector2(204, 16.5)
+scale = Vector2(3.781, 3.781)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
 
 [node name="Settings_Tab" type="Panel" parent="Panel"]
-visible = false
 z_index = 1
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -385.0
-offset_top = -250.0
-offset_right = 385.0
-offset_bottom = 250.0
+offset_left = -267.0
+offset_top = -268.0
+offset_right = 379.0
+offset_bottom = 247.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_iy58a")
 
 [node name="Panel" type="Panel" parent="Panel/Settings_Tab"]
 layout_mode = 1
@@ -206,6 +306,7 @@ offset_right = -10.0
 offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("9_tq07p")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/Settings_Tab/Panel"]
 layout_mode = 1
@@ -214,6 +315,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_group_ = true
 
 [node name="ventana" type="Label" parent="Panel/Settings_Tab/Panel/VBoxContainer"]
 layout_mode = 2
@@ -248,11 +350,16 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nmcrp")
 
 [node name="Botones_Side_Config" type="VBoxContainer" parent="Panel/Config_Tab"]
-layout_mode = 0
-offset_left = 29.0
-offset_top = 281.0
-offset_right = 256.0
-offset_bottom = 633.0
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 39.0
+offset_top = -176.0
+offset_right = 266.0
+offset_bottom = 176.0
+grow_vertical = 2
+theme_override_constants/separation = 17
 
 [node name="juego_texture" type="NinePatchRect" parent="Panel/Config_Tab/Botones_Side_Config"]
 texture_filter = 1
@@ -544,25 +651,17 @@ offset_right = 590.0
 offset_bottom = 33.0
 script = ExtResource("13_uq3ll")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(137.5, 149)
-rotation = -0.00281681
-scale = Vector2(0.295898, 0.334473)
-texture = ExtResource("6_0ytqx")
-script = ExtResource("6_sllrp")
-
-[node name="IdeaChinga" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(606, 291)
-scale = Vector2(0.873047, 0.824219)
-texture = ExtResource("7_pxugv")
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
-[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
-[connection signal="toggled" from="Panel/Button" to="." method="_on_button_toggled"]
+[connection signal="mouse_entered" from="Panel/Botones_Side/NinePatchRect" to="Panel/Botones_Side/NinePatchRect/Play/Node2D" method="_on_nine_patch_rect_mouse_entered"]
+[connection signal="mouse_entered" from="Panel/Botones_Side/NinePatchRect/Play" to="Panel/Botones_Side/NinePatchRect/Play/Node2D" method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Botones_Side/NinePatchRect/Play" to="Panel/Botones_Side/NinePatchRect/Play/Node2D" method="_on_play_mouse_exited"]
 [connection signal="pressed" from="Panel/Botones_Side/NinePatchRect/Play" to="." method="play_pressed"]
+[connection signal="mouse_entered" from="Panel/Botones_Side/NinePatchRect2/Settings" to="Panel/Botones_Side/NinePatchRect2/Settings/Node2D" method="_on_settings_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Botones_Side/NinePatchRect2/Settings" to="Panel/Botones_Side/NinePatchRect2/Settings/Node2D" method="_on_settings_mouse_exited"]
 [connection signal="pressed" from="Panel/Botones_Side/NinePatchRect2/Settings" to="." method="_on_settings_pressed"]
+[connection signal="mouse_entered" from="Panel/Botones_Side/NinePatchRect3/Quit" to="Panel/Botones_Side/NinePatchRect3/Quit/Node2D" method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Botones_Side/NinePatchRect3/Quit" to="Panel/Botones_Side/NinePatchRect3/Quit/Node2D" method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="Panel/Botones_Side/NinePatchRect3/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Salir" to="." method="_on_salir_pressed"]
 [connection signal="pressed" from="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Volver" to="." method="_on_volver_pressed"]
