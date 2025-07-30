@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://doecc38wvpm3k"]
+[gd_scene load_steps=34 format=3 uid="uid://doecc38wvpm3k"]
 
 [ext_resource type="Script" uid="uid://eqto2d5mhk60" path="res://Escenas/Menu_Handler.gd" id="1_0fbet"]
 [ext_resource type="Texture2D" uid="uid://b733suml7n1cd" path="res://Escenas/MainMenu-Chiga.png" id="2_n8okg"]
@@ -15,8 +15,11 @@
 [ext_resource type="Script" uid="uid://drroqx2nwu2ct" path="res://Escenas/tecla2.gd" id="9_bffhi"]
 [ext_resource type="Theme" uid="uid://dc4pv7cl42gt8" path="res://Recursos/Temas/new_theme.tres" id="9_tq07p"]
 [ext_resource type="Script" uid="uid://ciu720tw8j8dk" path="res://Escenas/tecla3}.gd" id="10_fb8t6"]
+[ext_resource type="Script" uid="uid://c7fwt7feg7dpk" path="res://Escenas/Settings_juego.gd" id="10_llqk2"]
+[ext_resource type="Script" uid="uid://ddmy4h5yfemuo" path="res://Escenas/Settings_sonido.gd" id="11_7jube"]
 [ext_resource type="Script" uid="uid://cmgj1edh7qbaw" path="res://Escenas/master_volumen_slider.gd" id="11_bffhi"]
 [ext_resource type="Script" uid="uid://d02ksvc72xgsg" path="res://Escenas/music_volumen_slider.gd" id="12_5xrkl"]
+[ext_resource type="Script" uid="uid://cprsgcg37j4xd" path="res://Escenas/Settings_atras.gd" id="12_fhhdm"]
 [ext_resource type="Script" uid="uid://dkvgbe1i8l25c" path="res://Escenas/sfx_volumen_slider.gd" id="13_uq3ll"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh0v1"]
@@ -280,6 +283,7 @@ frame = 2
 frame_progress = 0.233857
 
 [node name="Settings_Tab" type="Panel" parent="Panel"]
+visible = false
 z_index = 1
 texture_filter = 1
 layout_mode = 1
@@ -339,7 +343,6 @@ size_flags_horizontal = 3
 text = "Volver"
 
 [node name="Config_Tab" type="Panel" parent="Panel"]
-visible = false
 z_index = 2
 layout_mode = 1
 anchors_preset = 15
@@ -388,6 +391,26 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_nabdr")
 theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
 text = "Juego"
 
+[node name="Node2D" type="Node2D" parent="Panel/Config_Tab/Botones_Side_Config/juego_texture/Juego"]
+position = Vector2(4, 1)
+script = ExtResource("10_llqk2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/Config_Tab/Botones_Side_Config/juego_texture/Juego/Node2D"]
+position = Vector2(52, 16.5)
+scale = Vector2(3.78125, 3.78125)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
+
+[node name="1" type="AnimatedSprite2D" parent="Panel/Config_Tab/Botones_Side_Config/juego_texture/Juego/Node2D"]
+position = Vector2(204, 16.5)
+scale = Vector2(3.781, 3.781)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
+
 [node name="sonido_texture" type="NinePatchRect" parent="Panel/Config_Tab/Botones_Side_Config"]
 texture_filter = 1
 layout_mode = 2
@@ -415,6 +438,26 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mthex")
 theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
 text = "Sonido"
+
+[node name="Node2D" type="Node2D" parent="Panel/Config_Tab/Botones_Side_Config/sonido_texture/Sonido"]
+position = Vector2(3, 1)
+script = ExtResource("11_7jube")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/Config_Tab/Botones_Side_Config/sonido_texture/Sonido/Node2D"]
+position = Vector2(43, 16.5)
+scale = Vector2(3.78125, 3.78125)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
+
+[node name="1" type="AnimatedSprite2D" parent="Panel/Config_Tab/Botones_Side_Config/sonido_texture/Sonido/Node2D"]
+position = Vector2(213, 16.5)
+scale = Vector2(3.781, 3.781)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
 
 [node name="atras_texture" type="NinePatchRect" parent="Panel/Config_Tab/Botones_Side_Config"]
 visibility_layer = 3
@@ -445,6 +488,26 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mthex")
 theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
 text = "Atras"
+
+[node name="Node2D" type="Node2D" parent="Panel/Config_Tab/Botones_Side_Config/atras_texture/Atras"]
+position = Vector2(4, 1)
+script = ExtResource("12_fhhdm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/Config_Tab/Botones_Side_Config/atras_texture/Atras/Node2D"]
+position = Vector2(50, 16.5)
+scale = Vector2(3.78125, 3.78125)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
+
+[node name="1" type="AnimatedSprite2D" parent="Panel/Config_Tab/Botones_Side_Config/atras_texture/Atras/Node2D"]
+position = Vector2(210, 16.5)
+scale = Vector2(3.781, 3.781)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Panel/Config_Tab"]
 texture_filter = 1
@@ -665,6 +728,12 @@ script = ExtResource("13_uq3ll")
 [connection signal="pressed" from="Panel/Botones_Side/NinePatchRect3/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Salir" to="." method="_on_salir_pressed"]
 [connection signal="pressed" from="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Volver" to="." method="_on_volver_pressed"]
+[connection signal="mouse_entered" from="Panel/Config_Tab/Botones_Side_Config/juego_texture/Juego" to="Panel/Config_Tab/Botones_Side_Config/juego_texture/Juego/Node2D" method="_on_juego_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Config_Tab/Botones_Side_Config/juego_texture/Juego" to="Panel/Config_Tab/Botones_Side_Config/juego_texture/Juego/Node2D" method="_on_juego_mouse_exited"]
 [connection signal="pressed" from="Panel/Config_Tab/Botones_Side_Config/juego_texture/Juego" to="." method="_on_juego_pressed"]
+[connection signal="mouse_entered" from="Panel/Config_Tab/Botones_Side_Config/sonido_texture/Sonido" to="Panel/Config_Tab/Botones_Side_Config/sonido_texture/Sonido/Node2D" method="_on_sonido_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Config_Tab/Botones_Side_Config/sonido_texture/Sonido" to="Panel/Config_Tab/Botones_Side_Config/sonido_texture/Sonido/Node2D" method="_on_sonido_mouse_exited"]
 [connection signal="pressed" from="Panel/Config_Tab/Botones_Side_Config/sonido_texture/Sonido" to="." method="_on_sonido_pressed"]
+[connection signal="mouse_entered" from="Panel/Config_Tab/Botones_Side_Config/atras_texture/Atras" to="Panel/Config_Tab/Botones_Side_Config/atras_texture/Atras/Node2D" method="_on_atras_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Config_Tab/Botones_Side_Config/atras_texture/Atras" to="Panel/Config_Tab/Botones_Side_Config/atras_texture/Atras/Node2D" method="_on_atras_mouse_exited"]
 [connection signal="pressed" from="Panel/Config_Tab/Botones_Side_Config/atras_texture/Atras" to="." method="config_atras_pressed"]

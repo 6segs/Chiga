@@ -21,6 +21,8 @@ func visible_window(levels: bool, config: bool, exit: bool) -> void:
 # Code para cada boton y sus respectivas ventanas
 func play_pressed() -> void:
 	visible_window(true, false, false)
+	get_tree().change_scene_to_file("res://Escenas/Game.tscn")
+	
 func _on_settings_pressed() -> void:
 	visible_window(false, true, false)
 	botones_side.visible = false
@@ -55,5 +57,4 @@ func config_atras_pressed() -> void:
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):  # Escape por defecto
-		settings_tab.visible = true
-		botones_side.visible = false
+		visible_window(false,false,true)
