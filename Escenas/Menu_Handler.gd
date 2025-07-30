@@ -52,3 +52,8 @@ func _on_salir_pressed() -> void:
 func config_atras_pressed() -> void:
 	visible_window(false, false, false)
 	botones_side.visible = true
+
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_cancel"):  # Escape por defecto
+		settings_tab.visible = true
+		botones_side.visible = false
