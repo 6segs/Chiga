@@ -10,7 +10,12 @@ extends Control
 @onready var settings_tab: Panel = $Panel/Settings_Tab
 @onready var botones_side: VBoxContainer = $Panel/Botones_Side
 
-
+# Variable de Audio
+@onready var music: AudioStreamPlayer = $AudioStreamPlayer
+var musica_menu = preload("res://Recursos/Audios/(1) intro_chiga_alt.wav")
+func _ready() -> void:
+	music.stream = musica_menu
+	music.play()
 # Menu > Ventanas > Config_Tab > Elementos
 
 func visible_window(levels: bool, config: bool, exit: bool) -> void:
@@ -58,3 +63,8 @@ func config_atras_pressed() -> void:
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):  # Escape por defecto
 		visible_window(false,false,true)
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		music.stream_paused = true
+	

@@ -715,6 +715,8 @@ offset_bottom = 33.0
 script = ExtResource("13_uq3ll")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = 11.473
+pitch_scale = 1.11
 
 [connection signal="mouse_entered" from="Panel/Botones_Side/NinePatchRect" to="Panel/Botones_Side/NinePatchRect/Play/Node2D" method="_on_nine_patch_rect_mouse_entered"]
 [connection signal="mouse_entered" from="Panel/Botones_Side/NinePatchRect/Play" to="Panel/Botones_Side/NinePatchRect/Play/Node2D" method="_on_play_mouse_entered"]
