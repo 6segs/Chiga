@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://doecc38wvpm3k"]
+[gd_scene load_steps=45 format=3 uid="uid://doecc38wvpm3k"]
 
 [ext_resource type="Script" uid="uid://eqto2d5mhk60" path="res://Escenas/Menu_Handler.gd" id="1_0fbet"]
 [ext_resource type="Texture2D" uid="uid://b733suml7n1cd" path="res://Escenas/MainMenu-Chiga.png" id="2_n8okg"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://d02ksvc72xgsg" path="res://Escenas/music_volumen_slider.gd" id="12_5xrkl"]
 [ext_resource type="Script" uid="uid://cprsgcg37j4xd" path="res://Escenas/Settings_atras.gd" id="12_fhhdm"]
 [ext_resource type="Script" uid="uid://dkvgbe1i8l25c" path="res://Escenas/sfx_volumen_slider.gd" id="13_uq3ll"]
+[ext_resource type="Theme" uid="uid://b8dux444xf3t7" path="res://Recursos/Temas/buttom.tres" id="17_fhhdm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh0v1"]
 bg_color = Color(0.143405, 0.0184957, 0.0319131, 1)
@@ -78,6 +79,44 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nabdr"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fhhdm"]
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(836.688, 3.72122, 22.4868, 24.5843)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ui7ib"]
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(868.664, 5.776, 22.6037, 22.6037)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7jube"]
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(836.688, 3.721, 22.487, 24.584)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cbwgl"]
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(836.655, 3.655, 22.742, 24.772)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7df2t"]
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(868.868, 5.78074, 22.3158, 22.3775)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7gina"]
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(836.655, 3.65493, 22.7418, 24.7723)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fhhdm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2w8mc"]
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(836.655, 3.655, 22.742, 24.772)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jbrna"]
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(868.868, 5.781, 22.316, 22.377)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pi3vk"]
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(836.655, 3.655, 22.742, 24.772)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -614,10 +653,15 @@ text = "Tecla izquierda"
 [node name="Button" type="Button" parent="Panel/Config_Tab/NinePatchRect/ajustes_juego/tecla_one"]
 layout_mode = 0
 offset_left = 534.0
-offset_top = 10.0
+offset_top = 15.0
 offset_right = 590.0
-offset_bottom = 41.0
-text = "-"
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxTexture_fhhdm")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ui7ib")
+theme_override_styles/normal = SubResource("StyleBoxTexture_7jube")
+text = ". . ."
 script = ExtResource("8_n8okg")
 
 [node name="tecla_two" type="Label" parent="Panel/Config_Tab/NinePatchRect/ajustes_juego"]
@@ -633,7 +677,14 @@ offset_left = 534.0
 offset_top = 10.0
 offset_right = 590.0
 offset_bottom = 41.0
-text = "-"
+theme = ExtResource("17_fhhdm")
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxTexture_cbwgl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7df2t")
+theme_override_styles/normal = SubResource("StyleBoxTexture_7gina")
+text = ". . ."
+icon = SubResource("ViewportTexture_fhhdm")
 script = ExtResource("9_bffhi")
 
 [node name="tecla_three" type="Label" parent="Panel/Config_Tab/NinePatchRect/ajustes_juego"]
@@ -649,7 +700,13 @@ offset_left = 534.0
 offset_top = 10.0
 offset_right = 590.0
 offset_bottom = 41.0
-text = "-"
+theme = ExtResource("17_fhhdm")
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxTexture_2w8mc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jbrna")
+theme_override_styles/normal = SubResource("StyleBoxTexture_pi3vk")
+text = ". . ."
 script = ExtResource("10_fb8t6")
 
 [node name="ajustes_sonido" type="VBoxContainer" parent="Panel/Config_Tab/NinePatchRect"]

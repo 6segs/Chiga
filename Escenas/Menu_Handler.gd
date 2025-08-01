@@ -16,6 +16,7 @@ var musica_menu = preload("res://Recursos/Audios/(1) intro_chiga_alt.wav")
 func _ready() -> void:
 	music.stream = musica_menu
 	music.play()
+	
 # Menu > Ventanas > Config_Tab > Elementos
 
 func visible_window(levels: bool, config: bool, exit: bool) -> void:
@@ -30,10 +31,11 @@ func play_pressed() -> void:
 	
 func _on_settings_pressed() -> void:
 	visible_window(false, true, false)
-	botones_side.visible = false
 	
 func _on_quit_pressed() -> void:
 	visible_window(false, false, true)
+	if music.playing: # Esto pausa la musica al apretar salir
+		music.stream_paused = true
 
 #Code > Ventanas > Config
 func _on_sonido_pressed() -> void:
@@ -52,19 +54,19 @@ func cfg_exit_pressed() -> void:
 func _on_volver_pressed() -> void:
 	visible_window(false, false, false)
 	botones_side.visible = true
+	if music.stream_paused: #Esto despausa la musica al apretar volver
+		music.stream_paused = false
+		
 func _on_salir_pressed() -> void:
 	get_tree().quit()
 
 
 func config_atras_pressed() -> void:
-	visible_window(false, false, false)
-	botones_side.visible = true
+	visible_window(true, false, false)
 
+# Pausa la Musica cuando se pone la ventana de salir apretando la tecla escape
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):  # Escape por defecto
 		visible_window(false,false,true)
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
-		music.stream_paused = true
-	
+		if music.playing:
+			music.stream_paused = true
