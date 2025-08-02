@@ -56,7 +56,7 @@ func _on_volver_pressed() -> void:
 	botones_side.visible = true
 	if music.stream_paused: #Esto despausa la musica al apretar volver
 		music.stream_paused = false
-		
+
 func _on_salir_pressed() -> void:
 	get_tree().quit()
 
