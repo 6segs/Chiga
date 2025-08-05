@@ -24,3 +24,10 @@ func definir_valor_slider() -> void:
 func musica_slider_val(value: int) -> void:
 	#AudioServer.get_bus_volume_db(0, linear_to_db(value))
 	cambiar_nombre()
+
+
+func volumen(bus_index, value):
+	AudioServer.set_bus_volume_db(bus_index, value)
+	
+func _on_value_changed(value: float) -> void:
+	volumen(0, value)

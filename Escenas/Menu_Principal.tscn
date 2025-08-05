@@ -1875,6 +1875,9 @@ offset_left = 261.0
 offset_top = 17.0
 offset_right = 590.0
 offset_bottom = 33.0
+min_value = -80.0
+max_value = 0.0
+value = -80.0
 script = ExtResource("12_5xrkl")
 
 [node name="sfx_volumen" type="Label" parent="Panel/Config_Tab/NinePatchRect/ajustes_sonido"]
@@ -1918,3 +1921,4 @@ pitch_scale = 1.11
 [connection signal="mouse_entered" from="Panel/Config_Tab/Botones_Side_Config/atras_texture/Atras" to="Panel/Config_Tab/Botones_Side_Config/atras_texture/Atras/Node2D" method="_on_atras_mouse_entered"]
 [connection signal="mouse_exited" from="Panel/Config_Tab/Botones_Side_Config/atras_texture/Atras" to="Panel/Config_Tab/Botones_Side_Config/atras_texture/Atras/Node2D" method="_on_atras_mouse_exited"]
 [connection signal="pressed" from="Panel/Config_Tab/Botones_Side_Config/atras_texture/Atras" to="." method="config_atras_pressed"]
+[connection signal="value_changed" from="Panel/Config_Tab/NinePatchRect/ajustes_sonido/music_volumen/music_volumen_slider" to="Panel/Config_Tab/NinePatchRect/ajustes_sonido/music_volumen/music_volumen_slider" method="_on_value_changed"]
