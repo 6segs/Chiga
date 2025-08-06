@@ -1,2 +1,0 @@
-# Chiga
-The Legendary Musician

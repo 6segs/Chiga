@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ftucwvmnmmsn"
-path="res://.godot/imported/Ajustes.png-620fe12e7ea51c40f531a1a5a39bc20f.ctex"
+uid="uid://bpbvnee2v00b8"
+path="res://.godot/imported/c.png-3e90398dd6ee0762066e84a20e5599a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Imagenes/Ajustes.png"
-dest_files=["res://.godot/imported/Ajustes.png-620fe12e7ea51c40f531a1a5a39bc20f.ctex"]
+source_file="res://Sprites/c.png"
+dest_files=["res://.godot/imported/c.png-3e90398dd6ee0762066e84a20e5599a0.ctex"]
 
 [params]
 

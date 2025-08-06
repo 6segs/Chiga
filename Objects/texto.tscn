@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://4c3g8jnp0kt4"]
+
+[ext_resource type="Script" uid="uid://dpuwug20782ga" path="res://Objects/texto.gd" id="1_ahsuu"]
+[ext_resource type="FontFile" uid="uid://jse5vf2o10b8" path="res://Recursos/Otros/GrapeSoda.ttf" id="2_gc2on"]
+
+[node name="Texto" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2, 2)
+script = ExtResource("1_ahsuu")
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 209.0
+offset_bottom = 45.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/normal_font = ExtResource("2_gc2on")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]???"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -30,4 +30,4 @@ func volumen(bus_index, value):
 	AudioServer.set_bus_volume_db(bus_index, value)
 	
 func _on_value_changed(value: float) -> void:
-	volumen(0, value)
+	volumen(0, value/100)

@@ -15,7 +15,7 @@ extends Control
 var musica_menu = preload("res://Recursos/Audios/(1) intro_chiga_alt.wav")
 func _ready() -> void:
 	music.stream = musica_menu
-	music.play()
+	#music.play()
 	
 # Menu > Ventanas > Config_Tab > Elementos
 
@@ -27,7 +27,7 @@ func visible_window(levels: bool, config: bool, exit: bool) -> void:
 # Code para cada boton y sus respectivas ventanas
 func play_pressed() -> void:
 	visible_window(true, false, false)
-	get_tree().change_scene_to_file("res://Escenas/Game.tscn")
+	get_tree().change_scene_to_file("res://Escenas/Niveles/main.tscn")
 	
 func _on_settings_pressed() -> void:
 	visible_window(false, true, false)

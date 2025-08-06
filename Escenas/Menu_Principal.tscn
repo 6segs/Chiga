@@ -1,7 +1,7 @@
 [gd_scene load_steps=65 format=4 uid="uid://doecc38wvpm3k"]
 
 [ext_resource type="Script" uid="uid://eqto2d5mhk60" path="res://Escenas/Menu_Handler.gd" id="1_0fbet"]
-[ext_resource type="Texture2D" uid="uid://b733suml7n1cd" path="res://Escenas/MainMenu-Chiga.png" id="2_n8okg"]
+[ext_resource type="Texture2D" uid="uid://b733suml7n1cd" path="res://Recursos/Imagenes/MainMenu-Chiga.png" id="2_n8okg"]
 [ext_resource type="Texture2D" uid="uid://b6yohsoym3ww7" path="res://Recursos/Imagenes/Sprite sheet for Basic Pack.png" id="2_nabdr"]
 [ext_resource type="FontFile" uid="uid://jse5vf2o10b8" path="res://Recursos/Otros/GrapeSoda.ttf" id="4_6a6wx"]
 [ext_resource type="Texture2D" uid="uid://d07mwb0knmjl2" path="res://Sprites/nota musical.png" id="5_bffhi"]
@@ -1167,7 +1167,7 @@ region_rect = Rect2(868.868, 5.781, 22.316, 22.377)
 texture = ExtResource("2_nabdr")
 region_rect = Rect2(836.655, 3.655, 22.742, 24.772)
 
-[node name="Control" type="Control"]
+[node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1185,7 +1185,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_eh0v1")
 
-[node name="TextureRect" type="TextureRect" parent="Panel"]
+[node name="Fondo" type="TextureRect" parent="Panel"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -1197,7 +1197,6 @@ texture = ExtResource("2_n8okg")
 expand_mode = 1
 
 [node name="Botones_Side" type="VBoxContainer" parent="Panel"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.043
@@ -1503,6 +1502,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_a00va")
 text = "Volver"
 
 [node name="Config_Tab" type="Panel" parent="Panel"]
+visible = false
 z_index = 2
 layout_mode = 1
 anchors_preset = 15
@@ -1703,7 +1703,6 @@ theme_override_font_sizes/font_size = 48
 text = "Ajustes del juego"
 
 [node name="ajustes_juego" type="VBoxContainer" parent="Panel/Config_Tab/NinePatchRect"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1833,6 +1832,7 @@ text = ". . ."
 script = ExtResource("10_fb8t6")
 
 [node name="ajustes_sonido" type="VBoxContainer" parent="Panel/Config_Tab/NinePatchRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1875,9 +1875,6 @@ offset_left = 261.0
 offset_top = 17.0
 offset_right = 590.0
 offset_bottom = 33.0
-min_value = -80.0
-max_value = 0.0
-value = -80.0
 script = ExtResource("12_5xrkl")
 
 [node name="sfx_volumen" type="Label" parent="Panel/Config_Tab/NinePatchRect/ajustes_sonido"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxtv5h4sn73dn"
-path="res://.godot/imported/Play.png-b92be25334fdc5fbd8f05c1620ee44ee.ctex"
+uid="uid://b733suml7n1cd"
+path="res://.godot/imported/MainMenu-Chiga.png-1e0e0ccfad01deb6754528618459d614.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Imagenes/Play.png"
-dest_files=["res://.godot/imported/Play.png-b92be25334fdc5fbd8f05c1620ee44ee.ctex"]
+source_file="res://Recursos/Imagenes/MainMenu-Chiga.png"
+dest_files=["res://.godot/imported/MainMenu-Chiga.png-1e0e0ccfad01deb6754528618459d614.ctex"]
 
 [params]
 
