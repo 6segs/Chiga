@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ly4k3qd3dnr7" path="res://Player.gd" id="1_wa4lb"]
 [ext_resource type="Texture2D" uid="uid://dfp3vsq4qwm1n" path="res://Sprites/arrow.png" id="2_onrkg"]
-[ext_resource type="Script" uid="uid://bx1ocyc227me1" path="res://miss_box.gd" id="3_i3pqv"]
+[ext_resource type="Script" path="res://miss_box.gd" id="3_i3pqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7r48m"]
 
@@ -32,7 +32,7 @@ texture = ExtResource("2_onrkg")
 points = PackedVector2Array(25, 59, 25, 690)
 
 [node name="MissZone" type="Area2D" parent="LeftInputHitbox"]
-position = Vector2(90, 761)
+position = Vector2(90, 792)
 scale = Vector2(6, 6)
 script = ExtResource("3_i3pqv")
 
@@ -57,7 +57,7 @@ position = Vector2(430, 0)
 points = PackedVector2Array(25, 59, 25, 207.009, 25, 690)
 
 [node name="MissZone" type="Area2D" parent="RightInputHitbox"]
-position = Vector2(240, 761)
+position = Vector2(240, 792)
 scale = Vector2(6, 6)
 script = ExtResource("3_i3pqv")
 
@@ -86,7 +86,7 @@ scale = Vector2(0.625, 0.625)
 texture = ExtResource("2_onrkg")
 
 [node name="MissZone" type="Area2D" parent="DownInputHitbox"]
-position = Vector2(390, 761)
+position = Vector2(390, 792)
 scale = Vector2(6, 6)
 script = ExtResource("3_i3pqv")
 

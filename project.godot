@@ -10,11 +10,15 @@ config_version=5
 
 [application]
 
-config/name="ddr"
+config/name="Chiga: The Legendary Musician"
 config/version="0.0.4"
 run/main_scene="uid://doecc38wvpm3k"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://cdhg10onvlcek"
+
+[autoload]
+
+Cfg="*res://Cfg.gd"
 
 [display]
 
