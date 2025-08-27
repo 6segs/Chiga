@@ -25,7 +25,7 @@ var play_countdown_sfx = false
 
 var last_beat: float = 0.0
 
-# Obviously this is hard-coded for now...
+# gugy, te deseo suerte cuando tengas q hacer esto D:
 var arrow_timers: Array = [
 	["right",0],["right",2],["down",3],
 	["left",4],["right",6],["left",7],
@@ -43,8 +43,8 @@ var arrows_before_music: Array = []
 var curr_combo = 0
 var max_combo = 0
 var score = 0
-
-# Called when the node enters the scene tree for the first time.
+##############################################################
+# basicamente el init de todo
 func _ready() -> void:
 	# es tan estupido esto -_-
 	$Player/LeftInputHitbox/MissZone.arrow_missed.connect(_on_arrow_missed)
@@ -57,19 +57,12 @@ func _ready() -> void:
 	$Player.hit.connect(_on_player_hit)
 	$Player.miss.connect(_on_player_miss)
 	$HUD/GameOverMenu/RetryButton.button_down.connect(_on_retry_button_button_down)
-
-	#TODO: Change these to be parsed from specific level data
-	$EndTimer.wait_time = 40 # no need to convert
-	music_has_intro = false
 	
 	BPM = 84
 	TIME_NUMERATOR = 4
 	QUARTER_NOTES_PER_SECOND = BPM / 60
 	QUARTER_NOTE_DURATION = 60 / BPM
 	MEASURE_DURATION = TIME_NUMERATOR * QUARTER_NOTE_DURATION
-	
-	if music_has_intro:
-		pass
 	
 	PERFECT_TIMING_Y = get_node("Player/LeftInputHitbox/CollisionShape2D").position.y
 	
@@ -121,7 +114,8 @@ func new_game():
 	$StartTimer.start()
 	
 func game_over():
-	# Display final score.
+	# lil sistema de rango segun el porcentaje de puntos
+	# rango C y D se consideran fracaso
 	var score_percentage = score / MAX_SCORE
 	if score_percentage >= 0.9:
 		$HUD/GameOverMenu/FinalRankLabel.text = "Rank S"
@@ -166,12 +160,12 @@ func _on_conductor_beat(_last_reported_beat) -> void:
 	pass
 	
 func spawn_arrow(arrow_data):
-	# q no se note el chatgpt aca 🫣
-	var arrow = arrow_scene.instantiate()  # Instanciás la flecha
-	arrow.add_to_group("arrows")           # Le agregás el grupo a la instancia
-	arrow.deleted.connect(_on_arrow_missed) # Conectás la señal deleted
+	# creas la flecha, la agregas al grupo "arrows", y conectar la señal!
+	var arrow = arrow_scene.instantiate()
+	arrow.add_to_group("arrows")
+	arrow.deleted.connect(_on_arrow_missed)
 
-	# Posicionamiento según dirección
+	# ubicar cada flechita dependiendo su data
 	if arrow_data[0] == "left":
 		arrow.position = $LeftArrowPath/LeftArrowSpawnLocation.position
 	elif arrow_data[0] == "down":
