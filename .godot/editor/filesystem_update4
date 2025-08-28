@@ -1,4 +1,8 @@
+res://audio_bus.tres
 res://Escenas/Menu_Principal.tscn
-res://Escenas/tecla1.gd
-res://Escenas/tecla2.gd
-res://Escenas/tecla3}.gd
+res://Escenas/Niveles/main.tscn
+res://hud.tscn
+res://Scripts/Menu_Handler.gd
+res://main.gd
+res://player.tscn
+res://arrow.tscn

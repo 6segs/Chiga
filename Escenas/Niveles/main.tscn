@@ -1,16 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3o0as4aqswnt"]
+[gd_scene load_steps=12 format=3 uid="uid://b3o0as4aqswnt"]
 
 [ext_resource type="Script" uid="uid://dxonvea3yvmfa" path="res://main.gd" id="1_bmteg"]
 [ext_resource type="PackedScene" uid="uid://deoub3f4yuebi" path="res://arrow.tscn" id="2_di4g5"]
 [ext_resource type="PackedScene" uid="uid://bvdtplj3m7gvg" path="res://player.tscn" id="3_7cisi"]
 [ext_resource type="PackedScene" uid="uid://tcoe64368u55" path="res://hud.tscn" id="3_ioanx"]
-[ext_resource type="AudioStream" uid="uid://b8o8pa755hlsc" path="res://sound/2023-02-16-#29.mp3" id="4_bk6ty"]
 [ext_resource type="Script" uid="uid://cwcw3bf47leoe" path="res://MusicPlayer.gd" id="6_mt427"]
-[ext_resource type="AudioStream" uid="uid://2bqogppu1xu5" path="res://sound/clap_1.wav" id="6_v0t4s"]
-[ext_resource type="AudioStream" uid="uid://b83ojtfeumrr6" path="res://sound/countdown_low.wav" id="7_07lnk"]
 [ext_resource type="Texture2D" uid="uid://bcv5547srg5hy" path="res://Recursos/Imagenes/bg1.png" id="9_amw6n"]
 
 [sub_resource type="Curve2D" id="Curve2D_1ygmk"]
+
+[sub_resource type="AudioStream" id="AudioStream_hslme"]
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_20ycw"]
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_kjsdu"]
+
+[sub_resource type="AudioStream" id="AudioStream_amw6n"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_bmteg")
@@ -56,14 +61,21 @@ curve = SubResource("Curve2D_1ygmk")
 position = Vector2(730, 0)
 
 [node name="Conductor" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_bk6ty")
+stream = SubResource("AudioStream_hslme")
+bus = &"Musica"
 script = ExtResource("6_mt427")
 
 [node name="HitPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_v0t4s")
+stream = SubResource("AudioStreamWAV_20ycw")
+bus = &"SFX"
 
 [node name="CountdownPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_07lnk")
+stream = SubResource("AudioStreamWAV_kjsdu")
+bus = &"SFX"
+
+[node name="FinalSFX" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStream_amw6n")
+bus = &"SFX"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 anchors_preset = 15

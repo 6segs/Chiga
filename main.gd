@@ -23,6 +23,8 @@ var LOADING_DELAY_OFFSET: float = 0.1
 var game_has_started = false
 var play_countdown_sfx = false
 
+var paso_nivel = false
+
 var last_beat: float = 0.0
 
 # gugy, te deseo suerte cuando tengas q hacer esto D:
@@ -56,13 +58,22 @@ func _ready() -> void:
 	$Conductor.beat.connect(_on_conductor_beat)
 	$Player.hit.connect(_on_player_hit)
 	$Player.miss.connect(_on_player_miss)
-	$HUD/GameOverMenu/RetryButton.button_down.connect(_on_retry_button_button_down)
+	$HUD/GameOverMenu/NinePatchRect/GoBackButton.button_down.connect(_go_back_button)
 	
+	$Conductor.stream = preload("res://Recursos/Audios/2023-02-16-#29.mp3")
+	$HitPlayer.stream = preload("res://Recursos/Audios/clap_1.wav")
+	$CountdownPlayer.stream = preload("res://Recursos/Audios/countdown_high.wav")
+	$FinalSFX.stream = preload("res://Recursos/Audios/sfx_perder.mp3")
+	
+	$EndTimer.wait_time = 40 # no need to convert
+	music_has_intro = false
 	BPM = 84
 	TIME_NUMERATOR = 4
 	QUARTER_NOTES_PER_SECOND = BPM / 60
 	QUARTER_NOTE_DURATION = 60 / BPM
 	MEASURE_DURATION = TIME_NUMERATOR * QUARTER_NOTE_DURATION
+	if music_has_intro:
+		pass
 	
 	PERFECT_TIMING_Y = get_node("Player/LeftInputHitbox/CollisionShape2D").position.y
 	
@@ -85,7 +96,7 @@ func _process(_delta: float) -> void:
 			if countdown_text != $HUD/CountdownLabel.text:
 				print(countdown_text)
 				if countdown_text == "GO!":
-					$CountdownPlayer.stream = load("res://sound/countdown_high.wav")
+					$CountdownPlayer.stream = load("res://Recursos/Audios/sfx_inicio_nivel.mp3")
 				
 				$CountdownPlayer.playing = true
 			$HUD/CountdownLabel.text = countdown_text
@@ -109,31 +120,42 @@ func _process(_delta: float) -> void:
 	$HUD/VBoxContainer/ScoreLabel.text = "Puntos: " + str(score)
 	$HUD/VBoxContainer/ComboLabel.text = "Combo: " + str(curr_combo) + "X"
 
-		
+
 func new_game():
 	$StartTimer.start()
-	
+
 func game_over():
 	# lil sistema de rango segun el porcentaje de puntos
 	# rango C y D se consideran fracaso
 	var score_percentage = score / MAX_SCORE
 	if score_percentage >= 0.9:
-		$HUD/GameOverMenu/FinalRankLabel.text = "Rank S"
+		$HUD/GameOverMenu/NinePatchRect/FinalRankLabel.text = "Rank S"
+		paso_nivel = true
 	elif score_percentage >= 0.8:
-		$HUD/GameOverMenu/FinalRankLabel.text = "Rank A"
+		$HUD/GameOverMenu/NinePatchRect/FinalRankLabel.text = "Rank A"
+		paso_nivel = true
 	elif score_percentage >= 0.7:
-		$HUD/GameOverMenu/FinalRankLabel.text = "Rank B"
+		$HUD/GameOverMenu/NinePatchRect/FinalRankLabel.text = "Rank B"
+		paso_nivel = true
 	elif score_percentage >= 0.6:
-		$HUD/GameOverMenu/FinalRankLabel.text = "Rank C"
+		$HUD/GameOverMenu/NinePatchRect/FinalRankLabel.text = "Rank C"
+		paso_nivel = false
 	else:
-		$HUD/GameOverMenu/FinalRankLabel.text = "Rank D"
+		$HUD/GameOverMenu/NinePatchRect/FinalRankLabel.text = "Rank D"
+		paso_nivel = false
 	
 	if max_combo == MAX_COMBO:
-		$HUD/GameOverMenu/ComboLabel.text = "Full Combo!"
+		$HUD/GameOverMenu/NinePatchRect/ComboLabel.text = "Full Combo!"
 	else:
-		$HUD/GameOverMenu/ComboLabel.text = "Max Combo:\n" + str(max_combo)
+		$HUD/GameOverMenu/NinePatchRect/ComboLabel.text = "Max Combo:\n" + str(max_combo)
+	
+	if paso_nivel:
+		$FinalSFX.stream = load("res://Recursos/Audios/sfx_ganar_nivel.mp3")
+		$FinalSFX.play()
+	else:
+		$FinalSFX.stream = load("res://Recursos/Audios/sfx_perder.mp3")
+		$FinalSFX.play()
 	$HUD/GameOverMenu.visible = true
-	#TODO: Show exit and play-again buttons.
 
 func _on_start_timer_timeout() -> void:
 	$EndTimer.start()
@@ -245,6 +267,5 @@ func compute_offset_beat_times():
 			
 	arrow_timers = arrow_timers.slice(num_negative, arrow_timers.size())
 
-func _on_retry_button_button_down():
-	print("pressed")
-	get_tree().reload_current_scene()
+func _go_back_button():
+	get_tree().change_scene_to_file("res://Escenas/Menu_Principal.tscn")

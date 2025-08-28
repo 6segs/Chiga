@@ -1,7 +1,7 @@
-[gd_scene load_steps=71 format=4 uid="uid://doecc38wvpm3k"]
+[gd_scene load_steps=69 format=4 uid="uid://doecc38wvpm3k"]
 
 [ext_resource type="Script" uid="uid://eqto2d5mhk60" path="res://Scripts/Menu_Handler.gd" id="1_0fbet"]
-[ext_resource type="Texture2D" uid="uid://b733suml7n1cd" path="res://Recursos/Imagenes/MainMenu-Chiga.png" id="2_n8okg"]
+[ext_resource type="Texture2D" uid="uid://b733suml7n1cd" path="res://Sprites/MainMenu-Chiga.png" id="2_n8okg"]
 [ext_resource type="Texture2D" uid="uid://b6yohsoym3ww7" path="res://Recursos/Imagenes/Sprite sheet for Basic Pack.png" id="2_nabdr"]
 [ext_resource type="FontFile" uid="uid://jse5vf2o10b8" path="res://Recursos/Otros/GrapeSoda.ttf" id="4_6a6wx"]
 [ext_resource type="Texture2D" uid="uid://d07mwb0knmjl2" path="res://Sprites/nota musical.png" id="5_bffhi"]
@@ -16,10 +16,8 @@
 [ext_resource type="Script" uid="uid://ciu720tw8j8dk" path="res://Scripts/tecla3.gd" id="10_fb8t6"]
 [ext_resource type="Script" uid="uid://c7fwt7feg7dpk" path="res://Scripts/Settings_juego.gd" id="10_llqk2"]
 [ext_resource type="Script" uid="uid://ddmy4h5yfemuo" path="res://Scripts/Settings_sonido.gd" id="11_7jube"]
-[ext_resource type="Script" uid="uid://cmgj1edh7qbaw" path="res://Scripts/master_volumen_slider.gd" id="11_bffhi"]
-[ext_resource type="Script" uid="uid://d02ksvc72xgsg" path="res://Scripts/music_volumen_slider.gd" id="12_5xrkl"]
 [ext_resource type="Script" uid="uid://cprsgcg37j4xd" path="res://Scripts/Settings_atras.gd" id="12_fhhdm"]
-[ext_resource type="Script" uid="uid://dkvgbe1i8l25c" path="res://Scripts/sfx_volumen_slider.gd" id="13_uq3ll"]
+[ext_resource type="AudioStream" uid="uid://b2pp0srbc1jno" path="res://Recursos/Audios/(2) menu_chiga.mp3" id="21_7jube"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh0v1"]
 bg_color = Color(0.143405, 0.0184957, 0.0319131, 1)
@@ -1881,7 +1879,6 @@ offset_left = 261.0
 offset_top = 17.0
 offset_right = 590.0
 offset_bottom = 33.0
-script = ExtResource("11_bffhi")
 
 [node name="music_volumen" type="Label" parent="Panel/Config_Tab/NinePatchRect/ajustes_sonido"]
 custom_minimum_size = Vector2(0, 10)
@@ -1897,7 +1894,6 @@ offset_left = 261.0
 offset_top = 17.0
 offset_right = 590.0
 offset_bottom = 33.0
-script = ExtResource("12_5xrkl")
 
 [node name="sfx_volumen" type="Label" parent="Panel/Config_Tab/NinePatchRect/ajustes_sonido"]
 custom_minimum_size = Vector2(0, 10)
@@ -1913,7 +1909,6 @@ offset_left = 261.0
 offset_top = 17.0
 offset_right = 590.0
 offset_bottom = 33.0
-script = ExtResource("13_uq3ll")
 
 [node name="Play_Tab" type="Panel" parent="Panel"]
 visible = false
@@ -2242,9 +2237,17 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_7jube")
 theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
 text = "Jugar Nivel 1"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_7jube")
+volume_db = 7.648
+pitch_scale = 1.11
+bus = &"Musica"
+parameters/looping = false
+
+[node name="sonidos" type="AudioStreamPlayer" parent="."]
 volume_db = 11.473
 pitch_scale = 1.11
+bus = &"SFX"
 
 [node name="Intro" type="Panel" parent="."]
 visible = false
@@ -2293,7 +2296,9 @@ vertical_alignment = 1
 [connection signal="mouse_entered" from="Panel/Config_Tab/Botones_Side_Config/atras_texture/Atras" to="Panel/Config_Tab/Botones_Side_Config/atras_texture/Atras/Node2D" method="_on_atras_mouse_entered"]
 [connection signal="mouse_exited" from="Panel/Config_Tab/Botones_Side_Config/atras_texture/Atras" to="Panel/Config_Tab/Botones_Side_Config/atras_texture/Atras/Node2D" method="_on_atras_mouse_exited"]
 [connection signal="pressed" from="Panel/Config_Tab/Botones_Side_Config/atras_texture/Atras" to="." method="config_atras_pressed"]
-[connection signal="value_changed" from="Panel/Config_Tab/NinePatchRect/ajustes_sonido/music_volumen/music_volumen_slider" to="Panel/Config_Tab/NinePatchRect/ajustes_sonido/music_volumen/music_volumen_slider" method="_on_value_changed"]
+[connection signal="value_changed" from="Panel/Config_Tab/NinePatchRect/ajustes_sonido/master_volumen/master_volumen_slider" to="." method="_on_master_slider_val"]
+[connection signal="value_changed" from="Panel/Config_Tab/NinePatchRect/ajustes_sonido/music_volumen/music_volumen_slider" to="." method="_on_music_slider_val"]
+[connection signal="value_changed" from="Panel/Config_Tab/NinePatchRect/ajustes_sonido/sfx_volumen/sfx_volumen_slider" to="." method="_on_sfx_slider_val"]
 [connection signal="mouse_entered" from="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver" to="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver/Node2D" method=" _on_volver_play_mouse_entered"]
 [connection signal="mouse_exited" from="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver" to="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver/Node2D" method=" _on_volver_play_mouse_exited"]
 [connection signal="pressed" from="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver" to="." method="_on_volver_play_pressed"]

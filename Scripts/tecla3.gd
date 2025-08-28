@@ -24,7 +24,7 @@ func _input(event: InputEvent) -> void:
 		button_pressed = false
 		text = assigned_key_to_string()
 		
-		var action_name = "input_left"
+		var action_name = "input_right"
 		InputMap.action_erase_events(action_name) # limpia todos los eventos previos
 		InputMap.action_add_event(action_name, assigned_key) # usa el evento capturado
 		Cfg.set_keybind(action_name, assigned_key)

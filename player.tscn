@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ly4k3qd3dnr7" path="res://Player.gd" id="1_wa4lb"]
 [ext_resource type="Texture2D" uid="uid://dfp3vsq4qwm1n" path="res://Sprites/arrow.png" id="2_onrkg"]
-[ext_resource type="Script" path="res://miss_box.gd" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://bx1ocyc227me1" path="res://miss_box.gd" id="3_i3pqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7r48m"]
 
