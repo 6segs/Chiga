@@ -1,3 +1,7 @@
+AnimationPlayer
+ColorRect
+CanvasLayer
+AudioStreamPlayer
 NinePatchRect
 Button
 RichTextLabel

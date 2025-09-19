@@ -1,8 +1,3 @@
-res://audio_bus.tres
+res://control.tscn
 res://Escenas/Menu_Principal.tscn
 res://Escenas/Niveles/main.tscn
-res://hud.tscn
-res://Scripts/Menu_Handler.gd
-res://main.gd
-res://player.tscn
-res://arrow.tscn

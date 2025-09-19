@@ -28,10 +28,14 @@ var bus_master: int
 var bus_music: int
 var bus_sfx: int
 
+@onready var musica: AudioStreamPlayer = $musica
+var musica_de_gameplay = preload("res://Recursos/Audios/(2) menu_chiga.mp3")
+
 
 func _ready() -> void:
 	Cfg.load_config()
-	$musica.playing = true
+	musica.play()
+	musica.finished.connect(_on_musica_finished)
 	
 	bus_master = AudioServer.get_bus_index("Master")
 	bus_music = AudioServer.get_bus_index("Musica")
@@ -152,3 +156,6 @@ func _on_volver_play_pressed() -> void:
 
 func _on_jogoo_pressed() -> void:
 	get_tree().change_scene_to_file("res://Escenas/Niveles/main.tscn")
+
+func _on_musica_finished() -> void:
+	musica.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://doecc38wvpm3k"]
+[gd_scene load_steps=80 format=4 uid="uid://doecc38wvpm3k"]
 
 [ext_resource type="Script" uid="uid://eqto2d5mhk60" path="res://Scripts/Menu_Handler.gd" id="1_0fbet"]
 [ext_resource type="Texture2D" uid="uid://b733suml7n1cd" path="res://Sprites/MainMenu-Chiga.png" id="2_n8okg"]
@@ -15,9 +15,14 @@
 [ext_resource type="Script" uid="uid://drroqx2nwu2ct" path="res://Scripts/tecla2.gd" id="9_bffhi"]
 [ext_resource type="Script" uid="uid://ciu720tw8j8dk" path="res://Scripts/tecla3.gd" id="10_fb8t6"]
 [ext_resource type="Script" uid="uid://c7fwt7feg7dpk" path="res://Scripts/Settings_juego.gd" id="10_llqk2"]
+[ext_resource type="Script" uid="uid://5msw34jbnw3r" path="res://Escenas/salir.gd" id="10_llxjb"]
 [ext_resource type="Script" uid="uid://ddmy4h5yfemuo" path="res://Scripts/Settings_sonido.gd" id="11_7jube"]
+[ext_resource type="Script" uid="uid://3b7y84r0l78e" path="res://Escenas/Volver.gd" id="11_llxjb"]
 [ext_resource type="Script" uid="uid://cprsgcg37j4xd" path="res://Scripts/Settings_atras.gd" id="12_fhhdm"]
+[ext_resource type="Script" uid="uid://brc18y81vanig" path="res://Escenas/salir_menu.gd" id="20_7jube"]
 [ext_resource type="AudioStream" uid="uid://b2pp0srbc1jno" path="res://Recursos/Audios/(2) menu_chiga.mp3" id="21_7jube"]
+[ext_resource type="Script" uid="uid://bbqpumthrege" path="res://Escenas/play_game.gd" id="21_fhhdm"]
+[ext_resource type="AudioStream" uid="uid://cvpko4ruclm0t" path="res://Recursos/Audios/chiga.mp3" id="22_ui7ib"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh0v1"]
 bg_color = Color(0.143405, 0.0184957, 0.0319131, 1)
@@ -1183,6 +1188,79 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbrna"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_cbwgl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intro/RichTextLabel/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ui7ib"]
+resource_name = "trans"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intro/RichTextLabel/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7df2t"]
+_data = {
+&"RESET": SubResource("Animation_cbwgl"),
+&"trans": SubResource("Animation_ui7ib")
+}
+
+[sub_resource type="Animation" id="Animation_7gina"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7df2t"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2w8mc"]
+_data = {
+&"RESET": SubResource("Animation_7gina"),
+&"new_animation": SubResource("Animation_7df2t")
+}
+
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -1481,6 +1559,25 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_llxjb")
 theme_override_styles/normal = SubResource("StyleBoxTexture_c0l21")
 text = "Salir"
 
+[node name="Node2D" type="Node2D" parent="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Confirm/NinePatchRect/salir"]
+script = ExtResource("10_llxjb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Confirm/NinePatchRect/salir/Node2D"]
+position = Vector2(54, 9.5)
+scale = Vector2(3.78125, 3.78125)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
+
+[node name="1" type="AnimatedSprite2D" parent="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Confirm/NinePatchRect/salir/Node2D"]
+position = Vector2(206, 9.5)
+scale = Vector2(3.781, 3.781)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
+
 [node name="Back" type="Panel" parent="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1517,6 +1614,26 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_y52ur")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_2wlx5")
 theme_override_styles/normal = SubResource("StyleBoxTexture_a00va")
 text = "Volver"
+
+[node name="Node2D" type="Node2D" parent="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Back/NinePatchRect2/volver"]
+position = Vector2(-7.5, 1)
+script = ExtResource("11_llxjb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Back/NinePatchRect2/volver/Node2D"]
+position = Vector2(54, 10)
+scale = Vector2(3.78125, 3.78125)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
+
+[node name="1" type="AnimatedSprite2D" parent="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Back/NinePatchRect2/volver/Node2D"]
+position = Vector2(220, 9.5)
+scale = Vector2(3.781, 3.781)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
 
 [node name="Config_Tab" type="Panel" parent="Panel"]
 visible = false
@@ -1984,7 +2101,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
 text = "Salir"
 
 [node name="Node2D" type="Node2D" parent="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver"]
-script = ExtResource("8_llqk2")
+script = ExtResource("20_7jube")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver/Node2D"]
 position = Vector2(52, 16.5)
@@ -2237,17 +2354,38 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_7jube")
 theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
 text = "Jugar Nivel 1"
 
+[node name="Node2D" type="Node2D" parent="Panel/Play_Tab/Info_Holder/NinePatchRect4/JOGOO"]
+position = Vector2(178, 0)
+script = ExtResource("21_fhhdm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/Play_Tab/Info_Holder/NinePatchRect4/JOGOO/Node2D"]
+position = Vector2(48, 16.5)
+scale = Vector2(3.78125, 3.78125)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
+
+[node name="1" type="AnimatedSprite2D" parent="Panel/Play_Tab/Info_Holder/NinePatchRect4/JOGOO/Node2D"]
+position = Vector2(362, 16.5)
+scale = Vector2(3.781, 3.781)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
+
 [node name="musica" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("21_7jube")
+stream = ExtResource("22_ui7ib")
 volume_db = 7.648
 pitch_scale = 1.11
-bus = &"Musica"
 parameters/looping = false
 
 [node name="sonidos" type="AudioStreamPlayer" parent="."]
 volume_db = 11.473
 pitch_scale = 1.11
-bus = &"SFX"
+
+[node name="Intro_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_7jube")
 
 [node name="Intro" type="Panel" parent="."]
 visible = false
@@ -2275,6 +2413,37 @@ EETP N°644"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ColorRect" type="ColorRect" parent="Intro/RichTextLabel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Intro/RichTextLabel/ColorRect"]
+root_node = NodePath("../../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_7df2t")
+}
+autoplay = "trans"
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="ColorRect2"]
+libraries = {
+&"": SubResource("AnimationLibrary_2w8mc")
+}
+
 [connection signal="mouse_entered" from="Panel/Botones_Side/NinePatchRect" to="Panel/Botones_Side/NinePatchRect/Play/Node2D" method="_on_nine_patch_rect_mouse_entered"]
 [connection signal="mouse_entered" from="Panel/Botones_Side/NinePatchRect/Play" to="Panel/Botones_Side/NinePatchRect/Play/Node2D" method="_on_play_mouse_entered"]
 [connection signal="mouse_exited" from="Panel/Botones_Side/NinePatchRect/Play" to="Panel/Botones_Side/NinePatchRect/Play/Node2D" method="_on_play_mouse_exited"]
@@ -2285,7 +2454,11 @@ vertical_alignment = 1
 [connection signal="mouse_entered" from="Panel/Botones_Side/NinePatchRect3/Quit" to="Panel/Botones_Side/NinePatchRect3/Quit/Node2D" method="_on_quit_mouse_entered"]
 [connection signal="mouse_exited" from="Panel/Botones_Side/NinePatchRect3/Quit" to="Panel/Botones_Side/NinePatchRect3/Quit/Node2D" method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="Panel/Botones_Side/NinePatchRect3/Quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Confirm/NinePatchRect/salir" to="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Confirm/NinePatchRect/salir/Node2D" method="_on_salir_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Confirm/NinePatchRect/salir" to="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Confirm/NinePatchRect/salir/Node2D" method="_on_salir_mouse_exited"]
 [connection signal="pressed" from="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Confirm/NinePatchRect/salir" to="." method="_on_salir_pressed"]
+[connection signal="mouse_entered" from="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Back/NinePatchRect2/volver" to="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Back/NinePatchRect2/volver/Node2D" method="_on_volver_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Back/NinePatchRect2/volver" to="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Back/NinePatchRect2/volver/Node2D" method="_on_volver_mouse_exited"]
 [connection signal="pressed" from="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Back/NinePatchRect2/volver" to="." method="_on_volver_pressed"]
 [connection signal="mouse_entered" from="Panel/Config_Tab/Botones_Side_Config/juego_texture/Juego" to="Panel/Config_Tab/Botones_Side_Config/juego_texture/Juego/Node2D" method="_on_juego_mouse_entered"]
 [connection signal="mouse_exited" from="Panel/Config_Tab/Botones_Side_Config/juego_texture/Juego" to="Panel/Config_Tab/Botones_Side_Config/juego_texture/Juego/Node2D" method="_on_juego_mouse_exited"]
@@ -2299,7 +2472,10 @@ vertical_alignment = 1
 [connection signal="value_changed" from="Panel/Config_Tab/NinePatchRect/ajustes_sonido/master_volumen/master_volumen_slider" to="." method="_on_master_slider_val"]
 [connection signal="value_changed" from="Panel/Config_Tab/NinePatchRect/ajustes_sonido/music_volumen/music_volumen_slider" to="." method="_on_music_slider_val"]
 [connection signal="value_changed" from="Panel/Config_Tab/NinePatchRect/ajustes_sonido/sfx_volumen/sfx_volumen_slider" to="." method="_on_sfx_slider_val"]
-[connection signal="mouse_entered" from="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver" to="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver/Node2D" method=" _on_volver_play_mouse_entered"]
-[connection signal="mouse_exited" from="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver" to="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver/Node2D" method=" _on_volver_play_mouse_exited"]
+[connection signal="mouse_entered" from="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver" to="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver/Node2D" method="_on_volver_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver" to="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver/Node2D" method="_on_volver_mouse_exited"]
 [connection signal="pressed" from="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver" to="." method="_on_volver_play_pressed"]
+[connection signal="mouse_entered" from="Panel/Play_Tab/Info_Holder/NinePatchRect4/JOGOO" to="Panel/Play_Tab/Info_Holder/NinePatchRect4/JOGOO/Node2D" method="_on_jogoo_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Play_Tab/Info_Holder/NinePatchRect4/JOGOO" to="Panel/Play_Tab/Info_Holder/NinePatchRect4/JOGOO/Node2D" method="_on_jogoo_mouse_exited"]
 [connection signal="pressed" from="Panel/Play_Tab/Info_Holder/NinePatchRect4/JOGOO" to="." method="_on_jogoo_pressed"]
+[connection signal="finished" from="musica" to="." method="_on_musica_finished"]

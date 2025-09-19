@@ -62,20 +62,16 @@ position = Vector2(730, 0)
 
 [node name="Conductor" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStream_hslme")
-bus = &"Musica"
 script = ExtResource("6_mt427")
 
 [node name="HitPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamWAV_20ycw")
-bus = &"SFX"
 
 [node name="CountdownPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamWAV_kjsdu")
-bus = &"SFX"
 
 [node name="FinalSFX" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStream_amw6n")
-bus = &"SFX"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 anchors_preset = 15
