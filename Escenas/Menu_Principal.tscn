@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=4 uid="uid://doecc38wvpm3k"]
+[gd_scene load_steps=73 format=4 uid="uid://doecc38wvpm3k"]
 
 [ext_resource type="Script" uid="uid://eqto2d5mhk60" path="res://Scripts/Menu_Handler.gd" id="1_0fbet"]
 [ext_resource type="Texture2D" uid="uid://b733suml7n1cd" path="res://Sprites/MainMenu-Chiga.png" id="2_n8okg"]
@@ -1185,82 +1185,6 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2w8mc"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbrna"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Animation" id="Animation_cbwgl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Intro/RichTextLabel/ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_ui7ib"]
-resource_name = "trans"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Intro/RichTextLabel/ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7df2t"]
-_data = {
-&"RESET": SubResource("Animation_cbwgl"),
-&"trans": SubResource("Animation_ui7ib")
-}
-
-[sub_resource type="Animation" id="Animation_7gina"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_7df2t"]
-resource_name = "new_animation"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2w8mc"]
-_data = {
-&"RESET": SubResource("Animation_7gina"),
-&"new_animation": SubResource("Animation_7df2t")
-}
-
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -1271,7 +1195,6 @@ grow_vertical = 2
 script = ExtResource("1_0fbet")
 
 [node name="Panel" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1857,7 +1780,7 @@ theme_override_font_sizes/font_size = 48
 text = "Modo de ventana"
 
 [node name="ventana_button" type="OptionButton" parent="Panel/Config_Tab/NinePatchRect/ajustes_juego/ventana_dropdown"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 342.0
 offset_top = 10.0
 offset_right = 590.0
@@ -1872,7 +1795,7 @@ theme_override_font_sizes/font_size = 48
 text = "Resolucion"
 
 [node name="res_button" type="OptionButton" parent="Panel/Config_Tab/NinePatchRect/ajustes_juego/resolucion_dropdown"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 342.0
 offset_top = 10.0
 offset_right = 590.0
@@ -2386,63 +2309,6 @@ pitch_scale = 1.11
 
 [node name="Intro_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_7jube")
-
-[node name="Intro" type="Panel" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_jbrna")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Intro"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/outline_size = 5
-theme_override_fonts/normal_font = ExtResource("4_6a6wx")
-theme_override_font_sizes/normal_font_size = 76
-bbcode_enabled = true
-text = "[center]Quinto \"A\" Informatica
-EETP N°644"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ColorRect" type="ColorRect" parent="Intro/RichTextLabel"]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Intro/RichTextLabel/ColorRect"]
-root_node = NodePath("../../../..")
-libraries = {
-&"": SubResource("AnimationLibrary_7df2t")
-}
-autoplay = "trans"
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_group_ = true
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="ColorRect2"]
-libraries = {
-&"": SubResource("AnimationLibrary_2w8mc")
-}
 
 [connection signal="mouse_entered" from="Panel/Botones_Side/NinePatchRect" to="Panel/Botones_Side/NinePatchRect/Play/Node2D" method="_on_nine_patch_rect_mouse_entered"]
 [connection signal="mouse_entered" from="Panel/Botones_Side/NinePatchRect/Play" to="Panel/Botones_Side/NinePatchRect/Play/Node2D" method="_on_play_mouse_entered"]

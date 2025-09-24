@@ -12,8 +12,8 @@ config_version=5
 
 config/name="Chiga: The Legendary Musician"
 config/version="0.0.4"
-run/main_scene="uid://doecc38wvpm3k"
-config/features=PackedStringArray("4.4", "Forward Plus")
+run/main_scene="uid://dwn57ayygbj7l"
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://cdhg10onvlcek"
 
 [autoload]

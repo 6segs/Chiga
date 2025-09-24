@@ -7,7 +7,6 @@ extends Control
 @onready var ajustes_sonido: VBoxContainer = $Panel/Config_Tab/NinePatchRect/ajustes_sonido
 @onready var cfg_titulo: Label = $Panel/Config_Tab/NinePatchRect/Cfg_titulo
 @onready var play_tab: Panel = $Panel/Play_Tab
-@onready var intro: Panel = $Intro
 @onready var panel: Panel = $Panel
 
 @onready var settings_tab: Panel = $Panel/Settings_Tab
@@ -31,7 +30,6 @@ var bus_sfx: int
 @onready var musica: AudioStreamPlayer = $musica
 var musica_de_gameplay = preload("res://Recursos/Audios/(2) menu_chiga.mp3")
 
-
 func _ready() -> void:
 	Cfg.load_config()
 	musica.play()
@@ -47,16 +45,7 @@ func _ready() -> void:
 	
 	# initttttttttttttttttt
 	init_sliders()
-
-	if not Global.intro_vista:
-		intro.visible = true
-		await get_tree().create_timer(3.0).timeout
-		intro.queue_free()
-		panel.visible = true
-		Global.intro_vista = true  # <- marcamos que ya se vio
-	else:
-		intro.queue_free()  # <- si ya se vio, la eliminamos directo
-		panel.visible = true
+	panel.visible = true
 
 # ------------------- SLIDERS -------------------
 # Menu > Ventanas > Config_Tab > Elementos
@@ -121,10 +110,12 @@ func _on_sonido_pressed() -> void:
 	ajustes_juego.visible = false
 	ajustes_sonido.visible = true
 	cfg_titulo.text = "Ajustes de sonido"
+
 func _on_juego_pressed() -> void:
 	ajustes_juego.visible = true
 	ajustes_sonido.visible = false
 	cfg_titulo.text = "Ajustes de juego"
+
 func cfg_exit_pressed() -> void:
 	visible_window(false, false, false, true)
 
@@ -137,22 +128,18 @@ func _on_volver_pressed() -> void:
 func _on_salir_pressed() -> void:
 	get_tree().quit()
 
-
 func config_atras_pressed() -> void:
 	visible_window(false, false, false, true)
 
 # Pausa la Musica cuando se pone la ventana de salir apretando la tecla escape
 func _unhandled_input(event):
-	if Global.intro_vista:
 		if event.is_action_pressed("ui_cancel"):  # Escape por defecto
 			visible_window(false,false,true, false)
 			if $musica.playing:
 				$musica.stream_paused = true
 
-
 func _on_volver_play_pressed() -> void:
 	visible_window(false, false, false, true)
-
 
 func _on_jogoo_pressed() -> void:
 	get_tree().change_scene_to_file("res://Escenas/Niveles/main.tscn")

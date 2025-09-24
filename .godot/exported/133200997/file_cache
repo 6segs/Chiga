@@ -1,0 +1,13 @@
+res://Escenas/Niveles/main.tscn::092e9f019cdd8861a7effae1b1362ec2::1758718676::res://.godot/exported/133200997/export-c0459fedc73c822c527975056db4d0f1-main.scn
+res://Escenas/intro.tscn::e0243eaf9821c8ebdc562efe31e06823::1758631540::res://.godot/exported/133200997/export-69f8d4548252448a128b5396a5db05c0-intro.scn
+res://Escenas/Menu_Principal.tscn::5e0d95aa65cab868834472968c2cd014::1758718676::res://.godot/exported/133200997/export-5134f1487ebd4f99f57b8dec5646f1fb-Menu_Principal.scn
+res://Objects/texto.tscn::aa3b333b185d97077d0d21acf1c85ebb::1756356274::res://.godot/exported/133200997/export-0a8e36b1e16107929ab9f59baac2479c-texto.scn
+res://Recursos/Imagenes/Play_Button.tres::d0ae1d47120fda58cd3e3d091c09c3c2::1756356274::res://.godot/exported/133200997/export-ad2af8df6580485d8be8ac0ba1074493-Play_Button.res
+res://Recursos/Temas/buttom.tres::5f72823de4a2310a2ccd9363f135d420::1756356274::res://.godot/exported/133200997/export-45639d71d966380732a076205feed355-buttom.res
+res://Recursos/Temas/new_theme.tres::35d3625ec3ebb9a774184df14d802df6::1756356274::res://.godot/exported/133200997/export-890b46b47c906eb50d5d76fdc5ea5dc6-new_theme.res
+res://Recursos/Temas/Settings.tscn::2fc77a3c520e2870bfe45c533fb97b78::1756356274::res://.godot/exported/133200997/export-dde0a39c2ea69333413073e0d3feafa5-Settings.scn
+res://arrow.tscn::196d834ce62f112ba3b103f4defa4ff8::1756356274::res://.godot/exported/133200997/export-a3ddbc996d1057c95d2a1dbbd876b665-arrow.scn
+res://audio_bus.tres::d7f9edc541e34790b6bd59cddf94ac24::1756356274::res://.godot/exported/133200997/export-a9db3883ed704bb0b9e856d2c8901992-audio_bus.res
+res://hud.tscn::e56366b065d169f659c362b3a25d663f::1756356274::res://.godot/exported/133200997/export-f4cf891e5f7a93b93d9b27cfb8401ccb-hud.scn
+res://intro.tscn::1247c67a9ecb77425176cf93c942d6d9::1758718676::res://.godot/exported/133200997/export-2dff5a063e418d17c9220ff5a6df7e7a-intro.scn
+res://player.tscn::0e2f51f138c47c86186141779ac1ee52::1756356274::res://.godot/exported/133200997/export-36a25e342948d0ceacc500772b5412b3-player.scn
