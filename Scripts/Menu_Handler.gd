@@ -8,6 +8,9 @@ extends Control
 @onready var cfg_titulo: Label = $Panel/Config_Tab/NinePatchRect/Cfg_titulo
 @onready var play_tab: Panel = $Panel/Play_Tab
 @onready var panel: Panel = $Panel
+@onready var info_holder: Panel = $Panel/Play_Tab/Info_Holder
+@onready var info_holder_2: Panel = $Panel/Play_Tab/Info_Holder2
+@onready var info_holder_3: Panel = $Panel/Play_Tab/Info_Holder3
 
 @onready var settings_tab: Panel = $Panel/Settings_Tab
 @onready var botones_side: VBoxContainer = $Panel/Botones_Side
@@ -92,10 +95,16 @@ func visible_window(levels: bool, config: bool, exit: bool, buttons: bool) -> vo
 	settings_tab.visible = exit
 	$sonidos.stream = load("res://Recursos/Audios/sfx_pasar_por_arriba_a_algo.mp3")
 	$sonidos.playing = true
+	
+func visible_game(info1: bool, info2: bool, info3: bool) -> void:
+	info_holder.visible = info1
+	info_holder_2.visible = info2
+	info_holder_3.visible = info3
 
 # Code para cada boton y sus respectivas ventanas
 func play_pressed() -> void:
 	visible_window(true, false, false, false)
+
 	
 func _on_settings_pressed() -> void:
 	visible_window(false, true, false, false)
@@ -141,8 +150,24 @@ func _unhandled_input(event):
 func _on_volver_play_pressed() -> void:
 	visible_window(false, false, false, true)
 
-func _on_jogoo_pressed() -> void:
-	get_tree().change_scene_to_file("res://Escenas/Niveles/main.tscn")
-
 func _on_musica_finished() -> void:
 	musica.play()
+
+
+func _on_button_pressed() -> void:
+	visible_game(true,false,false)
+	
+func _on_button_2_pressed() -> void:
+	visible_game(false,true,false)
+
+func _on_button_3_pressed() -> void:
+	visible_game(false,false,true)
+
+func _on_jogoo_pressed() -> void:
+	get_tree().change_scene_to_file("res://Escenas/Niveles/main.tscn")
+	
+func _on_nivel_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://Escenas/Niveles/Level2.tscn")
+	
+func _on_nivel_3_pressed() -> void:
+	get_tree().change_scene_to_file("res://Escenas/Niveles/Level3.tscn")

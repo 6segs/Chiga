@@ -27,7 +27,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh0v1"]
 bg_color = Color(0.143405, 0.0184957, 0.0319131, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdi4w"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j10pq"]
 texture = ExtResource("2_nabdr")
 region_rect = Rect2(274.983, 177.972, 90.047, 27.05)
 
@@ -35,7 +35,7 @@ region_rect = Rect2(274.983, 177.972, 90.047, 27.05)
 texture = ExtResource("2_nabdr")
 region_rect = Rect2(274.964, 211.985, 90.053, 25.039)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j10pq"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdi4w"]
 texture = ExtResource("2_nabdr")
 region_rect = Rect2(274.983, 177.972, 90.047, 27.05)
 
@@ -75,17 +75,17 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wy5n"]
-bg_color = Color(1, 1, 1, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sllrp"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am1vj"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mthex"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am1vj"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sllrp"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wy5n"]
+bg_color = Color(1, 1, 1, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jube"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -103,19 +103,19 @@ Panel/styles/panel = SubResource("StyleBoxTexture_gap33")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhhdm"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_moj2o"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c0l21"]
 texture = ExtResource("2_nabdr")
-region_rect = Rect2(274.983, 177.972, 90.047, 27.05)
+region_rect = Rect2(274.983, 177.972, 90.047, 27.0503)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_llxjb"]
 texture = ExtResource("2_nabdr")
 region_rect = Rect2(274.964, 211.985, 90.0529, 25.0393)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c0l21"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_moj2o"]
 texture = ExtResource("2_nabdr")
-region_rect = Rect2(274.983, 177.972, 90.047, 27.0503)
+region_rect = Rect2(274.983, 177.972, 90.047, 27.05)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y52ur"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a00va"]
 texture = ExtResource("2_nabdr")
 region_rect = Rect2(274.983, 177.972, 90.047, 27.05)
 
@@ -123,7 +123,7 @@ region_rect = Rect2(274.983, 177.972, 90.047, 27.05)
 texture = ExtResource("2_nabdr")
 region_rect = Rect2(274.964, 211.985, 90.053, 25.039)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a00va"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y52ur"]
 texture = ExtResource("2_nabdr")
 region_rect = Rect2(274.983, 177.972, 90.047, 27.05)
 
@@ -133,17 +133,17 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nabdr"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fhhdm"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7jube"]
 texture = ExtResource("2_nabdr")
-region_rect = Rect2(836.688, 3.72122, 22.4868, 24.5843)
+region_rect = Rect2(836.688, 3.721, 22.487, 24.584)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ui7ib"]
 texture = ExtResource("2_nabdr")
 region_rect = Rect2(868.664, 5.776, 22.6037, 22.6037)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7jube"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fhhdm"]
 texture = ExtResource("2_nabdr")
-region_rect = Rect2(836.688, 3.721, 22.487, 24.584)
+region_rect = Rect2(836.688, 3.72122, 22.4868, 24.5843)
 
 [sub_resource type="Image" id="Image_f2qqj"]
 data = {
@@ -1144,21 +1144,21 @@ Button/styles/hover = SubResource("StyleBoxFlat_pdqkh")
 Button/styles/normal = SubResource("StyleBoxFlat_2xya1")
 Button/styles/pressed = SubResource("StyleBoxTexture_40uti")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cbwgl"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7gina"]
 texture = ExtResource("2_nabdr")
-region_rect = Rect2(836.655, 3.655, 22.742, 24.772)
+region_rect = Rect2(836.655, 3.65493, 22.7418, 24.7723)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7df2t"]
 texture = ExtResource("2_nabdr")
 region_rect = Rect2(868.868, 5.78074, 22.3158, 22.3775)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7gina"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cbwgl"]
 texture = ExtResource("2_nabdr")
-region_rect = Rect2(836.655, 3.65493, 22.7418, 24.7723)
+region_rect = Rect2(836.655, 3.655, 22.742, 24.772)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fhhdm"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2w8mc"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pi3vk"]
 texture = ExtResource("2_nabdr")
 region_rect = Rect2(836.655, 3.655, 22.742, 24.772)
 
@@ -1166,7 +1166,7 @@ region_rect = Rect2(836.655, 3.655, 22.742, 24.772)
 texture = ExtResource("2_nabdr")
 region_rect = Rect2(868.868, 5.781, 22.316, 22.377)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pi3vk"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2w8mc"]
 texture = ExtResource("2_nabdr")
 region_rect = Rect2(836.655, 3.655, 22.742, 24.772)
 
@@ -1251,14 +1251,14 @@ offset_bottom = 51.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_6a6wx")
 theme_override_font_sizes/font_size = 48
-theme_override_styles/hover = SubResource("StyleBoxTexture_fdi4w")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_bqfen")
 theme_override_styles/normal = SubResource("StyleBoxTexture_j10pq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bqfen")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fdi4w")
 text = "Jugar"
 
 [node name="Node2D" type="Node2D" parent="Panel/Botones_Side/NinePatchRect/Play"]
@@ -1304,15 +1304,15 @@ offset_bottom = 29.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_6a6wx")
 theme_override_font_sizes/font_size = 42
-theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
-theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_mthex")
 theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mthex")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
 text = "Ajustes"
 
 [node name="Node2D" type="Node2D" parent="Panel/Botones_Side/NinePatchRect2/Settings"]
@@ -1360,15 +1360,15 @@ offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_6a6wx")
 theme_override_font_sizes/font_size = 48
-theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
-theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7jube")
 theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7jube")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
 text = "Salir"
 
 [node name="Node2D" type="Node2D" parent="Panel/Botones_Side/NinePatchRect3/Quit"]
@@ -1477,9 +1477,9 @@ grow_vertical = 2
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_6a6wx")
 theme_override_font_sizes/font_size = 48
-theme_override_styles/hover = SubResource("StyleBoxTexture_moj2o")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_llxjb")
 theme_override_styles/normal = SubResource("StyleBoxTexture_c0l21")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_llxjb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_moj2o")
 text = "Salir"
 
 [node name="Node2D" type="Node2D" parent="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Confirm/NinePatchRect/salir"]
@@ -1533,9 +1533,9 @@ grow_vertical = 2
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_6a6wx")
 theme_override_font_sizes/font_size = 48
-theme_override_styles/hover = SubResource("StyleBoxTexture_y52ur")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_2wlx5")
 theme_override_styles/normal = SubResource("StyleBoxTexture_a00va")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2wlx5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_y52ur")
 text = "Volver"
 
 [node name="Node2D" type="Node2D" parent="Panel/Settings_Tab/Panel/VBoxContainer/HBoxContainer/Back/NinePatchRect2/volver"]
@@ -1598,14 +1598,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_6a6wx")
 theme_override_font_sizes/font_size = 48
-theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
-theme_override_styles/hover = SubResource("StyleBoxFlat_nabdr")
 theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nabdr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
 text = "Juego"
 
 [node name="Node2D" type="Node2D" parent="Panel/Config_Tab/Botones_Side_Config/juego_texture/Juego"]
@@ -1645,15 +1645,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_6a6wx")
 theme_override_font_sizes/font_size = 48
-theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
-theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_mthex")
 theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mthex")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
 text = "Sonido"
 
 [node name="Node2D" type="Node2D" parent="Panel/Config_Tab/Botones_Side_Config/sonido_texture/Sonido"]
@@ -1695,15 +1695,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_6a6wx")
 theme_override_font_sizes/font_size = 48
-theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
-theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_mthex")
 theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mthex")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
 text = "Atras"
 metadata/_edit_group_ = true
 
@@ -1838,9 +1838,9 @@ offset_bottom = 46.0
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_6a6wx")
 theme_override_font_sizes/font_size = 25
-theme_override_styles/hover = SubResource("StyleBoxTexture_fhhdm")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_ui7ib")
 theme_override_styles/normal = SubResource("StyleBoxTexture_7jube")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ui7ib")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fhhdm")
 text = ". . ."
 script = ExtResource("8_n8okg")
 
@@ -1861,9 +1861,9 @@ theme = SubResource("Theme_7gina")
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_6a6wx")
 theme_override_font_sizes/font_size = 25
-theme_override_styles/hover = SubResource("StyleBoxTexture_cbwgl")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_7df2t")
 theme_override_styles/normal = SubResource("StyleBoxTexture_7gina")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7df2t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cbwgl")
 text = ". . ."
 icon = SubResource("ViewportTexture_fhhdm")
 script = ExtResource("9_bffhi")
@@ -1885,9 +1885,9 @@ theme = SubResource("Theme_7gina")
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_6a6wx")
 theme_override_font_sizes/font_size = 25
-theme_override_styles/hover = SubResource("StyleBoxTexture_2w8mc")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_jbrna")
 theme_override_styles/normal = SubResource("StyleBoxTexture_pi3vk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jbrna")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2w8mc")
 text = ". . ."
 script = ExtResource("10_fb8t6")
 
@@ -2012,15 +2012,15 @@ offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_6a6wx")
 theme_override_font_sizes/font_size = 48
-theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
-theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7jube")
 theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7jube")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
 text = "Salir"
 
 [node name="Node2D" type="Node2D" parent="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver"]
@@ -2250,7 +2250,7 @@ texture = ExtResource("2_nabdr")
 region_rect = Rect2(275, 178, 90, 27)
 metadata/_edit_use_anchors_ = true
 
-[node name="JOGOO" type="Button" parent="Panel/Play_Tab/Info_Holder/NinePatchRect4"]
+[node name="Nivel1" type="Button" parent="Panel/Play_Tab/Info_Holder/NinePatchRect4"]
 texture_filter = 1
 texture_repeat = 2
 layout_mode = 1
@@ -2266,22 +2266,22 @@ offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_6a6wx")
 theme_override_font_sizes/font_size = 48
-theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
-theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7jube")
 theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7jube")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
 text = "Jugar Nivel 1"
 
-[node name="Node2D" type="Node2D" parent="Panel/Play_Tab/Info_Holder/NinePatchRect4/JOGOO"]
+[node name="Node2D" type="Node2D" parent="Panel/Play_Tab/Info_Holder/NinePatchRect4/Nivel1"]
 position = Vector2(178, 0)
 script = ExtResource("21_fhhdm")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/Play_Tab/Info_Holder/NinePatchRect4/JOGOO/Node2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/Play_Tab/Info_Holder/NinePatchRect4/Nivel1/Node2D"]
 position = Vector2(48, 16.5)
 scale = Vector2(3.78125, 3.78125)
 sprite_frames = SubResource("SpriteFrames_fhhdm")
@@ -2289,7 +2289,213 @@ animation = &"Run"
 frame = 2
 frame_progress = 0.233857
 
-[node name="1" type="AnimatedSprite2D" parent="Panel/Play_Tab/Info_Holder/NinePatchRect4/JOGOO/Node2D"]
+[node name="1" type="AnimatedSprite2D" parent="Panel/Play_Tab/Info_Holder/NinePatchRect4/Nivel1/Node2D"]
+position = Vector2(362, 16.5)
+scale = Vector2(3.781, 3.781)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
+
+[node name="Info_Holder2" type="Panel" parent="Panel/Play_Tab"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -833.0
+offset_top = -21.0
+offset_bottom = 302.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2w8mc")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Panel/Play_Tab/Info_Holder2"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -107.0
+offset_bottom = 217.0
+grow_horizontal = 2
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(275, 212, 90, 25)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel/Play_Tab/Info_Holder2/NinePatchRect"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 26.0
+offset_right = 702.0
+offset_bottom = 191.0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 48
+text = "Nivel 2 [Medio]
+ Descripcionn"
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="Panel/Play_Tab/Info_Holder2"]
+visibility_layer = 3
+z_index = 1
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_right = -104.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(275, 178, 90, 27)
+metadata/_edit_use_anchors_ = true
+
+[node name="Nivel 2" type="Button" parent="Panel/Play_Tab/Info_Holder2/NinePatchRect4"]
+texture_filter = 1
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -364.5
+offset_top = -51.0
+offset_right = 364.5
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7jube")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
+text = "Jugar Nivel 2"
+
+[node name="Node2D" type="Node2D" parent="Panel/Play_Tab/Info_Holder2/NinePatchRect4/Nivel 2"]
+position = Vector2(178, 0)
+script = ExtResource("21_fhhdm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/Play_Tab/Info_Holder2/NinePatchRect4/Nivel 2/Node2D"]
+position = Vector2(48, 16.5)
+scale = Vector2(3.78125, 3.78125)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
+
+[node name="1" type="AnimatedSprite2D" parent="Panel/Play_Tab/Info_Holder2/NinePatchRect4/Nivel 2/Node2D"]
+position = Vector2(362, 16.5)
+scale = Vector2(3.781, 3.781)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
+
+[node name="Info_Holder3" type="Panel" parent="Panel/Play_Tab"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -833.0
+offset_top = -21.0
+offset_bottom = 302.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2w8mc")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Panel/Play_Tab/Info_Holder3"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -107.0
+offset_bottom = 217.0
+grow_horizontal = 2
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(275, 212, 90, 25)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel/Play_Tab/Info_Holder3/NinePatchRect"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 26.0
+offset_right = 702.0
+offset_bottom = 191.0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 48
+text = "Nivel 3 [Dificil]
+ Descripcionn"
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="Panel/Play_Tab/Info_Holder3"]
+visibility_layer = 3
+z_index = 1
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_right = -104.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(275, 178, 90, 27)
+metadata/_edit_use_anchors_ = true
+
+[node name="Nivel3" type="Button" parent="Panel/Play_Tab/Info_Holder3/NinePatchRect4"]
+texture_filter = 1
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -364.5
+offset_top = -51.0
+offset_right = 364.5
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7jube")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
+text = "Jugar Nivel 3"
+
+[node name="Node2D" type="Node2D" parent="Panel/Play_Tab/Info_Holder3/NinePatchRect4/Nivel3"]
+position = Vector2(178, 0)
+script = ExtResource("21_fhhdm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/Play_Tab/Info_Holder3/NinePatchRect4/Nivel3/Node2D"]
+position = Vector2(48, 16.5)
+scale = Vector2(3.78125, 3.78125)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
+
+[node name="1" type="AnimatedSprite2D" parent="Panel/Play_Tab/Info_Holder3/NinePatchRect4/Nivel3/Node2D"]
 position = Vector2(362, 16.5)
 scale = Vector2(3.781, 3.781)
 sprite_frames = SubResource("SpriteFrames_fhhdm")
@@ -2341,7 +2547,16 @@ stream = ExtResource("21_7jube")
 [connection signal="mouse_entered" from="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver" to="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver/Node2D" method="_on_volver_mouse_entered"]
 [connection signal="mouse_exited" from="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver" to="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver/Node2D" method="_on_volver_mouse_exited"]
 [connection signal="pressed" from="Panel/Play_Tab/Botones_Side2/NinePatchRect3/Volver" to="." method="_on_volver_play_pressed"]
-[connection signal="mouse_entered" from="Panel/Play_Tab/Info_Holder/NinePatchRect4/JOGOO" to="Panel/Play_Tab/Info_Holder/NinePatchRect4/JOGOO/Node2D" method="_on_jogoo_mouse_entered"]
-[connection signal="mouse_exited" from="Panel/Play_Tab/Info_Holder/NinePatchRect4/JOGOO" to="Panel/Play_Tab/Info_Holder/NinePatchRect4/JOGOO/Node2D" method="_on_jogoo_mouse_exited"]
-[connection signal="pressed" from="Panel/Play_Tab/Info_Holder/NinePatchRect4/JOGOO" to="." method="_on_jogoo_pressed"]
+[connection signal="pressed" from="Panel/Play_Tab/Lvls_Holder/HBoxContainer/Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Play_Tab/Lvls_Holder/HBoxContainer/Panel2/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Panel/Play_Tab/Lvls_Holder/HBoxContainer/Panel3/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="mouse_entered" from="Panel/Play_Tab/Info_Holder/NinePatchRect4/Nivel1" to="Panel/Play_Tab/Info_Holder/NinePatchRect4/Nivel1/Node2D" method="_on_jogoo_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Play_Tab/Info_Holder/NinePatchRect4/Nivel1" to="Panel/Play_Tab/Info_Holder/NinePatchRect4/Nivel1/Node2D" method="_on_jogoo_mouse_exited"]
+[connection signal="pressed" from="Panel/Play_Tab/Info_Holder/NinePatchRect4/Nivel1" to="." method="_on_jogoo_pressed"]
+[connection signal="mouse_entered" from="Panel/Play_Tab/Info_Holder2/NinePatchRect4/Nivel 2" to="Panel/Play_Tab/Info_Holder2/NinePatchRect4/Nivel 2/Node2D" method="_on_jogoo_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Play_Tab/Info_Holder2/NinePatchRect4/Nivel 2" to="Panel/Play_Tab/Info_Holder2/NinePatchRect4/Nivel 2/Node2D" method="_on_jogoo_mouse_exited"]
+[connection signal="pressed" from="Panel/Play_Tab/Info_Holder2/NinePatchRect4/Nivel 2" to="." method="_on_nivel_2_pressed"]
+[connection signal="mouse_entered" from="Panel/Play_Tab/Info_Holder3/NinePatchRect4/Nivel3" to="Panel/Play_Tab/Info_Holder3/NinePatchRect4/Nivel3/Node2D" method="_on_jogoo_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Play_Tab/Info_Holder3/NinePatchRect4/Nivel3" to="Panel/Play_Tab/Info_Holder3/NinePatchRect4/Nivel3/Node2D" method="_on_jogoo_mouse_exited"]
+[connection signal="pressed" from="Panel/Play_Tab/Info_Holder3/NinePatchRect4/Nivel3" to="." method="_on_nivel_3_pressed"]
 [connection signal="finished" from="musica" to="." method="_on_musica_finished"]

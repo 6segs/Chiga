@@ -4,27 +4,29 @@ arrow.gd::GDScript/GDScript::1515482667143305505::1756356274::0::1::::<>RigidBod
 arrow.tscn::PackedScene/PackedScene::7470136319565819962::1756356274::0::1::::<><><>0<>0<><>::uid://vud1pq7q4wgv::::res://arrow.gd<>uid://bpbvnee2v00b8::::res://Sprites/c.png<>uid://cbjspmu1k36v3::::res://Sprites/bat1.png<>uid://dtssmbw7vfykl::::res://Sprites/bat2.png
 audio_bus.tres::AudioBusLayout/AudioBusLayout::293551358306181191::1756356274::0::1::::<><><>0<>0<><>::
 Cfg.gd::GDScript/GDScript::1042052921723886539::1756356274::0::1::::<>Node<><>0<>0<><>::
-export_presets.cfg::TextFile::-1::1758722592::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1758763842::0::1::::<><><>0<>0<><>::
 global.gd::GDScript/GDScript::175454025173007032::1756356274::0::1::::<>Node<><>0<>0<><>::
-hud.tscn::PackedScene/PackedScene::1338575640043206946::1756356274::0::1::::<><><>0<>0<><>::uid://jse5vf2o10b8::::res://Recursos/Otros/GrapeSoda.ttf<>uid://b6yohsoym3ww7::::res://Recursos/Imagenes/Sprite sheet for Basic Pack.png
+hud.tscn::PackedScene::1338575640043206946::1758768492::0::1::::<><><>0<>0<><>::uid://jse5vf2o10b8::::res://Recursos/Otros/GrapeSoda.ttf<>uid://b6yohsoym3ww7::::res://Recursos/Imagenes/Sprite sheet for Basic Pack.png
 intro.gd::GDScript::4048512907480401215::1758721274::0::1::::<>Node<><>0<>0<><>::
 intro.tscn::PackedScene::5362952560205411933::1758718676::0::1::::<><><>0<>0<><>::uid://bxxeofabp557h::::res://intro.gd<>uid://7cr3vb5gyjk6::::res://Filmora/Chiga_intro_Usable_final.ogv
-main.gd::GDScript/GDScript::8803333777287355650::1756356274::0::1::::<>Node<><>0<>0<><>::
+main.gd::GDScript::8803333777287355650::1758761076::0::1::::<>Node<><>0<>0<><>::
 miss_box.gd::GDScript/GDScript::4055292783374061922::1756356274::0::1::::<>Area2D<><>0<>0<><>::
 MusicPlayer.gd::GDScript/GDScript::6322510520609433128::1756356274::0::1::::<>AudioStreamPlayer2D<><>0<>0<><>::
 Player.gd::GDScript/GDScript::823402492389599182::1756356274::0::1::::<>Node2D<><>0<>0<><>::
-player.tscn::PackedScene/PackedScene::3867760536074681320::1756356274::0::1::::<><><>0<>0<><>::uid://ly4k3qd3dnr7::::res://Player.gd<>uid://dfp3vsq4qwm1n::::res://Sprites/arrow.png<>uid://bx1ocyc227me1::::res://miss_box.gd
+player.tscn::PackedScene::3867760536074681320::1758768494::0::1::::<><><>0<>0<><>::uid://ly4k3qd3dnr7::::res://Player.gd<>uid://dfp3vsq4qwm1n::::res://Sprites/arrow.png<>uid://bx1ocyc227me1::::res://miss_box.gd
 trans.gd::GDScript/GDScript::227544107140692884::1758030810::0::1::::<>CanvasLayer<><>0<>0<><>::
-::res://Ejecutables/::1758719026
 ::res://Escenas/::1758031458
 intro.tscn::PackedScene/PackedScene::8732132215280568279::1758631540::0::1::::<><><>0<>0<><>::uid://bxxeofabp557h::::res://intro.gd<>uid://7cr3vb5gyjk6::::res://Filmora/Chiga_intro_Usable_final.ogv
-Menu_Principal.tscn::PackedScene::8150289901261934906::1758718676::0::1::::<><><>0<>0<><>::uid://eqto2d5mhk60::::res://Scripts/Menu_Handler.gd<>uid://b733suml7n1cd::::res://Sprites/MainMenu-Chiga.png<>uid://b6yohsoym3ww7::::res://Recursos/Imagenes/Sprite sheet for Basic Pack.png<>uid://jse5vf2o10b8::::res://Recursos/Otros/GrapeSoda.ttf<>uid://d07mwb0knmjl2::::res://Sprites/nota musical.png<>uid://48yrseusxbqy::::res://Recursos/Imagenes/Setting menu.png<>uid://c55xhxy11piok::::res://Scripts/node_2d.gd<>uid://c8vskqud37nbs::::res://Scripts/option_button.gd<>uid://c4sekgqhhjdvl::::res://Scripts/res_button.gd<>uid://dkn3oxk5dc8ph::::res://Scripts/node_s.gd<>uid://x8bsbj01r7fv::::res://Scripts/node_q.gd<>uid://b1501ovk7fabp::::res://Scripts/tecla1.gd<>uid://drroqx2nwu2ct::::res://Scripts/tecla2.gd<>uid://ciu720tw8j8dk::::res://Scripts/tecla3.gd<>uid://c7fwt7feg7dpk::::res://Scripts/Settings_juego.gd<>uid://5msw34jbnw3r::::res://Escenas/salir.gd<>uid://ddmy4h5yfemuo::::res://Scripts/Settings_sonido.gd<>uid://3b7y84r0l78e::::res://Escenas/Volver.gd<>uid://cprsgcg37j4xd::::res://Scripts/Settings_atras.gd<>uid://brc18y81vanig::::res://Escenas/salir_menu.gd<>uid://b2pp0srbc1jno::::res://Recursos/Audios/(2) menu_chiga.mp3<>uid://bbqpumthrege::::res://Escenas/play_game.gd<>uid://cvpko4ruclm0t::::res://Recursos/Audios/chiga.mp3
+Menu_Principal.tscn::PackedScene::8150289901261934906::1758760208::0::1::::<><><>0<>0<><>::uid://eqto2d5mhk60::::res://Scripts/Menu_Handler.gd<>uid://b733suml7n1cd::::res://Sprites/MainMenu-Chiga.png<>uid://b6yohsoym3ww7::::res://Recursos/Imagenes/Sprite sheet for Basic Pack.png<>uid://jse5vf2o10b8::::res://Recursos/Otros/GrapeSoda.ttf<>uid://d07mwb0knmjl2::::res://Sprites/nota musical.png<>uid://48yrseusxbqy::::res://Recursos/Imagenes/Setting menu.png<>uid://c55xhxy11piok::::res://Scripts/node_2d.gd<>uid://c8vskqud37nbs::::res://Scripts/option_button.gd<>uid://c4sekgqhhjdvl::::res://Scripts/res_button.gd<>uid://dkn3oxk5dc8ph::::res://Scripts/node_s.gd<>uid://x8bsbj01r7fv::::res://Scripts/node_q.gd<>uid://b1501ovk7fabp::::res://Scripts/tecla1.gd<>uid://drroqx2nwu2ct::::res://Scripts/tecla2.gd<>uid://ciu720tw8j8dk::::res://Scripts/tecla3.gd<>uid://c7fwt7feg7dpk::::res://Scripts/Settings_juego.gd<>uid://5msw34jbnw3r::::res://Escenas/salir.gd<>uid://ddmy4h5yfemuo::::res://Scripts/Settings_sonido.gd<>uid://3b7y84r0l78e::::res://Escenas/Volver.gd<>uid://cprsgcg37j4xd::::res://Scripts/Settings_atras.gd<>uid://brc18y81vanig::::res://Escenas/salir_menu.gd<>uid://b2pp0srbc1jno::::res://Recursos/Audios/(2) menu_chiga.mp3<>uid://bbqpumthrege::::res://Escenas/play_game.gd<>uid://cvpko4ruclm0t::::res://Recursos/Audios/chiga.mp3
 play_game.gd::GDScript/GDScript::73252550062885304::1758021490::0::1::::<>Node2D<><>0<>0<><>::
 salir.gd::GDScript/GDScript::2131571551389317497::1758020574::0::1::::<>Node2D<><>0<>0<><>::
 salir_menu.gd::GDScript/GDScript::3585398666806909338::1758020946::0::1::::<>Node2D<><>0<>0<><>::
 Volver.gd::GDScript/GDScript::1969339581317374766::1758020682::0::1::::<>Node2D<><>0<>0<><>::
 ::res://Escenas/Niveles/::1758031404
-main.tscn::PackedScene::4382128509175751669::1758718676::0::1::::<><><>0<>0<><>::uid://dxonvea3yvmfa::::res://main.gd<>uid://deoub3f4yuebi::::res://arrow.tscn<>uid://bvdtplj3m7gvg::::res://player.tscn<>uid://tcoe64368u55::::res://hud.tscn<>uid://cwcw3bf47leoe::::res://MusicPlayer.gd<>uid://bcv5547srg5hy::::res://Recursos/Imagenes/bg1.png
+Level2.tscn::PackedScene::1092881510700822003::1758760502::0::1::::<><><>0<>0<><>::uid://0rw3ujqkonca::::res://Scripts/level_2.gd<>uid://tcoe64368u55::::res://hud.tscn<>uid://bvdtplj3m7gvg::::res://player.tscn<>uid://cwcw3bf47leoe::::res://MusicPlayer.gd<>uid://bcv5547srg5hy::::res://Recursos/Imagenes/bg1.png
+Level3.tscn::PackedScene::2836701147470440838::1758760530::0::1::::<><><>0<>0<><>::uid://cs7sid5kfvylj::::res://Escenas/Niveles/level_3.gd<>uid://tcoe64368u55::::res://hud.tscn<>uid://bvdtplj3m7gvg::::res://player.tscn<>uid://cwcw3bf47leoe::::res://MusicPlayer.gd<>uid://bcv5547srg5hy::::res://Recursos/Imagenes/bg1.png
+level_3.gd::GDScript::6103408037597805719::1758760838::0::1::::<>Node<><>0<>0<><>::
+main.tscn::PackedScene::4382128509175751669::1758767824::0::1::::<><><>0<>0<><>::uid://dxonvea3yvmfa::::res://main.gd<>uid://deoub3f4yuebi::::res://arrow.tscn<>uid://bvdtplj3m7gvg::::res://player.tscn<>uid://tcoe64368u55::::res://hud.tscn<>uid://cwcw3bf47leoe::::res://MusicPlayer.gd<>uid://bbn27vwnqnvlf::::res://Sprites/Hikaru chiga tocando (v1).png<>uid://bhkwjnir5lfgp::::res://Sprites/Hikaru chiga tocando (v2).png<>uid://bcv5547srg5hy::::res://Recursos/Imagenes/bg1.png<>uid://cq8436mwnbqe6::::res://Sprites/Hikaru chiga tocando (v3).png<>uid://c6lwg5bptcfcx::::res://Sprites/Yokai.png
 ::res://Filmora/::1758250918
 Chiga_intro_Usable_final.ogv::VideoStreamTheora/VideoStreamTheora::2251255048938715063::1758627344::0::1::::<><><>0<>0<><>::
 Fondo negro.png::CompressedTexture2D/CompressedTexture2D::1103500051963987459::1758248012::1758631276::1::::<><><>0<>0<>bb5731e6d0ccd806f919a5579f0c5f73<>res://.godot/imported/Fondo negro.png-7d591f1fd83a7fbbfbe914152c7bef89.ctex::
@@ -36,6 +38,7 @@ texto.tscn::PackedScene/PackedScene::2041317759357443939::1756356274::0::1::::<>
 2023-02-16-#29.mp3::AudioStreamMP3/AudioStreamMP3::4733584310812055914::1756356274::1756356274::1::::<><><>0<>0<>829c0751bbd590efabaa47e34ed425d7<>res://.godot/imported/2023-02-16-#29.mp3-c2e391aa40b66e4683a4559c32cca429.mp3str::
 (1) intro_chiga_alt.wav::AudioStreamWAV/AudioStreamWAV::5950177599132007168::1756356274::1756356274::1::::<><><>0<>0<>88f6778d541f02a3d197e691e1e115e6<>res://.godot/imported/(1) intro_chiga_alt.wav-45e18d011a94562f44baf413438ce5a2.sample::
 (2) menu_chiga.mp3::AudioStreamMP3/AudioStreamMP3::4313441499701109948::1756356274::1756356274::1::::<><><>0<>0<>69f98669ec94faf7be9f7cf6eb0e15d0<>res://.godot/imported/(2) menu_chiga.mp3-c8a215a968f9628b990e9207a8bbc865.mp3str::
+cancion_1_chiga.mp3::AudioStreamMP3::278970874661521913::1758760716::1758760826::1::::<><><>0<>0<>257428bc8cb7b3fdb2c9241abdb9c1c2<>res://.godot/imported/cancion_1_chiga.mp3-5b1cbfd01ddbfdf8754612902eb430e2.mp3str::
 chiga.mp3::AudioStreamMP3/AudioStreamMP3::6278406471488769485::1758028672::1758028712::1::::<><><>0<>0<>513170534549b2223de2054b1f8a22f2<>res://.godot/imported/chiga.mp3-b21daa0eef1530a568302ac0537f1e30.mp3str::
 clap_1.wav::AudioStreamWAV/AudioStreamWAV::1898159968001340498::1756356274::1756356274::1::::<><><>0<>0<>795076f46d2f974d398e2f27d7e5b624<>res://.godot/imported/clap_1.wav-bc04820ce4a760f844d818dc3e032574.sample::
 countdown_high.wav::AudioStreamWAV/AudioStreamWAV::6278237807083752347::1756356274::1756356274::1::::<><><>0<>0<>5707acf061d8ab78eb380244de10c4be<>res://.godot/imported/countdown_high.wav-5af010f983106774b855dd6e0ba2dbe6.sample::
@@ -66,8 +69,9 @@ Settings.tscn::PackedScene/PackedScene::3682254432629695972::1756356274::0::1:::
 ::res://Scripts/::1758027846
 button.gd::GDScript/GDScript::8517298647193879311::1756356274::0::1::::<>Button<><>0<>0<><>::
 icon.gd::GDScript/GDScript::2461490617747404606::1756356274::0::1::::<>Node2D<><>0<>0<><>::
+level_2.gd::GDScript::1791202353951163208::1758760532::0::1::::<>Node<><>0<>0<><>::
 master_volumen_slider.gd::GDScript/GDScript::5628086856232629434::1756356274::0::1::::<>HSlider<><>0<>0<><>::
-Menu_Handler.gd::GDScript/GDScript::314965466738570967::1758633108::0::1::::<>Control<><>0<>0<><>::
+Menu_Handler.gd::GDScript::314965466738570967::1758760210::0::1::::<>Control<><>0<>0<><>::
 music_volumen_slider.gd::GDScript/GDScript::8970361763178567530::1756356274::0::1::::<>HSlider<><>0<>0<><>::
 nine_patch_rect.gd::GDScript/GDScript::2504129523230011567::1756356274::0::1::::<>RefCounted<><>0<>0<><>::
 node_2d.gd::GDScript/GDScript::6941848246868954206::1756356274::0::1::::<>Node2D<><>0<>0<><>::
@@ -84,10 +88,21 @@ tecla1.gd::GDScript/GDScript::4274827074629533529::1756356274::0::1::::<>Button<
 tecla2.gd::GDScript/GDScript::8388446675713728547::1756356274::0::1::::<>Button<><>0<>0<><>::
 tecla3.gd::GDScript/GDScript::5377632175254723660::1756356274::0::1::::<>Button<><>0<>0<><>::
 ::res://Sprites/::1756356274
+Angry Meiko Yapping.png::CompressedTexture2D::1735017855757909148::1758634894::1758764102::1::::<><><>0<>0<>dc9cf6b2322537bbe9db8236313e7f64<>res://.godot/imported/Angry Meiko Yapping.png-d2654326e4290df79d2ec2bb215e9529.ctex::
 arrow.png::CompressedTexture2D/CompressedTexture2D::7542910484526886913::1756356274::1756356274::1::::<><><>0<>0<>8040eb62d797bc00574ebb07150e4499<>res://.godot/imported/arrow.png-5405b2f4a5090f6ebaea005362d7d52b.ctex::
 arrows.png::CompressedTexture2D/CompressedTexture2D::6741872317355484897::1756356274::1756356274::1::::<><><>0<>0<>ebef6c6d23cb267ea5beaa6a287ff2c8<>res://.godot/imported/arrows.png-270dd9a61256c0495f8acb5a0b9f5e5f.ctex::
 bat1.png::CompressedTexture2D/CompressedTexture2D::4862729965961253794::1756356274::1756356274::1::::<><><>0<>0<>3fcfc81af6a49f032d8d05ec2b31c5d1<>res://.godot/imported/bat1.png-536f7ac491dbba13ca39ab9a3af67ba1.ctex::
 bat2.png::CompressedTexture2D/CompressedTexture2D::8531123303162918071::1756356274::1756356274::1::::<><><>0<>0<>bd7d96e4b3cfa451fb0266b28de2da20<>res://.godot/imported/bat2.png-12f44da59b591e936973bfde8a408f38.ctex::
 c.png::CompressedTexture2D/CompressedTexture2D::3442616205714955295::1756356274::1756356274::1::::<><><>0<>0<>a2b91a3e644999d761383ef619df6560<>res://.godot/imported/c.png-3e90398dd6ee0762066e84a20e5599a0.ctex::
+Hikaru chiga tocando (v1).png::CompressedTexture2D::2485144079932189399::1758631158::1758764102::1::::<><><>0<>0<>097148b6a0ddf3f67d17fc8c175740bd<>res://.godot/imported/Hikaru chiga tocando (v1).png-92a47570fed0d22d82a93a422af87632.ctex::
+Hikaru chiga tocando (v2).png::CompressedTexture2D::2899738908660849607::1758631246::1758764102::1::::<><><>0<>0<>72abd7af3b6b687ec457a641b763f624<>res://.godot/imported/Hikaru chiga tocando (v2).png-67de53d6e5c1a6531cd6528b1150c4f2.ctex::
+Hikaru chiga tocando (v3).png::CompressedTexture2D::5965799774276774527::1758631260::1758764102::1::::<><><>0<>0<>e27ba4479470e9f85379aa7bdc32e0c2<>res://.godot/imported/Hikaru chiga tocando (v3).png-022814d170d3122ecf64aaa2885e73a7.ctex::
+Intento fondo.png::CompressedTexture2D::9089884619731867476::1758289996::1758764102::1::::<><><>0<>0<>a171c6ae1625c8ad4d1975149b188ea4<>res://.godot/imported/Intento fondo.png-7f0174705ebe57efb05b8f5cb3215a92.ctex::
 MainMenu-Chiga.png::CompressedTexture2D/CompressedTexture2D::4691999546859309559::1756356274::1756356274::1::::<><><>0<>0<>797739fc02f93fa5d295e642bbee13cb<>res://.godot/imported/MainMenu-Chiga.png-114e48908fa79f4e5b88093a36835f9b.ctex::
+Meiko Yapping.png::CompressedTexture2D::2905019660544369000::1758634848::1758764102::1::::<><><>0<>0<>7d2dddc1ce71347cdf951f204b060653<>res://.godot/imported/Meiko Yapping.png-070922a3f2bc1679ae1f440e58e27406.ctex::
+Neutral Meiko.png::CompressedTexture2D::4476881593445973972::1758634932::1758764102::1::::<><><>0<>0<>f37dbbc5dd3779431f8ad519d110bbc0<>res://.godot/imported/Neutral Meiko.png-b0b5f7fa6e9c4d5ee9aeed76641d183b.ctex::
+Nota (x2).png::CompressedTexture2D::8367752561314722997::1754997692::1758764102::1::::<><><>0<>0<>b37b95802f59739ed478bc68bd45d8bd<>res://.godot/imported/Nota (x2).png-9e41d6adb7ab233f4b50db72a3a1d333.ctex::
+Nota (x4).png::CompressedTexture2D::5501495945933926580::1754997702::1758764102::1::::<><><>0<>0<>2e9702c367951b4301c5ad9c654c8d70<>res://.godot/imported/Nota (x4).png-881d131a05b90a948b58e8d44d6381cd.ctex::
 nota musical.png::CompressedTexture2D/CompressedTexture2D::8980811213154800485::1756356274::1756356274::1::::<><><>0<>0<>6cc4e1f7b327b3f69ff61d9fc570199e<>res://.godot/imported/nota musical.png-417db27315714016c37d1d3a626984ec.ctex::
+Nota.png::CompressedTexture2D::8337624901275319415::1754997680::1758764102::1::::<><><>0<>0<>2b204bfdb3e4d6b418971053fe46e04e<>res://.godot/imported/Nota.png-d3048f610aeff428bb8be7127bbdc83e.ctex::
+Yokai.png::CompressedTexture2D::6972751742016470095::1758631306::1758764102::1::::<><><>0<>0<>777c7692d3afaf8cbceb2ba9e8555d40<>res://.godot/imported/Yokai.png-ac1dc655089c16df04940137034f3054.ctex::
