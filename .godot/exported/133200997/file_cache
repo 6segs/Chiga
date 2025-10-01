@@ -1,6 +1,6 @@
-res://Escenas/Niveles/main.tscn::092e9f019cdd8861a7effae1b1362ec2::1758718676::res://.godot/exported/133200997/export-c0459fedc73c822c527975056db4d0f1-main.scn
+res://Escenas/Niveles/main.tscn::d04116cee2264ac3e992f792768359d5::1758767824::res://.godot/exported/133200997/export-c0459fedc73c822c527975056db4d0f1-main.scn
 res://Escenas/intro.tscn::e0243eaf9821c8ebdc562efe31e06823::1758631540::res://.godot/exported/133200997/export-69f8d4548252448a128b5396a5db05c0-intro.scn
-res://Escenas/Menu_Principal.tscn::5e0d95aa65cab868834472968c2cd014::1758718676::res://.godot/exported/133200997/export-5134f1487ebd4f99f57b8dec5646f1fb-Menu_Principal.scn
+res://Escenas/Menu_Principal.tscn::a9bd80ef4eb81bc38a4e56c31e9f6da0::1759107902::res://.godot/exported/133200997/export-5134f1487ebd4f99f57b8dec5646f1fb-Menu_Principal.scn
 res://Objects/texto.tscn::aa3b333b185d97077d0d21acf1c85ebb::1756356274::res://.godot/exported/133200997/export-0a8e36b1e16107929ab9f59baac2479c-texto.scn
 res://Recursos/Imagenes/Play_Button.tres::d0ae1d47120fda58cd3e3d091c09c3c2::1756356274::res://.godot/exported/133200997/export-ad2af8df6580485d8be8ac0ba1074493-Play_Button.res
 res://Recursos/Temas/buttom.tres::5f72823de4a2310a2ccd9363f135d420::1756356274::res://.godot/exported/133200997/export-45639d71d966380732a076205feed355-buttom.res
@@ -8,6 +8,11 @@ res://Recursos/Temas/new_theme.tres::35d3625ec3ebb9a774184df14d802df6::175635627
 res://Recursos/Temas/Settings.tscn::2fc77a3c520e2870bfe45c533fb97b78::1756356274::res://.godot/exported/133200997/export-dde0a39c2ea69333413073e0d3feafa5-Settings.scn
 res://arrow.tscn::196d834ce62f112ba3b103f4defa4ff8::1756356274::res://.godot/exported/133200997/export-a3ddbc996d1057c95d2a1dbbd876b665-arrow.scn
 res://audio_bus.tres::d7f9edc541e34790b6bd59cddf94ac24::1756356274::res://.godot/exported/133200997/export-a9db3883ed704bb0b9e856d2c8901992-audio_bus.res
-res://hud.tscn::e56366b065d169f659c362b3a25d663f::1756356274::res://.godot/exported/133200997/export-f4cf891e5f7a93b93d9b27cfb8401ccb-hud.scn
-res://intro.tscn::1247c67a9ecb77425176cf93c942d6d9::1758718676::res://.godot/exported/133200997/export-2dff5a063e418d17c9220ff5a6df7e7a-intro.scn
-res://player.tscn::0e2f51f138c47c86186141779ac1ee52::1756356274::res://.godot/exported/133200997/export-36a25e342948d0ceacc500772b5412b3-player.scn
+res://hud.tscn::076f8a72ed76a0c061a562ab1d178cee::1758768492::res://.godot/exported/133200997/export-f4cf891e5f7a93b93d9b27cfb8401ccb-hud.scn
+res://intro.tscn::960335669751e4f1b8fb86297f5aeada::1759188092::res://.godot/exported/133200997/export-2dff5a063e418d17c9220ff5a6df7e7a-intro.scn
+res://player.tscn::4494bebaa8e891bc121ee54b3a648b0c::1758768494::res://.godot/exported/133200997/export-36a25e342948d0ceacc500772b5412b3-player.scn
+res://Escenas/Niveles/Level2.tscn::a8a4494006b2688a710140ba4e548a8f::1758760502::res://.godot/exported/133200997/export-2b7315656d12c2882d3c069779b1c647-Level2.scn
+res://Escenas/Niveles/Level3.tscn::eee08dbd6fc0662e4815a036c6fb3f15::1758760530::res://.godot/exported/133200997/export-7faaf1cb3d9b7ccebfe2429d4c9bfd98-Level3.scn
+res://Lore.tscn::0784a22798da74739672bea273b54c4d::1759200812::res://.godot/exported/133200997/export-bedde69b963990d5c677bd4df1b5237d-Lore.scn
+res://Escenas/historia.tscn::e105cb82df0daa2e40326d446f12cc13::1759200812::res://.godot/exported/133200997/export-86ea9de4442d4ca8bbc8db1b907b7e27-historia.scn
+res://Escenas/Lore.tscn::2b38b503c3b1ee6396cd6890ef3a7a20::1759200812::res://.godot/exported/133200997/export-5125d6408fd2dc4e087cad72296a7f32-Lore.scn

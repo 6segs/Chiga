@@ -1,3 +1,9 @@
+res://global.gd
+res://main.gd
 res://Scripts/Menu_Handler.gd
+res://hud.tscn
 res://Escenas/Menu_Principal.tscn
-res://Scripts/level_2.gd
+res://Escenas/historia.tscn
+res://historia.gd
+res://Escenas/Niveles/main.tscn
+res://Escenas/node_2d.gd

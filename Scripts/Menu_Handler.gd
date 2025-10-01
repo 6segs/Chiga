@@ -163,11 +163,28 @@ func _on_button_2_pressed() -> void:
 func _on_button_3_pressed() -> void:
 	visible_game(false,false,true)
 
-func _on_jogoo_pressed() -> void:
+func _on_tutorial_pressed() -> void:
+	Global.juego_iniciado = true
+	Global.nivel_actual = 0   # Guardamos que arrancó el tutorial
+	Global.save_data()
 	get_tree().change_scene_to_file("res://Escenas/Niveles/main.tscn")
+func _on_jogoo_pressed() -> void:
+	Global.juego_iniciado = true
+	Global.nivel_actual = 1   # Guardamos que arrancó nivel 1
+	Global.save_data()
+	if not Global.lore_vista:
+		get_tree().change_scene_to_file("res://Escenas/Historia.tscn")
+	else:
+		get_tree().change_scene_to_file("res://Escenas/Niveles/main.tscn")
 	
 func _on_nivel_2_pressed() -> void:
-	get_tree().change_scene_to_file("res://Escenas/Niveles/Level2.tscn")
+	Global.juego_iniciado = true
+	Global.nivel_actual = 2   # Guardamos que arrancó nivel 2
+	Global.save_data()
+	get_tree().change_scene_to_file("res://Escenas/Niveles/main.tscn")
 	
 func _on_nivel_3_pressed() -> void:
-	get_tree().change_scene_to_file("res://Escenas/Niveles/Level3.tscn")
+	Global.juego_iniciado = true
+	Global.nivel_actual = 3   # Guardamos que arrancó nivel 3
+	Global.save_data()
+	get_tree().change_scene_to_file("res://Escenas/Niveles/main.tscn")

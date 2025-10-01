@@ -335,7 +335,7 @@ FALL_SPEED = 200.0
 z_index = 3
 
 [node name="StartTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.001
 one_shot = true
 
 [node name="MusicStartTimer" type="Timer" parent="."]
@@ -392,10 +392,11 @@ texture = ExtResource("9_amw6n")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(192, 337)
 sprite_frames = SubResource("SpriteFrames_fwk7s")
-frame_progress = 0.111144505
+frame_progress = 0.43673417
 speed_scale = 2.635
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(915, 346)
 sprite_frames = SubResource("SpriteFrames_btc5n")
-frame_progress = 0.97587836
+frame = 8
+frame_progress = 0.649642

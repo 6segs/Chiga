@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8mxrb4n0hanc"]
+
+[ext_resource type="Script" uid="uid://d066tqjyhlfkp" path="res://Lore.gd" id="1_pkncr"]
+[ext_resource type="VideoStream" uid="uid://7cr3vb5gyjk6" path="res://Filmora/Chiga_intro_Usable_final.ogv" id="2_pkncr"]
+
+[node name="Lore" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pkncr")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+stream = ExtResource("2_pkncr")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

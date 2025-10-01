@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=4 uid="uid://doecc38wvpm3k"]
+[gd_scene load_steps=74 format=4 uid="uid://doecc38wvpm3k"]
 
 [ext_resource type="Script" uid="uid://eqto2d5mhk60" path="res://Scripts/Menu_Handler.gd" id="1_0fbet"]
 [ext_resource type="Texture2D" uid="uid://b733suml7n1cd" path="res://Sprites/MainMenu-Chiga.png" id="2_n8okg"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://brc18y81vanig" path="res://Escenas/salir_menu.gd" id="20_7jube"]
 [ext_resource type="AudioStream" uid="uid://b2pp0srbc1jno" path="res://Recursos/Audios/(2) menu_chiga.mp3" id="21_7jube"]
 [ext_resource type="Script" uid="uid://bbqpumthrege" path="res://Escenas/play_game.gd" id="21_fhhdm"]
+[ext_resource type="Script" uid="uid://b2k1kiuhhsvok" path="res://Escenas/node_2d.gd" id="22_cbwgl"]
 [ext_resource type="AudioStream" uid="uid://cvpko4ruclm0t" path="res://Recursos/Audios/chiga.mp3" id="22_ui7ib"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh0v1"]
@@ -2237,9 +2238,9 @@ visibility_layer = 3
 z_index = 1
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 12
+anchors_preset = -1
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.6662665
 anchor_bottom = 1.0
 offset_top = -100.0
 offset_right = -104.0
@@ -2259,9 +2260,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -364.5
+offset_left = -225.5
 offset_top = -51.0
-offset_right = 364.5
+offset_right = 225.5
 offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -2282,7 +2283,7 @@ position = Vector2(178, 0)
 script = ExtResource("21_fhhdm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/Play_Tab/Info_Holder/NinePatchRect4/Nivel1/Node2D"]
-position = Vector2(48, 16.5)
+position = Vector2(-95.499985, 16.49997)
 scale = Vector2(3.78125, 3.78125)
 sprite_frames = SubResource("SpriteFrames_fhhdm")
 animation = &"Run"
@@ -2290,7 +2291,63 @@ frame = 2
 frame_progress = 0.233857
 
 [node name="1" type="AnimatedSprite2D" parent="Panel/Play_Tab/Info_Holder/NinePatchRect4/Nivel1/Node2D"]
-position = Vector2(362, 16.5)
+position = Vector2(218.50002, 16.49997)
+scale = Vector2(3.781, 3.781)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Panel/Play_Tab/Info_Holder"]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 223.0
+offset_right = 725.0
+offset_bottom = 323.0
+texture = ExtResource("2_nabdr")
+region_rect = Rect2(275, 178, 90, 27)
+
+[node name="tutorial" type="Button" parent="Panel/Play_Tab/Info_Holder/NinePatchRect2"]
+texture_filter = 1
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.5
+offset_top = -51.0
+offset_right = 133.5
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_6a6wx")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_am1vj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7jube")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sllrp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7wy5n")
+text = "Tutorial"
+
+[node name="Node2D" type="Node2D" parent="Panel/Play_Tab/Info_Holder/NinePatchRect2/tutorial"]
+position = Vector2(178, 0)
+script = ExtResource("22_cbwgl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/Play_Tab/Info_Holder/NinePatchRect2/tutorial/Node2D"]
+position = Vector2(-129.49998, 15.4999695)
+scale = Vector2(3.78125, 3.78125)
+sprite_frames = SubResource("SpriteFrames_fhhdm")
+animation = &"Run"
+frame = 2
+frame_progress = 0.233857
+
+[node name="1" type="AnimatedSprite2D" parent="Panel/Play_Tab/Info_Holder/NinePatchRect2/tutorial/Node2D"]
+position = Vector2(79.00002, 15.4999695)
 scale = Vector2(3.781, 3.781)
 sprite_frames = SubResource("SpriteFrames_fhhdm")
 animation = &"Run"
@@ -2553,6 +2610,9 @@ stream = ExtResource("21_7jube")
 [connection signal="mouse_entered" from="Panel/Play_Tab/Info_Holder/NinePatchRect4/Nivel1" to="Panel/Play_Tab/Info_Holder/NinePatchRect4/Nivel1/Node2D" method="_on_jogoo_mouse_entered"]
 [connection signal="mouse_exited" from="Panel/Play_Tab/Info_Holder/NinePatchRect4/Nivel1" to="Panel/Play_Tab/Info_Holder/NinePatchRect4/Nivel1/Node2D" method="_on_jogoo_mouse_exited"]
 [connection signal="pressed" from="Panel/Play_Tab/Info_Holder/NinePatchRect4/Nivel1" to="." method="_on_jogoo_pressed"]
+[connection signal="mouse_entered" from="Panel/Play_Tab/Info_Holder/NinePatchRect2/tutorial" to="Panel/Play_Tab/Info_Holder/NinePatchRect2/tutorial/Node2D" method="_on_tutorial_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Play_Tab/Info_Holder/NinePatchRect2/tutorial" to="Panel/Play_Tab/Info_Holder/NinePatchRect2/tutorial/Node2D" method="_on_tutorial_mouse_exited"]
+[connection signal="pressed" from="Panel/Play_Tab/Info_Holder/NinePatchRect2/tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="mouse_entered" from="Panel/Play_Tab/Info_Holder2/NinePatchRect4/Nivel 2" to="Panel/Play_Tab/Info_Holder2/NinePatchRect4/Nivel 2/Node2D" method="_on_jogoo_mouse_entered"]
 [connection signal="mouse_exited" from="Panel/Play_Tab/Info_Holder2/NinePatchRect4/Nivel 2" to="Panel/Play_Tab/Info_Holder2/NinePatchRect4/Nivel 2/Node2D" method="_on_jogoo_mouse_exited"]
 [connection signal="pressed" from="Panel/Play_Tab/Info_Holder2/NinePatchRect4/Nivel 2" to="." method="_on_nivel_2_pressed"]

@@ -23,25 +23,18 @@ var LOADING_DELAY_OFFSET: float = 0.1
 var game_has_started = false
 var play_countdown_sfx = false
 
+var nivel_iniciado: bool = false
 var paso_nivel = false
 
 var last_beat: float = 0.0
 
 # gugy, te deseo suerte cuando tengas q hacer esto D:
-var arrow_timers: Array = [
-	["right",0],["left",0],["right",2],["left",2],["down",3],
-	["left",4],["right",6],["left",7],
-	["left",8],["down",10],["down",11],
-	["left",12],["right",14],["right",15],
-	["left",16],["right",18],["left",19],
-	["left",20],["right",22],["left",23],
-	["left",24],["down",25],["right",26],["left",27],
-	["left",28],["right",30],["left",31],
-	["left",32],["left",34],["down",35],
-	["right",36],["left",38],["down",39],
-	["right",40]]
+var arrow_timers: Array = []
 var arrows_before_music: Array = []
-
+#niveles
+var nivel1_iniciado = false 
+var nivel2_iniciado = false 
+var nivel3_iniciado = false 
 var curr_combo = 0
 var max_combo = 0
 var score = 0
@@ -59,12 +52,11 @@ func _ready() -> void:
 	$Player.hit.connect(_on_player_hit)
 	$Player.miss.connect(_on_player_miss)
 	$HUD/GameOverMenu/NinePatchRect/GoBackButton.button_down.connect(_go_back_button)
-	
-	$Conductor.stream = preload("res://Recursos/Audios/cancion_1_chiga.mp3")
+	# $Conductor.stream = preload("res://Recursos/Audios/cancion_1_chiga.mp3")
 	$HitPlayer.stream = preload("res://Recursos/Audios/clap_1.wav")
 	$CountdownPlayer.stream = preload("res://Recursos/Audios/countdown_high.wav")
 	$FinalSFX.stream = preload("res://Recursos/Audios/sfx_perder.mp3")
-	
+	arrows_before_music.clear()
 	$EndTimer.wait_time = 40 # no need to convert
 	music_has_intro = false
 	BPM = 84
@@ -85,77 +77,198 @@ func _ready() -> void:
 	compute_offset_beat_times()
 	
 	new_game()
+func iniciar_nivel():
+	# Reiniciar variables comunes
+	arrows_before_music.clear()
+	curr_combo = 0
+	max_combo = 0
+	score = 0
+	last_beat = 0.0
+
+	# Asignar flechas según nivel
+	match Global.nivel_actual:
+		0:
+			arrow_timers = [["left",0],["right",2],["down",3],
+	["left",4],["right",6],["left",7],
+	["left",8],["down",10],["down",11],
+	["left",12],["right",14],["right",15],
+	["left",16],["right",18],["left",19],
+	["left",20],["right",22],["left",23],
+	["left",24],["down",25],["right",26],["left",27],
+	["left",28],["right",30],["left",31],
+	["left",32],["left",34],["down",35],
+	["right",36],["left",38],["down",39],
+	["right",40]] # tu lista completa
+			FALL_SPEED = 100 
+		1:
+			arrow_timers = [["left",0],["right",2],["down",3],
+	["left",4],["right",6],["left",7],
+	["left",8],["down",10],["down",11],
+	["left",12],["right",14],["right",15],
+	["left",16],["right",18],["left",19],
+	["left",20],["right",22],["left",23],
+	["left",24],["down",25],["right",26],["left",27],
+	["left",28],["right",30],["left",31],
+	["left",32],["left",34],["down",35],
+	["right",36],["left",38],["down",39],
+	["right",40]] # tu lista completa
+			FALL_SPEED = 100 
+		2:
+			arrow_timers = [["left",4],["right",6],["left",7],
+	["left",8],["down",10],["down",11],
+	["left",12],["right",14],["right",15],
+	["left",16],["right",18],["left",19],
+	["left",20],["right",22],["left",23],
+	["left",24],["down",25],["right",26],["left",27],
+	["left",28],["right",30],["left",31],
+	["left",32],["left",34],["down",35],
+	["right",36],["left",38],["down",39],
+	["right",40]]
+			FALL_SPEED = 200 
+		3:
+			arrow_timers = [["right",0],["left",0],["right",2],["left",2],["down",3],
+	["left",4],["right",6],["left",7],
+	["left",8],["down",10],["down",11],
+	["left",12],["right",14],["right",15],
+	["left",16],["right",18],["left",19],
+	["left",20],["right",22],["left",23],
+	["left",24],["down",25],["right",26],["left",27],
+	["left",28],["right",30],["left",31],
+	["left",32],["left",34],["down",35],
+	["right",36],["left",38],["down",39],
+	["right",40]]
+			FALL_SPEED = 300 
+	FALL_DURATION = (PERFECT_TIMING_Y + 60) / FALL_SPEED
+	# Calcular combos y puntajes máximos
+	MAX_COMBO = arrow_timers.size()
+	MAX_SCORE = PERFECT_POINTS * arrow_timers.size()
+	compute_offset_beat_times()
+
+	# Asignar música
+	asignar_musica_según_nivel()
+	# Preparar countdown
+	game_has_started = false
+	$HUD/CountdownLabel.visible = true
+	$HUD/CountdownLabel.text = ""    # empezar vacío
+	$CountdownPlayer.stream = preload("res://Recursos/Audios/countdown_high.wav") # beep genérico
+ 
+func manejar_countdown():
+	var beats_left = ceil($MusicStartTimer.time_left / QUARTER_NOTE_DURATION)
+	var countdown_text = ""
+
+	# Mostrar READY primero
+	if beats_left > 3:
+		countdown_text = "READY..."
+	elif beats_left == 3:
+		countdown_text = "3"
+	elif beats_left == 2:
+		countdown_text = "2"
+	elif beats_left == 1:
+		countdown_text = "1"
+	elif beats_left == 0:
+		countdown_text = "GO!"
+
+	# Solo actualizar si cambió el texto
+	if countdown_text != $HUD/CountdownLabel.text:
+		print(countdown_text)
+		if countdown_text == "GO!":
+			$CountdownPlayer.stream = load("res://Recursos/Audios/sfx_inicio_nivel.mp3")
+		else:
+			$CountdownPlayer.stream = preload("res://Recursos/Audios/countdown_high.wav")
+		$CountdownPlayer.playing = true
+
+	$HUD/CountdownLabel.text = countdown_text
+
+	# Cuando ya terminó la cuenta → arrancar el juego
+	if countdown_text == "GO!":
+		game_has_started = true
+		await get_tree().create_timer(1.0).timeout
+		$HUD/CountdownLabel.visible = false
+
+func asignar_musica_según_nivel():
+	match Global.nivel_actual:
+		0:
+			$Conductor.stream = preload("res://Recursos/Audios/(2) menu_chiga.mp3")
+		1:
+			$Conductor.stream = preload("res://Recursos/Audios/chiga.mp3")
+		2:
+			$Conductor.stream = preload("res://Recursos/Audios/(2) menu_chiga.mp3")
+		3:
+			$Conductor.stream = preload("res://Recursos/Audios/2023-02-16-#29.mp3")
+		_:
+			$Conductor.stream = preload("res://Recursos/Audios/cancion_1_chiga.mp3")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if !game_has_started:
-		if $MusicStartTimer.time_left < TIME_NUMERATOR * QUARTER_NOTE_DURATION:
-			var countdown_text = str(max(ceil($MusicStartTimer.time_left / QUARTER_NOTE_DURATION) - 1,0))
-			if countdown_text == "0":
-				countdown_text = "GO!"
-			if countdown_text != $HUD/CountdownLabel.text:
-				print(countdown_text)
-				if countdown_text == "GO!":
-					$CountdownPlayer.stream = load("res://Recursos/Audios/sfx_inicio_nivel.mp3")
-				
-				$CountdownPlayer.playing = true
-			$HUD/CountdownLabel.text = countdown_text
-			if $MusicStartTimer.time_left == 0:
-				game_has_started = true
-				$HUD/CountdownLabel.visible = false
-				
-	if ($Conductor.song_position > last_beat + QUARTER_NOTE_DURATION):
-		last_beat += QUARTER_NOTE_DURATION
+	if Global.juego_iniciado:
+		if Global.juego_iniciado and !nivel_iniciado:
+			iniciar_nivel()
+			nivel_iniciado = true
 
-	if (!arrow_timers.is_empty()):
-		if arrow_timers[0][1] <= $Conductor.song_position && arrow_timers[0][1] >= 0:
-			var arrow = arrow_timers.pop_front()
-			spawn_arrow(arrow)
-			
-	if (!arrows_before_music.is_empty()):
-		if abs(arrows_before_music[0][1]) >= $MusicStartTimer.time_left:
-			var arrow = arrows_before_music.pop_front()
-			spawn_arrow(arrow)
-	
-	$HUD/VBoxContainer/ScoreLabel.text = "Puntos: " + str(score)
-	$HUD/VBoxContainer/ComboLabel.text = "Combo: " + str(curr_combo) + "X"
+		# Si el nivel está iniciado pero el juego no empezó todavía,
+		# mostramos/actualizamos el countdown cada frame
+		if nivel_iniciado and not game_has_started:
+			manejar_countdown()
+
+	# ============================
+	# LÓGICA GENERAL — sólo ejecuta después de que game_has_started == true
+	# ============================
+	if game_has_started:
+		if ($Conductor.song_position > last_beat + QUARTER_NOTE_DURATION):
+			last_beat += QUARTER_NOTE_DURATION
+
+		if (!arrow_timers.is_empty()):
+			if arrow_timers[0][1] <= $Conductor.song_position and arrow_timers[0][1] >= 0:
+				var arrow = arrow_timers.pop_front()
+				spawn_arrow(arrow)
+
+		if (!arrows_before_music.is_empty()):
+			if abs(arrows_before_music[0][1]) >= $MusicStartTimer.time_left:
+				var arrow = arrows_before_music.pop_front()
+				spawn_arrow(arrow)
+
+		$HUD/VBoxContainer/ScoreLabel.text = "Puntos: " + str(score)
+		$HUD/VBoxContainer/ComboLabel.text = "Combo: " + str(curr_combo) + "X"
 
 
 func new_game():
 	$StartTimer.start()
 
 func game_over():
-	# lil sistema de rango segun el porcentaje de puntos
-	# rango C y D se consideran fracaso
 	var score_percentage = score / MAX_SCORE
+	var rango_final: String
+
 	if score_percentage >= 0.9:
-		$HUD/GameOverMenu/NinePatchRect/FinalRankLabel.text = "Rank S"
-		paso_nivel = true
+		rango_final = "S"
 	elif score_percentage >= 0.8:
-		$HUD/GameOverMenu/NinePatchRect/FinalRankLabel.text = "Rank A"
-		paso_nivel = true
+		rango_final = "A"
 	elif score_percentage >= 0.7:
-		$HUD/GameOverMenu/NinePatchRect/FinalRankLabel.text = "Rank B"
-		paso_nivel = true
+		rango_final = "B"
 	elif score_percentage >= 0.6:
-		$HUD/GameOverMenu/NinePatchRect/FinalRankLabel.text = "Rank C"
-		paso_nivel = false
+		rango_final = "C"
 	else:
-		$HUD/GameOverMenu/NinePatchRect/FinalRankLabel.text = "Rank D"
-		paso_nivel = false
-	
+		rango_final = "D"
+
+	$HUD/GameOverMenu/NinePatchRect/FinalRankLabel.text = "Rank " + rango_final
 	if max_combo == MAX_COMBO:
 		$HUD/GameOverMenu/NinePatchRect/ComboLabel.text = "Full Combo!"
 	else:
 		$HUD/GameOverMenu/NinePatchRect/ComboLabel.text = "Max Combo:\n" + str(max_combo)
-	
+
+	# Guardar progreso en el nivel actual
+	Global.guardar_rango(Global.nivel_actual, rango_final)
+
+	# Verificar si puede pasar al siguiente
+	paso_nivel = Global.rango_valido(rango_final)
+
 	if paso_nivel:
 		$FinalSFX.stream = load("res://Recursos/Audios/sfx_ganar_nivel.mp3")
-		$FinalSFX.play()
 	else:
 		$FinalSFX.stream = load("res://Recursos/Audios/sfx_perder.mp3")
-		$FinalSFX.play()
+
+	$FinalSFX.play()
 	$HUD/GameOverMenu.visible = true
+
 
 func _on_start_timer_timeout() -> void:
 	$EndTimer.start()
@@ -266,6 +379,8 @@ func compute_offset_beat_times():
 			num_negative += 1
 			
 	arrow_timers = arrow_timers.slice(num_negative, arrow_timers.size())
+	
 
 func _go_back_button():
 	get_tree().change_scene_to_file("res://Escenas/Menu_Principal.tscn")
+	
