@@ -25,6 +25,14 @@ extends Control
 @onready var sfx_volumen: HSlider = $Panel/Config_Tab/NinePatchRect/ajustes_sonido/sfx_volumen/sfx_volumen_slider
 @onready var label_sfx: Label = $Panel/Config_Tab/NinePatchRect/ajustes_sonido/sfx_volumen
 
+# ------------------- BOTONES DE NIVELES -------------------
+# Ajustá la ruta según dónde estén los botones en tu escena
+@onready var tutorial: Button = $Panel/Play_Tab/Info_Holder/NinePatchRect2/tutorial
+@onready var boton_nivel1: Button = $Panel/Play_Tab/Info_Holder/NinePatchRect4/Nivel1
+@onready var boton_nivel2: Button = $"Panel/Play_Tab/Info_Holder2/NinePatchRect4/Nivel 2"
+@onready var boton_nivel3: Button = $Panel/Play_Tab/Info_Holder3/NinePatchRect4/Nivel3
+
+
 # buses de audio
 var bus_master: int
 var bus_music: int
@@ -46,9 +54,17 @@ func _ready() -> void:
 	music_volumen.value_changed.connect(_on_music_slider_val)
 	sfx_volumen.value_changed.connect(_on_sfx_slider_val)
 	
-	# initttttttttttttttttt
+	# init sliders
 	init_sliders()
 	panel.visible = true
+	actualizar_botones_niveles()
+# ----------------- BLOQUEO DE NIVELES -----------------
+func actualizar_botones_niveles():
+	tutorial.disabled = false  # El tutorial siempre disponible
+	boton_nivel1.disabled = Global.nivel_max < 1
+	boton_nivel2.disabled = Global.nivel_max < 2
+	boton_nivel3.disabled = Global.nivel_max < 3
+
 
 # ------------------- SLIDERS -------------------
 # Menu > Ventanas > Config_Tab > Elementos
@@ -86,8 +102,7 @@ func _on_sfx_slider_val(valor: float) -> void:
 	actualizar_label(label_sfx, "SFX", valor)
 
 # --------------------------------------------------
-# ------------------- fvdsxfdfds -------------------
-# Menu > Ventanas > Elementos
+# ------------------- VENTANAS ---------------------
 func visible_window(levels: bool, config: bool, exit: bool, buttons: bool) -> void:
 	play_tab.visible = levels
 	config_tab.visible = config
@@ -101,11 +116,11 @@ func visible_game(info1: bool, info2: bool, info3: bool) -> void:
 	info_holder_2.visible = info2
 	info_holder_3.visible = info3
 
-# Code para cada boton y sus respectivas ventanas
+# --------------------------------------------------
+# ------------------- BOTONES ----------------------
 func play_pressed() -> void:
 	visible_window(true, false, false, false)
 
-	
 func _on_settings_pressed() -> void:
 	visible_window(false, true, false, false)
 	
@@ -142,10 +157,10 @@ func config_atras_pressed() -> void:
 
 # Pausa la Musica cuando se pone la ventana de salir apretando la tecla escape
 func _unhandled_input(event):
-		if event.is_action_pressed("ui_cancel"):  # Escape por defecto
-			visible_window(false,false,true, false)
-			if $musica.playing:
-				$musica.stream_paused = true
+	if event.is_action_pressed("ui_cancel"):  # Escape por defecto
+		visible_window(false,false,true, false)
+		if $musica.playing:
+			$musica.stream_paused = true
 
 func _on_volver_play_pressed() -> void:
 	visible_window(false, false, false, true)
@@ -153,7 +168,7 @@ func _on_volver_play_pressed() -> void:
 func _on_musica_finished() -> void:
 	musica.play()
 
-
+# ---------------- BOTONES DE NIVELES ----------------
 func _on_button_pressed() -> void:
 	visible_game(true,false,false)
 	
@@ -165,12 +180,12 @@ func _on_button_3_pressed() -> void:
 
 func _on_tutorial_pressed() -> void:
 	Global.juego_iniciado = true
-	Global.nivel_actual = 0   # Guardamos que arrancó el tutorial
+	Global.nivel_actual = 1
 	Global.save_data()
 	get_tree().change_scene_to_file("res://Escenas/Niveles/main.tscn")
 func _on_jogoo_pressed() -> void:
 	Global.juego_iniciado = true
-	Global.nivel_actual = 1   # Guardamos que arrancó nivel 1
+	Global.nivel_actual = 2
 	Global.save_data()
 	if not Global.lore_vista:
 		get_tree().change_scene_to_file("res://Escenas/Historia.tscn")
@@ -179,12 +194,12 @@ func _on_jogoo_pressed() -> void:
 	
 func _on_nivel_2_pressed() -> void:
 	Global.juego_iniciado = true
-	Global.nivel_actual = 2   # Guardamos que arrancó nivel 2
+	Global.nivel_actual = 3
 	Global.save_data()
 	get_tree().change_scene_to_file("res://Escenas/Niveles/main.tscn")
 	
 func _on_nivel_3_pressed() -> void:
 	Global.juego_iniciado = true
-	Global.nivel_actual = 3   # Guardamos que arrancó nivel 3
+	Global.nivel_actual = 4
 	Global.save_data()
 	get_tree().change_scene_to_file("res://Escenas/Niveles/main.tscn")

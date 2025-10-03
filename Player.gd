@@ -1,5 +1,8 @@
 extends Node2D
 
+@onready var label: Label = $Panel/NinePatchRect/Label
+@onready var nine_patch_rect: NinePatchRect = $NinePatchRect
+
 signal hit
 signal miss
 
@@ -28,6 +31,7 @@ func _process(_delta: float) -> void:
 		check_pego_flecha(right_arrows, RIGHT_HITBOX_POS)
 	elif Input.is_action_just_pressed("input_down"):
 		check_pego_flecha(down_arrows, DOWN_HITBOX_POS)
+
 
 func check_pego_flecha(lista: Array, pos_hitbox: Vector2) -> void:
 	# primero, se limpia la lista

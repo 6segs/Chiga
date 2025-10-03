@@ -18,8 +18,8 @@ config/icon="uid://cdhg10onvlcek"
 
 [autoload]
 
-Cfg="*res://Cfg.gd"
 Global="*res://global.gd"
+Cfg="*res://Cfg.gd"
 
 [display]
 

@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://tcoe64368u55"]
+[gd_scene load_steps=7 format=3 uid="uid://tcoe64368u55"]
 
+[ext_resource type="Script" uid="uid://ctrq5x2m25tgx" path="res://hud.gd" id="1_8sq4i"]
 [ext_resource type="FontFile" uid="uid://jse5vf2o10b8" path="res://Recursos/Otros/GrapeSoda.ttf" id="1_37p78"]
 [ext_resource type="Texture2D" uid="uid://b6yohsoym3ww7" path="res://Recursos/Imagenes/Sprite sheet for Basic Pack.png" id="1_64ctp"]
 
@@ -13,6 +14,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_8sq4i")
 
 [node name="CountdownLabel" type="Label" parent="."]
 anchors_preset = 8
@@ -155,3 +157,20 @@ text = "Combo: 0X"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 1150.0
+offset_bottom = 246.0
+texture = ExtResource("1_64ctp")
+region_rect = Rect2(275, 178, 90, 27)
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 38.0
+offset_right = 1094.0
+offset_bottom = 194.0
+theme_override_fonts/font = ExtResource("1_37p78")
+theme_override_font_sizes/font_size = 40

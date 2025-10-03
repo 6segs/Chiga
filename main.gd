@@ -1,7 +1,18 @@
 extends Node
 
-@export var arrow_scene: PackedScene
+@export var arrow_right_scene: PackedScene
+@export var arrow_center_scene : PackedScene
+@export var arrow_left_scene : PackedScene
 @export var FALL_SPEED: float
+
+@onready var chiga: AnimatedSprite2D = $Chiga
+@onready var meiko_happy: AnimatedSprite2D = $Meiko_happy
+@onready var meiko_agry: AnimatedSprite2D = $Meiko_agry
+@onready var paraguas: AnimatedSprite2D = $Paraguas
+@onready var sin_ojos: AnimatedSprite2D = $sin_ojos
+@onready var narigon: AnimatedSprite2D = $Narigon
+
+
 const st_texto = preload("res://Objects/texto.tscn")
 var BPM: float
 var TIME_NUMERATOR: float
@@ -38,6 +49,12 @@ var nivel3_iniciado = false
 var curr_combo = 0
 var max_combo = 0
 var score = 0
+var DURACIONES_NIVELES := {
+	1: 10.0,
+	2: 60.0,
+	3: 80.0,
+	4: 100.0
+}
 ##############################################################
 # basicamente el init de todo
 func _ready() -> void:
@@ -57,7 +74,6 @@ func _ready() -> void:
 	$CountdownPlayer.stream = preload("res://Recursos/Audios/countdown_high.wav")
 	$FinalSFX.stream = preload("res://Recursos/Audios/sfx_perder.mp3")
 	arrows_before_music.clear()
-	$EndTimer.wait_time = 40 # no need to convert
 	music_has_intro = false
 	BPM = 84
 	TIME_NUMERATOR = 4
@@ -73,9 +89,9 @@ func _ready() -> void:
 	MAX_SCORE = PERFECT_POINTS * arrow_timers.size()
 	
 	FALL_DURATION = (PERFECT_TIMING_Y + 60) / FALL_SPEED
-	
+	# Duraciones de cada nivel (en segundos)
+	chiga.visible = false
 	compute_offset_beat_times()
-	
 	new_game()
 func iniciar_nivel():
 	# Reiniciar variables comunes
@@ -87,22 +103,13 @@ func iniciar_nivel():
 
 	# Asignar flechas según nivel
 	match Global.nivel_actual:
-		0:
-			arrow_timers = [["left",0],["right",2],["down",3],
-	["left",4],["right",6],["left",7],
-	["left",8],["down",10],["down",11],
-	["left",12],["right",14],["right",15],
-	["left",16],["right",18],["left",19],
-	["left",20],["right",22],["left",23],
-	["left",24],["down",25],["right",26],["left",27],
-	["left",28],["right",30],["left",31],
-	["left",32],["left",34],["down",35],
-	["right",36],["left",38],["down",39],
-	["right",40]] # tu lista completa
-			FALL_SPEED = 100 
 		1:
-			arrow_timers = [["left",0],["right",2],["down",3],
-	["left",4],["right",6],["left",7],
+			arrow_timers = [["right",15],["left",16],["right",16],["right",18],["right",20],["right",22],["right",24],["right",39],
+	["right",40]] # tu lista completa
+			FALL_SPEED = 100 
+			BPM = 100
+		2:
+			arrow_timers = [["left",4],["right",6],["left",7],
 	["left",8],["down",10],["down",11],
 	["left",12],["right",14],["right",15],
 	["left",16],["right",18],["left",19],
@@ -113,7 +120,7 @@ func iniciar_nivel():
 	["right",36],["left",38],["down",39],
 	["right",40]] # tu lista completa
 			FALL_SPEED = 100 
-		2:
+		3:
 			arrow_timers = [["left",4],["right",6],["left",7],
 	["left",8],["down",10],["down",11],
 	["left",12],["right",14],["right",15],
@@ -125,9 +132,8 @@ func iniciar_nivel():
 	["right",36],["left",38],["down",39],
 	["right",40]]
 			FALL_SPEED = 200 
-		3:
-			arrow_timers = [["right",0],["left",0],["right",2],["left",2],["down",3],
-	["left",4],["right",6],["left",7],
+		4:
+			arrow_timers = [["left",4],["right",6],["left",7],
 	["left",8],["down",10],["down",11],
 	["left",12],["right",14],["right",15],
 	["left",16],["right",18],["left",19],
@@ -143,14 +149,32 @@ func iniciar_nivel():
 	MAX_COMBO = arrow_timers.size()
 	MAX_SCORE = PERFECT_POINTS * arrow_timers.size()
 	compute_offset_beat_times()
-
+	$EndTimer.wait_time = DURACIONES_NIVELES.get(Global.nivel_actual, 40.0)
+	$EndTimer.start()
 	# Asignar música
 	asignar_musica_según_nivel()
+	cambiar_sprite_por_nivel()
 	# Preparar countdown
 	game_has_started = false
 	$HUD/CountdownLabel.visible = true
 	$HUD/CountdownLabel.text = ""    # empezar vacío
 	$CountdownPlayer.stream = preload("res://Recursos/Audios/countdown_high.wav") # beep genérico
+
+func cambiar_sprite_por_nivel():
+	match Global.nivel_actual:
+		1:
+			chiga.visible= true
+			meiko_happy.visible = true
+			meiko_happy.play("Run")
+		2:
+			chiga.visible= true
+			paraguas.visible = true
+		3:
+			chiga.visible= true
+			sin_ojos.visible = true
+		4:
+			chiga.visible= true
+			narigon.visible = true
  
 func manejar_countdown():
 	var beats_left = ceil($MusicStartTimer.time_left / QUARTER_NOTE_DURATION)
@@ -172,10 +196,15 @@ func manejar_countdown():
 	if countdown_text != $HUD/CountdownLabel.text:
 		print(countdown_text)
 		if countdown_text == "GO!":
+			chiga.play("Run")
+			paraguas.play("Run")
+			sin_ojos.play("Run")
+			narigon.play("Run")
 			$CountdownPlayer.stream = load("res://Recursos/Audios/sfx_inicio_nivel.mp3")
 		else:
 			$CountdownPlayer.stream = preload("res://Recursos/Audios/countdown_high.wav")
 		$CountdownPlayer.playing = true
+
 
 	$HUD/CountdownLabel.text = countdown_text
 
@@ -187,16 +216,16 @@ func manejar_countdown():
 
 func asignar_musica_según_nivel():
 	match Global.nivel_actual:
-		0:
-			$Conductor.stream = preload("res://Recursos/Audios/(2) menu_chiga.mp3")
 		1:
-			$Conductor.stream = preload("res://Recursos/Audios/chiga.mp3")
-		2:
 			$Conductor.stream = preload("res://Recursos/Audios/(2) menu_chiga.mp3")
+		2:
+			$Conductor.stream = preload("res://Recursos/Audios/chiga.mp3")
 		3:
+			$Conductor.stream = preload("res://Recursos/Audios/cancion_level2_chiga.mp3")
+		4:
 			$Conductor.stream = preload("res://Recursos/Audios/2023-02-16-#29.mp3")
 		_:
-			$Conductor.stream = preload("res://Recursos/Audios/cancion_1_chiga.mp3")
+			$Conductor.stream = preload("res://Recursos/Audios/cancion_level2_chiga.mp3")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -209,6 +238,7 @@ func _process(_delta: float) -> void:
 		# mostramos/actualizamos el countdown cada frame
 		if nivel_iniciado and not game_has_started:
 			manejar_countdown()
+
 
 	# ============================
 	# LÓGICA GENERAL — sólo ejecuta después de que game_has_started == true
@@ -255,19 +285,27 @@ func game_over():
 	else:
 		$HUD/GameOverMenu/NinePatchRect/ComboLabel.text = "Max Combo:\n" + str(max_combo)
 
-	# Guardar progreso en el nivel actual
 	Global.guardar_rango(Global.nivel_actual, rango_final)
+	Global.save_data()
 
-	# Verificar si puede pasar al siguiente
-	paso_nivel = Global.rango_valido(rango_final)
-
-	if paso_nivel:
+	if Global.rango_valido(rango_final):  # solo si el rango es suficiente
+		if Global.nivel_actual >= Global.nivel_max:
+			Global.nivel_max = Global.nivel_actual + 1
 		$FinalSFX.stream = load("res://Recursos/Audios/sfx_ganar_nivel.mp3")
 	else:
 		$FinalSFX.stream = load("res://Recursos/Audios/sfx_perder.mp3")
-
 	$FinalSFX.play()
 	$HUD/GameOverMenu.visible = true
+func _on_nivel_completado():
+	# supongamos que calculás el rango en alguna variable
+	var rango_obtenido = Global.guardar_rango
+	Global.guardar_rango(Global.nivel_actual, rango_obtenido)
+
+	if Global.nivel_actual >= Global.nivel_max:
+		Global.nivel_max = Global.nivel_actual + 1
+	
+	Global.save_data()
+
 
 
 func _on_start_timer_timeout() -> void:
@@ -295,22 +333,27 @@ func _on_conductor_beat(_last_reported_beat) -> void:
 	pass
 	
 func spawn_arrow(arrow_data):
-	# creas la flecha, la agregas al grupo "arrows", y conectar la señal!
-	var arrow = arrow_scene.instantiate()
+	var arrow: RigidBody2D
+
+	match arrow_data[0]:
+		"left":
+			arrow = arrow_right_scene.instantiate()
+			arrow.position = $LeftArrowPath/LeftArrowSpawnLocation.position
+		"down", "center":   # usan el mismo scene
+			arrow = arrow_center_scene.instantiate()
+			arrow.position = $DownArrowPath/DownArrowSpawnLocation.position
+		"right":
+			arrow = arrow_left_scene.instantiate()
+			arrow.position = $RightArrowPath/RightArrowSpawnLocation.position
+		_:
+			return
+	
 	arrow.add_to_group("arrows")
 	arrow.deleted.connect(_on_arrow_missed)
-
-	# ubicar cada flechita dependiendo su data
-	if arrow_data[0] == "left":
-		arrow.position = $LeftArrowPath/LeftArrowSpawnLocation.position
-	elif arrow_data[0] == "down":
-		arrow.position = $DownArrowPath/DownArrowSpawnLocation.position
-	elif arrow_data[0] == "right":
-		arrow.position = $RightArrowPath/RightArrowSpawnLocation.position
-
 	arrow.linear_velocity = Vector2.DOWN * FALL_SPEED
 
 	add_child(arrow)
+
 
 
 

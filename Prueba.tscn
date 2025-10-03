@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://hb8ahsmhy4iq"]
+
+[ext_resource type="Script" uid="uid://b2cjoqehr4ooy" path="res://Prueba.gd" id="1_lgsii"]
+[ext_resource type="Texture2D" uid="uid://b6yohsoym3ww7" path="res://Recursos/Imagenes/Sprite sheet for Basic Pack.png" id="2_wgwtc"]
+[ext_resource type="Theme" uid="uid://b8dux444xf3t7" path="res://Recursos/Temas/buttom.tres" id="3_b0kld"]
+[ext_resource type="FontFile" uid="uid://jse5vf2o10b8" path="res://Recursos/Otros/GrapeSoda.ttf" id="4_ep22w"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lgsii")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wgwtc")
+region_rect = Rect2(275, 178, 90, 27)
+
+[node name="Label" type="Label" parent="Panel/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 167.0
+offset_top = 100.0
+offset_right = -340.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_b0kld")
+theme_override_fonts/font = ExtResource("4_ep22w")
+theme_override_font_sizes/font_size = 40
+text = "holaaaaa
+"

@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf4dqofdgperl"]
+
+[ext_resource type="Script" uid="uid://d2fh84edlkbc2" path="res://Escenas/arrow_left.gd" id="1_in1qb"]
+[ext_resource type="Texture2D" uid="uid://bpbvnee2v00b8" path="res://Sprites/c.png" id="2_tswpi"]
+[ext_resource type="Texture2D" uid="uid://b5nx38s0a5r2e" path="res://Sprites/Flecha (Roja).png" id="3_wa43f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akh1h"]
+size = Vector2(126, 127)
+
+[node name="Arrow_Left" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 1.66533e-16
+linear_damp_mode = 1
+script = ExtResource("1_in1qb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+scale = Vector2(0.938, 0.938)
+shape = SubResource("RectangleShape2D_akh1h")
+debug_color = Color(0, 0.6, 0.7019608, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+visible = false
+position = Vector2(2.38419e-06, 4.76837e-06)
+scale = Vector2(1.258, 1.26866)
+texture = ExtResource("2_tswpi")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.8146973e-06, 0)
+rotation = 1.5707964
+scale = Vector2(2.344, 2.363)
+texture = ExtResource("3_wa43f")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
