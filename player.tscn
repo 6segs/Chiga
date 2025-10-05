@@ -46,7 +46,7 @@ debug_color = Color(1, 1, 1, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="RightInputHitbox/CollisionShape2D"]
 rotation = 1.5707964
-scale = Vector2(0.3634675, 0.3634675)
+scale = Vector2(0.36346754, 0.36346754)
 texture = ExtResource("2_i3pqv")
 
 [node name="MissZone" type="Area2D" parent="RightInputHitbox"]

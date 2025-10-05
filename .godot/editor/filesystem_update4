@@ -1,10 +1,2 @@
-res://player.tscn
-res://main.gd
-res://Escenas/Niveles/main.tscn
-res://global.gd
-res://Recursos/Temas/buttom.tres
-res://Prueba.gd
-res://Escenas/Menu_Principal.tscn
-res://Player.gd
-res://hud.tscn
-res://hud.gd
+res://Lore.tscn
+res://Scripts/Menu_Handler.gd

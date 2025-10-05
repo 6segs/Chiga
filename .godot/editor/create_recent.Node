@@ -1,3 +1,5 @@
+Camera2D
+VideoStreamPlayer
 Label
 NinePatchRect
 HBoxContainer
@@ -6,8 +8,6 @@ AnimatedSprite2D
 Sprite2D
 Button
 Control
-Camera2D
-VideoStreamPlayer
 Node
 AnimationPlayer
 ColorRect

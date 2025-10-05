@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8mxrb4n0hanc"]
+[gd_scene load_steps=3 format=3 uid="uid://cuqbrmvds3wbi"]
 
-[ext_resource type="Script" uid="uid://d066tqjyhlfkp" path="res://Lore.gd" id="1_pkncr"]
-[ext_resource type="VideoStream" uid="uid://7cr3vb5gyjk6" path="res://Filmora/Chiga_intro_Usable_final.ogv" id="2_pkncr"]
+[ext_resource type="Script" uid="uid://cmtb46ghpq14d" path="res://control.gd" id="1_pkncr"]
+[ext_resource type="VideoStream" uid="uid://dvevbi2eblppk" path="res://Filmora/Chiga_historia_sin_marca_de_agua_final.ogv" id="2_pkncr"]
 
-[node name="Lore" type="Control"]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

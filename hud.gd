@@ -7,16 +7,17 @@ extends CanvasLayer
 var dialogo: Array[String] = [
 	"Escúchame querido te voy a enseñar los conceptos básicos para
 	tocar el shamisen bien piola.",
-	"las cuerdas son 3, la izquierda, la derecha y la del medio.",
-	"Primero quiero que toques la cuerda izquierda “<-”",
-	"buen trabajo.",
-	"Ahora quiero que toques la cuerda derecha “D”", 
-	"estas totalmente loco.",
-	"Para terminar, toca la cuerda del medio “W”",
-	"nana definitivamente eres parte del clan chiga lo tienes en la
+	"Las cuerdas son 3, la izquierda, la derecha y la del medio.",
+	"Primero quiero que toques la cuerda izquierda “←”",
+	"Buen trabajo.",
+	"Ahora quiero que toques la cuerda derecha “→”", 
+	"Estas totalmente loco.",
+	"Para terminar, toca la cuerda del medio “↓”",
+	"Nana definitivamente eres parte del clan chiga lo tienes en la
 	sangre.",
-	"no sos tan picante como tu abuelo chi-gerr, pero para 
-	ser tu primera vez tocando un shamisen, esta bastante bien."
+	"No sos tan picante como tu abuelo chi-gerr, pero para 
+	ser tu primera vez tocando un shamisen, esta bastante bien.",
+	"Ahora vamos por un reto real."
 ]
 
 var indice: int = 0

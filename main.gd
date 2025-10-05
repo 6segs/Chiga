@@ -50,7 +50,7 @@ var curr_combo = 0
 var max_combo = 0
 var score = 0
 var DURACIONES_NIVELES := {
-	1: 10.0,
+	1: 57.0,
 	2: 60.0,
 	3: 80.0,
 	4: 100.0
@@ -104,8 +104,7 @@ func iniciar_nivel():
 	# Asignar flechas según nivel
 	match Global.nivel_actual:
 		1:
-			arrow_timers = [["right",15],["left",16],["right",16],["right",18],["right",20],["right",22],["right",24],["right",39],
-	["right",40]] # tu lista completa
+			arrow_timers = [["left",22],["right",35],["down",49]] # tu lista completa
 			FALL_SPEED = 100 
 			BPM = 100
 		2:
@@ -119,7 +118,7 @@ func iniciar_nivel():
 	["left",32],["left",34],["down",35],
 	["right",36],["left",38],["down",39],
 	["right",40]] # tu lista completa
-			FALL_SPEED = 100 
+			FALL_SPEED = 120 
 		3:
 			arrow_timers = [["left",4],["right",6],["left",7],
 	["left",8],["down",10],["down",11],
@@ -131,7 +130,7 @@ func iniciar_nivel():
 	["left",32],["left",34],["down",35],
 	["right",36],["left",38],["down",39],
 	["right",40]]
-			FALL_SPEED = 200 
+			FALL_SPEED = 250
 		4:
 			arrow_timers = [["left",4],["right",6],["left",7],
 	["left",8],["down",10],["down",11],
@@ -143,7 +142,7 @@ func iniciar_nivel():
 	["left",32],["left",34],["down",35],
 	["right",36],["left",38],["down",39],
 	["right",40]]
-			FALL_SPEED = 300 
+			FALL_SPEED = 400
 	FALL_DURATION = (PERFECT_TIMING_Y + 60) / FALL_SPEED
 	# Calcular combos y puntajes máximos
 	MAX_COMBO = arrow_timers.size()

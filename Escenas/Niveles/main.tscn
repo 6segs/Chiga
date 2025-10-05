@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://b3o0as4aqswnt"]
+[gd_scene load_steps=106 format=3 uid="uid://b3o0as4aqswnt"]
 
 [ext_resource type="Script" uid="uid://dxonvea3yvmfa" path="res://main.gd" id="1_bmteg"]
 [ext_resource type="PackedScene" uid="uid://deoub3f4yuebi" path="res://arrow.tscn" id="2_di4g5"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://bhkwjnir5lfgp" path="res://Sprites/Hikaru chiga tocando (v2).png" id="8_81u6y"]
 [ext_resource type="Texture2D" uid="uid://cq8436mwnbqe6" path="res://Sprites/Hikaru chiga tocando (v3).png" id="9_awkw4"]
 [ext_resource type="Texture2D" uid="uid://c6lwg5bptcfcx" path="res://Sprites/Yokai.png" id="10_81u6y"]
-[ext_resource type="Texture2D" uid="uid://b6yohsoym3ww7" path="res://Recursos/Imagenes/Sprite sheet for Basic Pack.png" id="11_awkw4"]
 [ext_resource type="Texture2D" uid="uid://u043as60ulhm" path="res://Recursos/Imagenes/Meiko Yapping.png" id="14_6osks"]
 [ext_resource type="Texture2D" uid="uid://kmecc0dgk3ma" path="res://Recursos/Imagenes/Angry Meiko Yapping.png" id="15_fvh46"]
 [ext_resource type="Texture2D" uid="uid://dchar183vo3aa" path="res://Recursos/Imagenes/Paraguas(Ameneza).png" id="16_pny74"]
@@ -743,46 +742,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_81u6y")
 
-[node name="Tutorial" type="Panel" parent="."]
-visible = false
-self_modulate = Color(1, 1, 1, 0)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -576.0
-offset_top = 156.0
-offset_right = 578.0
-offset_bottom = 317.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="NinePatchRect" type="NinePatchRect" parent="Tutorial"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -548.0
-offset_top = -92.5
-offset_right = 528.0
-offset_bottom = 78.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_awkw4")
-region_rect = Rect2(275, 178, 90, 27)
-
-[node name="Label" type="Label" parent="Tutorial/NinePatchRect"]
-layout_mode = 0
-offset_left = 118.0
-offset_top = 32.0
-offset_right = 161.0
-offset_bottom = 81.0
-text = "holaa
-"
-
 [node name="Chiga" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(192, 350)
@@ -807,8 +766,8 @@ animation = &"Run"
 
 [node name="Paraguas" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(982, 365)
-scale = Vector2(0.9609375, 0.8828125)
+position = Vector2(945.00006, 341)
+scale = Vector2(1.1835938, 1.0873666)
 sprite_frames = SubResource("SpriteFrames_c1gna")
 animation = &"Run"
 frame_progress = 0.61962914
@@ -816,14 +775,15 @@ speed_scale = 2.0
 
 [node name="sin_ojos" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(956.00006, 359)
-scale = Vector2(0.8671875, 0.8671875)
+position = Vector2(976.00006, 379)
+scale = Vector2(1.1562498, 1.1562498)
 sprite_frames = SubResource("SpriteFrames_h8dq1")
 animation = &"Run"
 frame_progress = 0.4355441
 
 [node name="Narigon" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(1007, 371)
+position = Vector2(982, 378)
+scale = Vector2(1.4121094, 1.4121094)
 sprite_frames = SubResource("SpriteFrames_btc5n")
 animation = &"Run"

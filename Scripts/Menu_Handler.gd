@@ -188,7 +188,7 @@ func _on_jogoo_pressed() -> void:
 	Global.nivel_actual = 2
 	Global.save_data()
 	if not Global.lore_vista:
-		get_tree().change_scene_to_file("res://Escenas/Historia.tscn")
+		get_tree().change_scene_to_file("res://Lore.tscn")
 	else:
 		get_tree().change_scene_to_file("res://Escenas/Niveles/main.tscn")
 	

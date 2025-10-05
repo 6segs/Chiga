@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1iidcc14qyck"]
+[gd_scene load_steps=3 format=3 uid="uid://bplsfvofue4fu"]
 
 [ext_resource type="Script" uid="uid://d2st5fumogqan" path="res://historia.gd" id="1_h4vum"]
-[ext_resource type="VideoStream" uid="uid://1uc3afhw6k2n" path="res://Filmora/proyecto_historia_chiga.ogv" id="2_dmxvl"]
+[ext_resource type="VideoStream" uid="uid://kt5hjvemw6li" path="res://Filmora/Chiga_historia_sin_marca_de_agua_usable.ogv" id="2_srwa0"]
 
 [node name="Historia" type="Control"]
 layout_mode = 3
@@ -23,7 +23,7 @@ offset_right = -192.0
 offset_bottom = -108.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("2_dmxvl")
+stream = ExtResource("2_srwa0")
 autoplay = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
