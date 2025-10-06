@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cuqbrmvds3wbi"]
+[gd_scene load_steps=3 format=3 uid="uid://b0acfs5x718tk"]
 
-[ext_resource type="Script" uid="uid://cmtb46ghpq14d" path="res://control.gd" id="1_pkncr"]
-[ext_resource type="VideoStream" uid="uid://dvevbi2eblppk" path="res://Recursos/Videos/Chiga_historia_sin_marca_de_agua_final.ogv" id="2_pkncr"]
+[ext_resource type="VideoStream" uid="uid://dvevbi2eblppk" path="res://Recursos/Videos/Chiga_historia_sin_marca_de_agua_final.ogv" id="1_kwj8o"]
+[ext_resource type="Script" uid="uid://cscop5osibwe" path="res://Pruebas_extras/control.gd" id="1_ywr6h"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_pkncr")
+script = ExtResource("1_ywr6h")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 0
@@ -18,7 +18,7 @@ offset_left = -960.0
 offset_top = -540.0
 offset_right = 960.0
 offset_bottom = 540.0
-stream = ExtResource("2_pkncr")
+stream = ExtResource("1_kwj8o")
 autoplay = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

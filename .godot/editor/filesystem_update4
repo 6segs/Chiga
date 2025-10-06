@@ -1,7 +1,1 @@
-res://control.gd
-res://global.gd
-res://Scripts/Menu_Handler.gd
-res://Lore.tscn
 res://main.gd
-res://hud.tscn
-res://Escenas/Menu_Principal.tscn

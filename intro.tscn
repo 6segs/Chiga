@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cin4bsf1b17lh"]
 
 [ext_resource type="Script" uid="uid://bxxeofabp557h" path="res://intro.gd" id="1_ayt76"]
-[ext_resource type="VideoStream" uid="uid://1uc3afhw6k2n" path="res://Filmora/proyecto_historia_chiga.ogv" id="2_ayt76"]
+[ext_resource type="VideoStream" path="res://Recursos/Videos/Chiga_intro_Usable_final.ogv" id="2_ayt76"]
 
 [node name="Intro" type="Control"]
 layout_mode = 3

@@ -51,9 +51,9 @@ var max_combo = 0
 var score = 0
 var DURACIONES_NIVELES := {
 	1: 57.0,
-	2: 60.0,
+	2: 43.0,
 	3: 80.0,
-	4: 100.0
+	4: 95.0
 }
 ##############################################################
 # basicamente el init de todo
@@ -110,7 +110,7 @@ func iniciar_nivel():
 			FALL_SPEED = 100 
 			BPM = 100
 		2:
-			arrow_timers = [["left",4],["right",6],["left",7],
+			arrow_timers = [["right",6],["left",7],
 	["left",8],["down",10],["down",11],
 	["left",12],["right",14],["right",15],
 	["left",16],["right",18],["left",19],
@@ -119,8 +119,9 @@ func iniciar_nivel():
 	["left",28],["right",30],["left",31],
 	["left",32],["left",34],["down",35],
 	["right",36],["left",38],["down",39],
-	["right",40]] # tu lista completa
-			FALL_SPEED = 120 
+	["right",40],["right",45],["right",50],["right",55],["right",60]] # tu lista completa
+			FALL_SPEED = 180
+			BPM = 200
 		3:
 			arrow_timers = [["left",4],["right",6],["left",7],
 	["left",8],["down",10],["down",11],
@@ -224,9 +225,9 @@ func asignar_musica_según_nivel():
 		3:
 			$Conductor.stream = preload("res://Recursos/Audios/cancion_level2_chiga.mp3")
 		4:
-			$Conductor.stream = preload("res://Recursos/Audios/2023-02-16-#29.mp3")
+			$Conductor.stream = preload("res://Recursos/Audios/cancion_level3_chiga.mp3")
 		_:
-			$Conductor.stream = preload("res://Recursos/Audios/cancion_level2_chiga.mp3")
+			$Conductor.stream = preload("res://Recursos/Audios/clap_1.wav")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

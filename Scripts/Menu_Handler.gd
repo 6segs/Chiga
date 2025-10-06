@@ -189,21 +189,22 @@ func _on_tutorial_pressed() -> void:
 	Global.nivel_actual = 1
 	Global.save_data()
 	get_tree().change_scene_to_file("res://Escenas/Niveles/main.tscn")
+
 func _on_jogoo_pressed() -> void:
 	Global.juego_iniciado = true
 	Global.nivel_actual = 2
 	Global.save_data()
 	if not Global.lore_vista:
-		get_tree().change_scene_to_file("res://Lore.tscn")
+		get_tree().change_scene_to_file("res://Pruebas_extras/control.tscn")
 	else:
 		get_tree().change_scene_to_file("res://Escenas/Niveles/main.tscn")
-	
+
 func _on_nivel_2_pressed() -> void:
 	Global.juego_iniciado = true
 	Global.nivel_actual = 3
 	Global.save_data()
 	get_tree().change_scene_to_file("res://Escenas/Niveles/main.tscn")
-	
+
 func _on_nivel_3_pressed() -> void:
 	Global.juego_iniciado = true
 	Global.nivel_actual = 4
