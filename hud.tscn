@@ -170,5 +170,7 @@ offset_left = 51.0
 offset_top = 38.0
 offset_right = 1101.0
 offset_bottom = 189.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("1_37p78")
 theme_override_font_sizes/font_size = 40

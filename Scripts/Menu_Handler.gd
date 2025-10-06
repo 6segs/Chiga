@@ -36,7 +36,7 @@ extends Control
 # buses de audio
 var bus_master: int
 var bus_music: int
-var bus_sfx: int
+var bus_sfx: int 
 
 @onready var musica: AudioStreamPlayer = $musica
 var musica_de_gameplay = preload("res://Recursos/Audios/(2) menu_chiga.mp3")
@@ -89,16 +89,22 @@ func actualizar_label(label: Label, nombre: String, valor: float) -> void:
 
 func _on_master_slider_val(valor: float) -> void:
 	AudioServer.set_bus_volume_db(bus_master, linear_to_db(valor / 100.0))
+	Global.volumen_master = valor / 100.0
+	Global.save_data()
 	actualizar_label(label_master, "Master", valor)
 
 func _on_music_slider_val(valor: float) -> void:
 	AudioServer.set_bus_volume_db(bus_music, linear_to_db(valor / 100.0))
+	Global.volumen_musica = valor / 100.0
+	Global.save_data()
 	$musica.volume_db = linear_to_db(valor / 100.0)
 	actualizar_label(label_music, "Musica", valor)
 
 func _on_sfx_slider_val(valor: float) -> void:
 	AudioServer.set_bus_volume_db(bus_sfx, linear_to_db(valor / 100.0))
 	$sonidos.volume_db = linear_to_db(valor / 100.0)
+	Global.volumen_sfx = valor / 100.0
+	Global.save_data()
 	actualizar_label(label_sfx, "SFX", valor)
 
 # --------------------------------------------------

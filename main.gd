@@ -93,6 +93,8 @@ func _ready() -> void:
 	chiga.visible = false
 	compute_offset_beat_times()
 	new_game()
+	Global.aplicar_volumenes()
+
 func iniciar_nivel():
 	# Reiniciar variables comunes
 	arrows_before_music.clear()

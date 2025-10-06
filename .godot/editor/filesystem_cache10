@@ -13,7 +13,7 @@ hud.gd::GDScript::6142550114358523919::1759539354::0::1::::<>CanvasLayer<><>0<>0
 hud.tscn::PackedScene::1338575640043206946::1759545094::0::1::::<><><>0<>0<><>::uid://ctrq5x2m25tgx::::res://hud.gd<>uid://jse5vf2o10b8::::res://Recursos/Otros/GrapeSoda.ttf<>uid://b6yohsoym3ww7::::res://Recursos/Imagenes/Sprite sheet for Basic Pack.png
 intro.gd::GDScript::4048512907480401215::1759236886::0::1::::<>Node<><>0<>0<><>::
 intro.tscn::PackedScene::5362952560205411933::1759188092::0::1::::<><><>0<>0<><>::uid://bxxeofabp557h::::res://intro.gd<>uid://1uc3afhw6k2n::::res://Filmora/proyecto_historia_chiga.ogv
-Lore.tscn::PackedScene::6209740022583536674::1759620744::0::1::::<><><>0<>0<><>::uid://cmtb46ghpq14d::::res://control.gd<>uid://dvevbi2eblppk::::res://Filmora/Chiga_historia_sin_marca_de_agua_final.ogv
+Lore.tscn::PackedScene::6209740022583536674::1759623496::0::1::::<><><>0<>0<><>::uid://cmtb46ghpq14d::::res://control.gd<>uid://dvevbi2eblppk::::res://Filmora/Chiga_historia_sin_marca_de_agua_final.ogv
 main.gd::GDScript::8803333777287355650::1759551880::0::1::::<>Node<><>0<>0<><>::
 miss_box.gd::GDScript/GDScript::4055292783374061922::1756356274::0::1::::<>Area2D<><>0<>0<><>::
 MusicPlayer.gd::GDScript/GDScript::6322510520609433128::1756356274::0::1::::<>AudioStreamPlayer2D<><>0<>0<><>::
@@ -42,7 +42,7 @@ Level3.tscn::PackedScene::2836701147470440838::1758760530::0::1::::<><><>0<>0<><
 level_3.gd::GDScript::6103408037597805719::1758760838::0::1::::<>Node<><>0<>0<><>::
 main.tscn::PackedScene::4382128509175751669::1759545096::0::1::::<><><>0<>0<><>::uid://dxonvea3yvmfa::::res://main.gd<>uid://deoub3f4yuebi::::res://arrow.tscn<>uid://bvdtplj3m7gvg::::res://player.tscn<>uid://tcoe64368u55::::res://hud.tscn<>uid://dbje627whn7t7::::res://Escenas/arrow_center.tscn<>uid://bf4dqofdgperl::::res://Escenas/arrow_left.tscn<>uid://d2rhco2wy6gu3::::res://Sprites/Intento fondo.png<>uid://cwcw3bf47leoe::::res://MusicPlayer.gd<>uid://bbn27vwnqnvlf::::res://Sprites/Hikaru chiga tocando (v1).png<>uid://bhkwjnir5lfgp::::res://Sprites/Hikaru chiga tocando (v2).png<>uid://cq8436mwnbqe6::::res://Sprites/Hikaru chiga tocando (v3).png<>uid://c6lwg5bptcfcx::::res://Sprites/Yokai.png<>uid://u043as60ulhm::::res://Recursos/Imagenes/Meiko Yapping.png<>uid://kmecc0dgk3ma::::res://Recursos/Imagenes/Angry Meiko Yapping.png<>uid://dchar183vo3aa::::res://Recursos/Imagenes/Paraguas(Ameneza).png<>uid://dtnqwlc51iigc::::res://Recursos/Imagenes/Paraguas(Parpadeo).png<>uid://ui8we46ip5m5::::res://Recursos/Imagenes/Paraguas(Idle).png<>uid://bn8wsa6j3xyw::::res://Recursos/Imagenes/Tenome (Hablando).png<>uid://bque2tli0kear::::res://Recursos/Imagenes/Tenome(Idle).png
 ::res://Filmora/::1758250918
-Chiga_historia_sin_marca_de_agua_final.ogg::AudioStreamOggVorbis::3855585164177997004::1759623304::1759623392::1::::<><><>0<>0<>b593ac5a72aab7e0ee8e75b29322a2a2<>res://.godot/imported/Chiga_historia_sin_marca_de_agua_final.ogg-b4800b737368b5f40b78bb754ec0fa17.oggvorbisstr::
+Chiga_historia_sin_marca_de_agua_final.ogv::VideoStreamTheora::8642762583216271596::1759623304::0::1::::<><><>0<>0<><>::
 Chiga_historia_sin_marca_de_agua_usable.ogv::VideoStreamTheora::742946129397510442::1759615828::0::1::::<><><>0<>0<><>::
 Chiga_intro_Usable_final.ogv::VideoStreamTheora/VideoStreamTheora::2251255048938715063::1758627344::0::1::::<><><>0<>0<><>::
 Fondo negro.png::CompressedTexture2D/CompressedTexture2D::1103500051963987459::1758248012::1758631276::1::::<><><>0<>0<>bb5731e6d0ccd806f919a5579f0c5f73<>res://.godot/imported/Fondo negro.png-7d591f1fd83a7fbbfbe914152c7bef89.ctex::
@@ -106,7 +106,7 @@ button.gd::GDScript/GDScript::8517298647193879311::1756356274::0::1::::<>Button<
 icon.gd::GDScript/GDScript::2461490617747404606::1756356274::0::1::::<>Node2D<><>0<>0<><>::
 level_2.gd::GDScript::1791202353951163208::1758838552::0::1::::<>Node<><>0<>0<><>::
 master_volumen_slider.gd::GDScript/GDScript::5628086856232629434::1756356274::0::1::::<>HSlider<><>0<>0<><>::
-Menu_Handler.gd::GDScript::314965466738570967::1759620760::0::1::::<>Control<><>0<>0<><>::
+Menu_Handler.gd::GDScript::314965466738570967::1759623518::0::1::::<>Control<><>0<>0<><>::
 music_volumen_slider.gd::GDScript/GDScript::8970361763178567530::1756356274::0::1::::<>HSlider<><>0<>0<><>::
 nine_patch_rect.gd::GDScript/GDScript::2504129523230011567::1756356274::0::1::::<>RefCounted<><>0<>0<><>::
 node_2d.gd::GDScript/GDScript::6941848246868954206::1756356274::0::1::::<>Node2D<><>0<>0<><>::
