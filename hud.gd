@@ -63,3 +63,7 @@ func iniciar_linea() -> void:
 	label.text = ""
 	mostrando = true
 	time_accumulator = 0.0
+
+
+func _on_go_back_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Escenas/Menu_Principal.tscn")

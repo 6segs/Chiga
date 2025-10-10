@@ -58,12 +58,13 @@ func _ready() -> void:
 	init_sliders()
 	panel.visible = true
 	actualizar_botones_niveles()
+	#Global.lore_vista = false
 # ----------------- BLOQUEO DE NIVELES -----------------
 func actualizar_botones_niveles():
 	tutorial.disabled = false  # El tutorial siempre disponible
-	boton_nivel1.disabled = Global.nivel_max < 1
-	boton_nivel2.disabled = Global.nivel_max < 2
-	boton_nivel3.disabled = Global.nivel_max < 3
+	boton_nivel1.disabled = Global.nivel_max < 2
+	boton_nivel2.disabled = Global.nivel_max < 4
+	boton_nivel3.disabled = Global.nivel_max < 5
 
 
 # ------------------- SLIDERS -------------------
@@ -188,16 +189,16 @@ func _on_tutorial_pressed() -> void:
 	Global.juego_iniciado = true
 	Global.nivel_actual = 1
 	Global.save_data()
-	get_tree().change_scene_to_file("res://Escenas/Niveles/main.tscn")
+	if not Global.lore_vista:
+		get_tree().change_scene_to_file("res://Pruebas_extras/control.tscn")
+	else:
+		get_tree().change_scene_to_file("res://Escenas/Niveles/main.tscn")
 
 func _on_jogoo_pressed() -> void:
 	Global.juego_iniciado = true
 	Global.nivel_actual = 2
 	Global.save_data()
-	if not Global.lore_vista:
-		get_tree().change_scene_to_file("res://Pruebas_extras/control.tscn")
-	else:
-		get_tree().change_scene_to_file("res://Escenas/Niveles/main.tscn")
+	get_tree().change_scene_to_file("res://Escenas/Niveles/main.tscn")
 
 func _on_nivel_2_pressed() -> void:
 	Global.juego_iniciado = true

@@ -1,11 +1,11 @@
+AnimatedSprite2D
+Sprite2D
 Camera2D
 VideoStreamPlayer
 Label
 NinePatchRect
 HBoxContainer
 Panel
-AnimatedSprite2D
-Sprite2D
 Button
 Control
 Node

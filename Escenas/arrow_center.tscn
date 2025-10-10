@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbje627whn7t7"]
+[gd_scene load_steps=9 format=3 uid="uid://dbje627whn7t7"]
 
 [ext_resource type="Script" uid="uid://bdi1cy4dlv3qt" path="res://arrow_center.gd" id="1_e6i8s"]
 [ext_resource type="Texture2D" uid="uid://bpbvnee2v00b8" path="res://Sprites/c.png" id="2_a77o4"]
 [ext_resource type="Texture2D" uid="uid://cbjspmu1k36v3" path="res://Sprites/bat1.png" id="3_3q7cq"]
 [ext_resource type="Texture2D" uid="uid://dtssmbw7vfykl" path="res://Sprites/bat2.png" id="4_xr55o"]
 [ext_resource type="Texture2D" uid="uid://b3oqyl07bi2rk" path="res://Sprites/Flecha (Azul).png" id="5_a77o4"]
+[ext_resource type="Texture2D" uid="uid://bk8osomfeoo3p" path="res://Recursos/Imagenes/Flecha nuevas/Flecha (Azul).png" id="6_3q7cq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_akh1h"]
 size = Vector2(126, 127)
@@ -56,5 +57,9 @@ frame_progress = 0.445824
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2.344, 2.344)
 texture = ExtResource("5_a77o4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(2.344, 2.344)
+texture = ExtResource("6_3q7cq")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvdtplj3m7gvg"]
+[gd_scene load_steps=9 format=3 uid="uid://bvdtplj3m7gvg"]
 
 [ext_resource type="Script" uid="uid://ly4k3qd3dnr7" path="res://Player.gd" id="1_wa4lb"]
 [ext_resource type="Texture2D" uid="uid://divxh4eei8k44" path="res://Recursos/Imagenes/Flecha (Gris).png" id="2_i3pqv"]
 [ext_resource type="Script" uid="uid://bx1ocyc227me1" path="res://miss_box.gd" id="3_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://w0yt83ujx1er" path="res://Recursos/Imagenes/Flechas/Flecha (Amarilla).png" id="4_hqtel"]
+[ext_resource type="Texture2D" uid="uid://caxhlbe6hwljl" path="res://Recursos/Imagenes/Flechas/Flecha (Roja).png" id="5_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://6bceyjm600t8" path="res://Recursos/Imagenes/Flechas/Flecha (Azul).png" id="6_1jxqw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7r48m"]
 
@@ -23,10 +26,16 @@ debug_color = Color(1, 1, 1, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="LeftInputHitbox/CollisionShape2D"]
 texture_filter = 1
-position = Vector2(-0.000263255, -0.000358826)
+position = Vector2(0, 3.167)
 rotation = 4.712389
 scale = Vector2(0.363, 0.363)
 texture = ExtResource("2_i3pqv")
+
+[node name="Sprite2D2" type="Sprite2D" parent="LeftInputHitbox/CollisionShape2D"]
+position = Vector2(0, 3.167)
+rotation = 4.712389
+scale = Vector2(0.363, 0.363)
+texture = ExtResource("4_hqtel")
 
 [node name="MissZone" type="Area2D" parent="LeftInputHitbox"]
 position = Vector2(90, 792)
@@ -45,9 +54,16 @@ shape = SubResource("RectangleShape2D_7r48m")
 debug_color = Color(1, 1, 1, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="RightInputHitbox/CollisionShape2D"]
+position = Vector2(0, 3.17)
 rotation = 1.5707964
 scale = Vector2(0.36346754, 0.36346754)
 texture = ExtResource("2_i3pqv")
+
+[node name="Sprite2D2" type="Sprite2D" parent="RightInputHitbox/CollisionShape2D"]
+position = Vector2(0.07, 3.17)
+rotation = 1.5707964
+scale = Vector2(0.363, 0.363)
+texture = ExtResource("5_2hs0m")
 
 [node name="MissZone" type="Area2D" parent="RightInputHitbox"]
 position = Vector2(240, 792)
@@ -66,8 +82,14 @@ shape = SubResource("RectangleShape2D_7r48m")
 debug_color = Color(1, 1, 1, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="DownInputHitbox/CollisionShape2D"]
+position = Vector2(0, 2.1669922)
 scale = Vector2(0.363, 0.363)
 texture = ExtResource("2_i3pqv")
+
+[node name="Sprite2D2" type="Sprite2D" parent="DownInputHitbox/CollisionShape2D"]
+position = Vector2(0, 2.167)
+scale = Vector2(0.363, 0.363)
+texture = ExtResource("6_1jxqw")
 
 [node name="MissZone" type="Area2D" parent="DownInputHitbox"]
 position = Vector2(390, 792)

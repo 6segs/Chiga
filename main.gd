@@ -5,7 +5,12 @@ extends Node
 @export var arrow_left_scene : PackedScene
 @export var FALL_SPEED: float
 
-@onready var chiga: AnimatedSprite2D = $Chiga
+@onready var chiga_tocando: AnimatedSprite2D = $Chiga_tocando
+@onready var chiga_viento: AnimatedSprite2D = $Chiga_viento
+@onready var chiga_old_tocando: AnimatedSprite2D = $Chiga_old_tocando
+@onready var chiga_old_viento: AnimatedSprite2D = $Chiga_old_viento
+@onready var chiga_veri_old_tocando: AnimatedSprite2D = $Chiga_veri_old_tocando
+@onready var chiga_veri_old_viento: AnimatedSprite2D = $Chiga_veri_old_viento
 @onready var meiko_happy: AnimatedSprite2D = $Meiko_happy
 @onready var meiko_agry: AnimatedSprite2D = $Meiko_agry
 @onready var paraguas: AnimatedSprite2D = $Paraguas
@@ -68,7 +73,6 @@ func _ready() -> void:
 	$Conductor.beat.connect(_on_conductor_beat)
 	$Player.hit.connect(_on_player_hit)
 	$Player.miss.connect(_on_player_miss)
-	$HUD/GameOverMenu/NinePatchRect/GoBackButton.button_down.connect(_go_back_button)
 	# $Conductor.stream = preload("res://Recursos/Audios/cancion_1_chiga.mp3")
 	$HitPlayer.stream = preload("res://Recursos/Audios/clap_1.wav")
 	$CountdownPlayer.stream = preload("res://Recursos/Audios/countdown_high.wav")
@@ -90,7 +94,6 @@ func _ready() -> void:
 	
 	FALL_DURATION = (PERFECT_TIMING_Y + 60) / FALL_SPEED
 	# Duraciones de cada nivel (en segundos)
-	chiga.visible = false
 	compute_offset_beat_times()
 	new_game()
 	Global.aplicar_volumenes()
@@ -123,7 +126,7 @@ func iniciar_nivel():
 			FALL_SPEED = 180
 			BPM = 200
 		3:
-			arrow_timers = [["left",4],["right",6],["left",7],
+			arrow_timers = [["left",4],["right",6],["left",6],["down",6],["left",7],
 	["left",8],["down",10],["down",11],
 	["left",12],["right",14],["right",15],
 	["left",16],["right",18],["left",19],
@@ -165,17 +168,21 @@ func iniciar_nivel():
 func cambiar_sprite_por_nivel():
 	match Global.nivel_actual:
 		1:
-			chiga.visible= true
+			chiga_viento.visible= true
+			chiga_viento.play("Run")
 			meiko_happy.visible = true
 			meiko_happy.play("Run")
 		2:
-			chiga.visible= true
+			chiga_viento.visible= true
+			chiga_viento.play("Run")
 			paraguas.visible = true
 		3:
-			chiga.visible= true
+			chiga_old_viento.visible= true
+			chiga_old_viento.play("Run")
 			sin_ojos.visible = true
 		4:
-			chiga.visible= true
+			chiga_veri_old_viento.visible= true
+			chiga_veri_old_viento.play("Run")
 			narigon.visible = true
  
 func manejar_countdown():
@@ -198,7 +205,28 @@ func manejar_countdown():
 	if countdown_text != $HUD/CountdownLabel.text:
 		print(countdown_text)
 		if countdown_text == "GO!":
-			chiga.play("Run")
+			if  Global.nivel_actual == 1:
+				chiga_viento.visible= false
+				chiga_tocando.visible = true
+				chiga_tocando.play("Run")
+			elif Global.nivel_actual == 2:
+				chiga_viento.visible= false
+				chiga_tocando.visible = true
+				chiga_tocando.play("Run")
+			elif Global.nivel_actual == 3:
+				chiga_old_viento.visible = false
+				chiga_old_tocando.visible = true
+				chiga_old_tocando.play("Run")
+			elif Global.nivel_actual == 4:
+				chiga_veri_old_viento.visible = false
+				chiga_veri_old_tocando.visible = true
+				chiga_veri_old_tocando.play("Run")
+			else:
+				chiga_viento.visible= false
+				chiga_tocando.visible = true
+				chiga_tocando.play("Run")
+			
+			
 			paraguas.play("Run")
 			sin_ojos.play("Run")
 			narigon.play("Run")
@@ -426,6 +454,5 @@ func compute_offset_beat_times():
 	arrow_timers = arrow_timers.slice(num_negative, arrow_timers.size())
 	
 
-func _go_back_button():
-	get_tree().change_scene_to_file("res://Escenas/Menu_Principal.tscn")
+
 	

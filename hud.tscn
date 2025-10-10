@@ -4,14 +4,17 @@
 [ext_resource type="FontFile" uid="uid://jse5vf2o10b8" path="res://Recursos/Otros/GrapeSoda.ttf" id="1_37p78"]
 [ext_resource type="Texture2D" uid="uid://b6yohsoym3ww7" path="res://Recursos/Imagenes/Sprite sheet for Basic Pack.png" id="1_64ctp"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sq4i"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8sq4i"]
+texture = ExtResource("1_64ctp")
+region_rect = Rect2(275, 178, 90, 27)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_640wx"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_640wx"]
+texture = ExtResource("1_64ctp")
+region_rect = Rect2(275, 212, 90, 25)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64ctp"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a2258"]
+texture = ExtResource("1_64ctp")
+region_rect = Rect2(275, 178, 90, 27)
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_8sq4i")
@@ -116,9 +119,9 @@ grow_vertical = 2
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("1_37p78")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_8sq4i")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_640wx")
-theme_override_styles/hover = SubResource("StyleBoxFlat_64ctp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8sq4i")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_640wx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_a2258")
 text = "Volver al menu"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="GameOverMenu/NinePatchRect/GoBackButton"]
@@ -129,7 +132,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_64ctp")
 region_rect = Rect2(275, 212, 90, 25)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -174,3 +176,5 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("1_37p78")
 theme_override_font_sizes/font_size = 40
+
+[connection signal="pressed" from="GameOverMenu/NinePatchRect/GoBackButton" to="." method="_on_go_back_button_pressed"]
